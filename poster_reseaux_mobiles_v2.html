@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Poster A1 — Évolution des Réseaux Radio Mobiles v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@page{size:A1 portrait;margin:0}
+:root{
+  --bg:#f3f1e8;
+  --dark:#090e1a;
+  --era1:#a82020;--era1-bg:#fdf1f0;--era1-lt:#fce8e7;
+  --era2:#b85800;--era2-bg:#fdf4ec;--era2-lt:#fce9d8;
+  --era3:#0f3d6e;--era3-bg:#eef3fb;--era3-lt:#dfe9f7;
+  --era4:#1a6b3a;--era4-bg:#edf7f1;
+  --g2:#1452a0;--g25:#05607a;--g275:#236a40;--g3:#5e1f96;
+  --g35:#7a1080;--g375:#a01060;--g4:#b04500;--g4p:#c83000;--g5:#921212;
+  --wifi:#0077cc;--bt:#4040aa;--zigbee:#e07000;--lora:#006060;--nbiot:#004488;--sigfox:#442200;
+  --ink:#161624;--ink2:#4a4a64;--ink3:#8888a8;--rule:#dedbd0;
+  --card-bg:#ffffff;
+}
+body{
+  width:594mm;
+  background:var(--bg);
+  font-family:'Barlow',sans-serif;
+  color:var(--ink);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{width:594mm}
+}
+
+/* ══ HEADER ══ */
+header{background:var(--dark);padding:10mm 15mm 8mm;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 18px,rgba(255,255,255,.018) 18px,rgba(255,255,255,.018) 19px),
+  repeating-linear-gradient(90deg,transparent,transparent 18px,rgba(255,255,255,.018) 18px,rgba(255,255,255,.018) 19px)}
+header::after{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(100,180,255,.06) 0%,transparent 70%)}
+.hdr-inner{position:relative;display:grid;grid-template-columns:1fr 220px;gap:10mm;align-items:start}
+.hdr-eyebrow{font-family:'JetBrains Mono',monospace;font-size:7.5pt;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:3mm}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:55pt;font-weight:900;line-height:.9;color:#fff;letter-spacing:-1.5px}
+h1 em{color:#79bff7;font-style:italic}
+.hdr-sub{font-size:9.5pt;font-weight:300;color:rgba(255,255,255,.45);margin-top:3mm;max-width:260mm;line-height:1.6}
+.hdr-stats{display:flex;gap:3.5mm;margin-top:4mm;flex-wrap:wrap}
+.hdr-stat{text-align:center;border:1px solid rgba(255,255,255,.1);border-radius:2mm;padding:2mm 4mm}
+.hdr-stat-n{font-family:'Barlow Condensed',sans-serif;font-size:20pt;font-weight:800;color:#79bff7;line-height:1}
+.hdr-stat-l{font-size:5.5pt;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:.5mm}
+.hdr-legend{display:flex;flex-direction:column;gap:2.5mm;padding-top:5mm;justify-content:flex-end}
+.lg-item{display:flex;align-items:center;gap:2.5mm;font-size:7.5pt;color:rgba(255,255,255,.52)}
+.lg-bar{width:12mm;height:4px;border-radius:2px;flex-shrink:0}
+
+/* ══ TIMELINE ══ */
+.timeline-wrap{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding:3.5mm 15mm 4mm}
+.timeline-track{position:relative;height:13mm}
+.tl-line{position:absolute;left:0;right:0;top:40%;height:2px;
+  background:linear-gradient(90deg,var(--era1) 0%,var(--era1) 28%,var(--era2) 28%,var(--era2) 48%,#1a6aaa 48%,#79bff7 100%);
+  transform:translateY(-50%)}
+.tl-evts{position:relative;width:100%;height:100%}
+.t-e{position:absolute;transform:translateX(-50%);top:0;display:flex;flex-direction:column;align-items:center}
+.t-e .d{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);margin-top:6px;margin-bottom:2px}
+.t-e.M .d{width:11px;height:11px;background:#fff;margin-top:4px;box-shadow:0 0 8px rgba(121,191,247,.5)}
+.t-e .lbl{font-family:'JetBrains Mono',monospace;font-size:5.5pt;color:rgba(255,255,255,.35);white-space:nowrap}
+.t-e.M .lbl{color:rgba(255,255,255,.78);font-size:6pt;font-weight:600}
+
+/* ══ SECTION BASE ══ */
+section.era-sec{padding:6mm 11mm 7mm}
+.era-sec.e1{background:var(--era1-bg)}
+.era-sec.e2{background:var(--era2-bg)}
+.era-sec.e3{background:var(--era3-bg)}
+.era-sec.e4{background:var(--era4-bg)}
+
+.sec-hdr{display:flex;align-items:center;gap:4mm;margin-bottom:5mm;padding-bottom:3mm;border-bottom:3px solid}
+.e1 .sec-hdr{border-color:var(--era1)}
+.e2 .sec-hdr{border-color:var(--era2)}
+.e3 .sec-hdr{border-color:var(--era3)}
+.e4 .sec-hdr{border-color:var(--era4)}
+
+.sec-tag{font-family:'JetBrains Mono',monospace;font-size:7pt;letter-spacing:2px;text-transform:uppercase;
+  padding:1.5mm 3.5mm;border-radius:1.5mm;color:#fff;font-weight:600}
+.e1 .sec-tag{background:var(--era1)}
+.e2 .sec-tag{background:var(--era2)}
+.e3 .sec-tag{background:var(--era3)}
+.e4 .sec-tag{background:var(--era4)}
+
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:20pt;font-weight:800;line-height:1}
+.e1 .sec-title{color:var(--era1)}
+.e2 .sec-title{color:var(--era2)}
+.e3 .sec-title{color:var(--era3)}
+.e4 .sec-title{color:var(--era4)}
+.sec-period{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9pt;color:var(--ink3)}
+
+/* ══ ERA I LAYOUT ══ */
+.era1-body{display:grid;grid-template-columns:100mm 1fr;gap:6mm;align-items:start}
+.era2-body{display:grid;grid-template-columns:90mm 1fr;gap:6mm;align-items:start}
+.illus-wrap{border-radius:3mm;overflow:hidden;border:1px solid rgba(0,0,0,.07)}
+.illus-cap{font-size:7pt;color:var(--ink3);text-align:center;margin-top:2mm;font-style:italic}
+
+/* ══ TECH CARDS ══ */
+.tc-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.tc-grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:3mm}
+.tc-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}
+.tc{background:var(--card-bg);border-radius:2.5mm;padding:3mm 3.5mm 2.5mm;border:1px solid var(--rule);position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:2.5mm 2.5mm 0 0}
+.e1 .tc::before{background:var(--era1)}
+.e2 .tc::before{background:var(--era2)}
+.tc-yr{font-family:'JetBrains Mono',monospace;font-size:6.5pt;color:var(--ink3);margin-bottom:1.5mm}
+.tc-name{font-family:'Barlow Condensed',sans-serif;font-size:11pt;font-weight:700;line-height:1.2;margin-bottom:2mm}
+.tc-r{display:flex;gap:2mm;margin-bottom:1.5mm}
+.tc-l{font-size:6pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);min-width:13mm;flex-shrink:0;padding-top:.5mm}
+.tc-v{font-size:7pt;color:var(--ink2);line-height:1.45}
+
+/* ══ ARCH PANELS ══ */
+.arch-panel{background:var(--card-bg);border-radius:2.5mm;border:1px solid var(--rule);padding:3mm;margin-top:3mm}
+.ap-title{font-size:6.5pt;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:center;margin-bottom:2mm;font-weight:600}
+
+/* ══ ERA III — GENERATIONS GRID (wider to fit more) ══ */
+.gen-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:2.5mm}
+.gen{background:var(--card-bg);border-radius:3mm;border:1px solid var(--rule);overflow:hidden;display:flex;flex-direction:column}
+.gen-hdr{padding:3.5mm 2.5mm;text-align:center;color:#fff}
+.g2 .gen-hdr{background:var(--g2)}
+.g25 .gen-hdr{background:var(--g25)}
+.g275 .gen-hdr{background:var(--g275)}
+.g3 .gen-hdr{background:var(--g3)}
+.g35 .gen-hdr{background:var(--g35)}
+.g375 .gen-hdr{background:var(--g375)}
+.g4 .gen-hdr{background:var(--g4)}
+.g4p .gen-hdr{background:var(--g4p)}
+.g5 .gen-hdr{background:var(--g5)}
+
+.gen-badge{font-family:'Barlow Condensed',sans-serif;font-size:26pt;font-weight:900;line-height:1}
+.gen-std{font-family:'JetBrains Mono',monospace;font-size:7pt;opacity:.85;margin-top:1mm;font-weight:600}
+.gen-yrs{font-size:6.5pt;opacity:.65;margin-top:.5mm}
+
+.gen-terminal{padding:3mm 2.5mm 2mm;background:#f7f7fa;border-bottom:1px solid var(--rule);display:flex;justify-content:center;align-items:center}
+.gen-arch{padding:2mm 2.5mm 2.5mm;background:#fbfbfe;border-bottom:1px solid var(--rule)}
+.ga-title{font-size:5.5pt;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);text-align:center;margin-bottom:1.5mm}
+.gen-specs{padding:2.5mm;flex:1}
+.sp-row{display:flex;justify-content:space-between;align-items:center;padding:.8mm 0;border-bottom:1px solid #f0eff4}
+.sp-row:last-of-type{border-bottom:none}
+.sp-k{font-size:5.5pt;letter-spacing:.8px;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.sp-v{font-family:'JetBrains Mono',monospace;font-size:7pt;font-weight:700}
+.g2 .sp-v{color:var(--g2)}.g25 .sp-v{color:var(--g25)}.g275 .sp-v{color:var(--g275)}.g3 .sp-v{color:var(--g3)}
+.g35 .sp-v{color:var(--g35)}.g375 .sp-v{color:var(--g375)}.g4 .sp-v{color:var(--g4)}.g4p .sp-v{color:var(--g4p)}.g5 .sp-v{color:var(--g5)}
+
+.gen-feats{margin-top:2mm;padding-top:2mm;border-top:1px solid var(--rule)}
+.gf{font-size:6.5pt;color:var(--ink2);padding:0.6mm 0 0.6mm 3mm;position:relative;line-height:1.4}
+.gf::before{content:'▸';position:absolute;left:0;font-size:5.5pt;color:var(--ink3)}
+
+/* ══ SPEED BAR ══ */
+.speed-compare{background:var(--dark);border-radius:3mm;padding:4mm 5mm;margin-top:4mm}
+.sc-title{font-family:'Barlow Condensed',sans-serif;font-size:11pt;font-weight:800;color:#fff;margin-bottom:2.5mm;letter-spacing:.5px}
+.sc-row{display:flex;align-items:center;gap:2.5mm;margin-bottom:1.6mm}
+.sc-gen{font-family:'JetBrains Mono',monospace;font-size:6.5pt;color:rgba(255,255,255,.55);width:16mm;flex-shrink:0;text-align:right}
+.sc-bar-wrap{flex:1;background:rgba(255,255,255,.07);border-radius:2px;height:5px}
+.sc-bar{height:100%;border-radius:2px}
+.sc-val{font-family:'JetBrains Mono',monospace;font-size:7pt;font-weight:600;color:rgba(255,255,255,.8);width:18mm;flex-shrink:0}
+
+/* ══ IOT SECTION ══ */
+.iot-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:3mm;margin-top:4mm}
+.iot-card{background:var(--card-bg);border-radius:2.5mm;padding:3mm;border:1px solid var(--rule);position:relative;overflow:hidden}
+.iot-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.iot-card.wifi::before{background:var(--wifi)}
+.iot-card.bt::before{background:var(--bt)}
+.iot-card.zigbee::before{background:var(--zigbee)}
+.iot-card.lora::before{background:var(--lora)}
+.iot-card.nbiot::before{background:var(--nbiot)}
+.iot-card.sigfox::before{background:var(--sigfox)}
+
+.iot-badge{font-family:'Barlow Condensed',sans-serif;font-size:14pt;font-weight:800;margin-bottom:1mm}
+.iot-card.wifi .iot-badge{color:var(--wifi)}
+.iot-card.bt .iot-badge{color:var(--bt)}
+.iot-card.zigbee .iot-badge{color:var(--zigbee)}
+.iot-card.lora .iot-badge{color:var(--lora)}
+.iot-card.nbiot .iot-badge{color:var(--nbiot)}
+.iot-card.sigfox .iot-badge{color:var(--sigfox)}
+
+.iot-yr{font-family:'JetBrains Mono',monospace;font-size:6pt;color:var(--ink3);margin-bottom:2mm}
+.iot-r{display:flex;gap:1.5mm;margin-bottom:1mm}
+.iot-l{font-size:5.5pt;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);min-width:12mm;flex-shrink:0}
+.iot-v{font-size:6.5pt;color:var(--ink2);line-height:1.4}
+
+/* ══ IOT ARCHITECTURE 4-LAYER ══ */
+.iot-arch-wrap{background:var(--card-bg);border-radius:3mm;padding:4mm 5mm;border:1px solid var(--rule);margin-top:4mm}
+.iot-arch-title{font-family:'Barlow Condensed',sans-serif;font-size:13pt;font-weight:800;color:var(--era4);margin-bottom:3mm}
+.iot-layers{display:flex;flex-direction:column;gap:2mm}
+.iot-layer{display:flex;align-items:center;gap:4mm}
+.iot-layer-box{border-radius:2mm;padding:2.5mm 5mm;min-width:60mm;text-align:center}
+.iot-layer-name{font-family:'Barlow Condensed',sans-serif;font-size:11pt;font-weight:700;color:#fff}
+.iot-layer-sub{font-size:6.5pt;color:rgba(255,255,255,.75);margin-top:.5mm}
+.iot-layer-desc{font-size:7.5pt;color:var(--ink2);line-height:1.45;flex:1}
+
+/* ══ FOOTER ══ */
+footer{background:var(--dark);padding:3.5mm 12mm;display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace;font-size:6.5pt;letter-spacing:1px}
+.ft-eras{display:flex;gap:5mm;align-items:center}
+.ft-dot{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:2mm}
+
+/* ══ SUB-GEN LABEL ══ */
+.sub-label{font-family:'JetBrains Mono',monospace;font-size:5.5pt;color:rgba(255,255,255,.55);margin-top:1mm;background:rgba(255,255,255,.1);border-radius:1mm;padding:.5mm 2mm;display:inline-block}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header>
+  <div class="hdr-inner">
+    <div>
+      <div class="hdr-eyebrow">Télécommunications · Histoire &amp; Architecture · Édition Complète</div>
+      <h1>Évolution des<br><em>Réseaux</em><br>Radio Mobiles</h1>
+      <p class="hdr-sub">De la télégraphie sans fil de Marconi aux réseaux 5G et à l'Internet des Objets — plus de 240 ans d'innovations qui ont transformé la communication humaine, des premières ondes hertziennes aux connexions millimétriques, en passant par WiFi, Bluetooth, LoRa, Sigfox et ZigBee.</p>
+      <div class="hdr-stats">
+        <div class="hdr-stat"><div class="hdr-stat-n">4</div><div class="hdr-stat-l">Grandes Ères</div></div>
+        <div class="hdr-stat"><div class="hdr-stat-n">8</div><div class="hdr-stat-l">Générations GSM</div></div>
+        <div class="hdr-stat"><div class="hdr-stat-n">6</div><div class="hdr-stat-l">Protocoles IoT</div></div>
+        <div class="hdr-stat"><div class="hdr-stat-n">240+</div><div class="hdr-stat-l">Années d'Histoire</div></div>
+      </div>
+    </div>
+    <div class="hdr-legend">
+      <div class="lg-item"><span class="lg-bar" style="background:var(--era1)"></span>Ère I — Radio Pionnière</div>
+      <div class="lg-item"><span class="lg-bar" style="background:var(--era2)"></span>Ère II — Mobile Analogique</div>
+      <div class="lg-item"><span class="lg-bar" style="background:var(--era3)"></span>Ère III — Numérique Cellulaire</div>
+      <div class="lg-item"><span class="lg-bar" style="background:var(--era4)"></span>Ère IV — IoT &amp; Réseaux Spécialisés</div>
+      <div class="lg-item" style="margin-top:3mm"><span class="lg-bar" style="background:var(--wifi)"></span>WiFi (802.11)</div>
+      <div class="lg-item"><span class="lg-bar" style="background:var(--bt)"></span>Bluetooth / BLE</div>
+      <div class="lg-item"><span class="lg-bar" style="background:var(--lora)"></span>LoRa / LoRaWAN</div>
+      <div class="lg-item"><span class="lg-bar" style="background:var(--sigfox)"></span>Sigfox</div>
+      <div class="lg-item"><span class="lg-bar" style="background:var(--zigbee)"></span>ZigBee / Z-Wave</div>
+      <div class="lg-item"><span class="lg-bar" style="background:var(--nbiot)"></span>NB-IoT / LTE-MTC</div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ TIMELINE ══════════ -->
+<div class="timeline-wrap">
+  <div class="timeline-track">
+    <div class="tl-line"></div>
+    <div class="tl-evts">
+      <div class="t-e M" style="left:2%"><div class="d"></div><div class="lbl">1780</div></div>
+      <div class="t-e" style="left:8%"><div class="d"></div><div class="lbl">1895·TSF</div></div>
+      <div class="t-e" style="left:13%"><div class="d"></div><div class="lbl">1914·Radio</div></div>
+      <div class="t-e M" style="left:20%"><div class="d"></div><div class="lbl">1946·0G</div></div>
+      <div class="t-e" style="left:27%"><div class="d"></div><div class="lbl">1964·IMTS</div></div>
+      <div class="t-e M" style="left:34%"><div class="d"></div><div class="lbl">1979·1G</div></div>
+      <div class="t-e" style="left:39%"><div class="d"></div><div class="lbl">1991·WiFi</div></div>
+      <div class="t-e M" style="left:43%"><div class="d"></div><div class="lbl">1991·2G</div></div>
+      <div class="t-e" style="left:47%"><div class="d"></div><div class="lbl">1994·BT</div></div>
+      <div class="t-e" style="left:50%"><div class="d"></div><div class="lbl">1998·2.5G</div></div>
+      <div class="t-e" style="left:54%"><div class="d"></div><div class="lbl">2001·3G</div></div>
+      <div class="t-e" style="left:58%"><div class="d"></div><div class="lbl">2003·ZigBee</div></div>
+      <div class="t-e" style="left:62%"><div class="d"></div><div class="lbl">2006·3.5G</div></div>
+      <div class="t-e" style="left:66%"><div class="d"></div><div class="lbl">2009·3.75G</div></div>
+      <div class="t-e M" style="left:70%"><div class="d"></div><div class="lbl">2009·4G LTE</div></div>
+      <div class="t-e" style="left:75%"><div class="d"></div><div class="lbl">2012·LTE+</div></div>
+      <div class="t-e" style="left:78%"><div class="d"></div><div class="lbl">2013·LoRa</div></div>
+      <div class="t-e" style="left:82%"><div class="d"></div><div class="lbl">2014·NB-IoT</div></div>
+      <div class="t-e M" style="left:88%"><div class="d"></div><div class="lbl">2019·5G</div></div>
+      <div class="t-e" style="left:95%"><div class="d"></div><div class="lbl">2025+</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ÈRE I ══════════ -->
+<section class="era-sec e1">
+  <div class="sec-hdr">
+    <span class="sec-tag">Ère I</span>
+    <span class="sec-title">Radio Pionnière — De la TSF aux Premières Ondes</span>
+    <span class="sec-period">1780 – 1945</span>
+  </div>
+  <div class="era1-body">
+    <div>
+      <div class="illus-wrap">
+        <svg viewBox="0 0 430 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+          <rect width="430" height="280" fill="#fdf1f0"/>
+          <!-- Ground -->
+          <rect y="250" width="430" height="30" fill="#e8ddd0"/>
+          <!-- Sky gradient -->
+          <rect y="0" width="430" height="250" fill="#fdf1f0"/>
+          <!-- Antenna tower left -->
+          <line x1="60" y1="250" x2="60" y2="30" stroke="#555" stroke-width="3"/>
+          <line x1="40" y1="250" x2="60" y2="30" stroke="#555" stroke-width="1.5"/>
+          <line x1="80" y1="250" x2="60" y2="30" stroke="#555" stroke-width="1.5"/>
+          <line x1="45" y1="200" x2="75" y2="200" stroke="#555" stroke-width="1.5"/>
+          <line x1="48" y1="155" x2="72" y2="155" stroke="#555" stroke-width="1.5"/>
+          <line x1="50" y1="110" x2="70" y2="110" stroke="#555" stroke-width="1.5"/>
+          <!-- Wave emissions -->
+          <path d="M60,80 Q120,50 180,80" fill="none" stroke="#a82020" stroke-width="1.5" stroke-dasharray="4,3" opacity=".5"/>
+          <path d="M60,80 Q130,30 200,80" fill="none" stroke="#a82020" stroke-width="1.2" stroke-dasharray="4,3" opacity=".35"/>
+          <path d="M60,80 Q140,10 210,80" fill="none" stroke="#a82020" stroke-width="1" stroke-dasharray="4,3" opacity=".2"/>
+          <!-- Transmitter room -->
+          <rect x="20" y="225" width="80" height="28" rx="3" fill="#8a4030"/>
+          <rect x="24" y="228" width="72" height="22" rx="2" fill="#7a3020"/>
+          <text x="60" y="242" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="8" fill="#f5c090" font-weight="600">ÉMETTEUR TSF</text>
+          <!-- Morse key -->
+          <rect x="140" y="210" width="60" height="42" rx="4" fill="#b09060"/>
+          <rect x="144" y="215" width="52" height="34" rx="2" fill="#906040"/>
+          <rect x="155" y="225" width="30" height="8" rx="2" fill="#555"/>
+          <rect x="161" y="220" width="18" height="4" rx="2" fill="#888"/>
+          <circle cx="170" cy="232" r="5" fill="#333"/>
+          <text x="170" y="254" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="8" fill="#a82020" font-weight="600">CLÉ MORSE</text>
+          <!-- Receiver cabinet -->
+          <rect x="290" y="170" width="100" height="82" rx="6" fill="#6B4E2A"/>
+          <rect x="295" y="175" width="90" height="72" rx="4" fill="#7a5a30"/>
+          <circle cx="340" cy="210" r="22" fill="#3a2808" stroke="#5a3a10" stroke-width="2"/>
+          <circle cx="340" cy="210" r="16" fill="#2a1808"/>
+          <circle cx="340" cy="210" r="9" fill="#4a3010"/>
+          <circle cx="340" cy="210" r="4" fill="#1a0800"/>
+          <rect x="295" y="228" width="90" height="4" fill="#5a3a10"/>
+          <circle cx="315" cy="238" r="5" fill="#333"/>
+          <circle cx="365" cy="238" r="5" fill="#333"/>
+          <text x="340" y="262" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="8" fill="#a82020" font-weight="600">RÉCEPTEUR GALÈNE</text>
+          <!-- Connecting wire -->
+          <path d="M80,90 Q190,50 290,195" fill="none" stroke="#a82020" stroke-width="1.5" stroke-dasharray="5,3" opacity=".4"/>
+          <!-- Labels -->
+          <rect x="15" y="10" width="90" height="14" rx="3" fill="rgba(168,32,32,.12)"/>
+          <text x="60" y="20.5" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="9" fill="#a82020" font-weight="700" letter-spacing="1">ANTENNE TSF</text>
+          <text x="215" y="275" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="#a82020" font-weight="800" opacity=".7">STATION DE TÉLÉGRAPHIE SANS FIL · CIRCA 1900</text>
+        </svg>
+      </div>
+      <p class="illus-cap">Station TSF — Marconi 1895 : émetteur à étincelles, antenne verticale, clé Morse et récepteur à galène</p>
+    </div>
+    <div class="tc-grid3">
+      <div class="tc"><div class="tc-yr">1780–1895</div><div class="tc-name">Radio Communication</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Radio meuble, talkie-walkie</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Premières expériences de transmission d'ondes électromagnétiques</span></div></div>
+      <div class="tc"><div class="tc-yr">1895–1905</div><div class="tc-name">Télégraphie Sans Fil (TSF)</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Stations radio fixes, navires</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Messages Morse sans fil — Marconi (1895)</span></div></div>
+      <div class="tc"><div class="tc-yr">1900–1920</div><div class="tc-name">Radiocommunication Maritime</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Navires équipés de radios</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Communication maritime et signaux de détresse (SOS)</span></div></div>
+      <div class="tc"><div class="tc-yr">1914–1918</div><div class="tc-name">Radio Mobile Militaire</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Équipements radio de campagne</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Coordination tactique, renseignement radio</span></div></div>
+      <div class="tc"><div class="tc-yr">1920–1930</div><div class="tc-name">Radio Mobile Policière</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Véhicule de police équipé</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Communication vocale mobile (voiture ↔ centrale)</span></div></div>
+      <div class="tc"><div class="tc-yr">1940–1945</div><div class="tc-name">Talkie-Walkie Militaire</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Radio portable militaire SCR-300</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Communication vocale portable sur le terrain</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ÈRE II ══════════ -->
+<section class="era-sec e2">
+  <div class="sec-hdr">
+    <span class="sec-tag">Ère II</span>
+    <span class="sec-title">Mobile Analogique — Vers le Téléphone Cellulaire</span>
+    <span class="sec-period">1946 – 1990</span>
+  </div>
+  <div class="era2-body">
+    <div>
+      <div class="illus-wrap">
+        <svg viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+          <rect width="380" height="240" fill="#fdf4ec"/>
+          <rect y="210" width="380" height="30" fill="#e8e0d0"/>
+          <!-- Car body -->
+          <ellipse cx="190" cy="214" rx="135" ry="7" fill="rgba(0,0,0,.12)"/>
+          <rect x="45" y="182" width="295" height="30" rx="4" fill="#8B6914"/>
+          <path d="M50,186 L50,158 Q53,130 88,122 L128,112 Q158,107 200,107 L250,110 Q280,114 308,124 L330,140 Q340,152 340,158 L340,186 Z" fill="#c8860a"/>
+          <path d="M108,122 L122,100 Q145,85 190,83 Q235,83 258,94 L282,112 L282,122 Z" fill="#e0960c"/>
+          <path d="M115,120 L128,100 Q148,87 190,85 Q232,85 256,96 L278,112 L278,120 Z" fill="rgba(130,180,220,.5)"/>
+          <line x1="195" y1="120" x2="195" y2="184" stroke="#a07000" stroke-width="1.5"/>
+          <rect x="42" y="188" width="18" height="12" rx="3" fill="#ccc"/>
+          <rect x="325" y="188" width="18" height="12" rx="3" fill="#ccc"/>
+          <circle cx="115" cy="208" r="24" fill="#2a2a2a"/><circle cx="115" cy="208" r="16" fill="#444"/><circle cx="115" cy="208" r="8" fill="#888"/>
+          <circle cx="268" cy="208" r="24" fill="#2a2a2a"/><circle cx="268" cy="208" r="16" fill="#444"/><circle cx="268" cy="208" r="8" fill="#888"/>
+          <!-- Roof antenna -->
+          <rect x="193" y="78" width="3" height="32" rx="1" fill="#555"/>
+          <!-- Phone on dash -->
+          <rect x="268" y="134" width="52" height="26" rx="2" fill="#3a2808"/>
+          <path d="M276,140 Q274,137 272,140 L269,153 Q268,156 271,157 L279,156 Q282,155 283,152 L281,140 Z" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+          <rect x="292" y="140" width="22" height="16" rx="2" fill="#2a2a2a"/>
+          <!-- Label -->
+          <rect x="100" y="10" width="180" height="16" rx="3" fill="rgba(184,88,0,.12)"/>
+          <text x="190" y="21" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="10" fill="#b85800" font-weight="800">TÉLÉPHONE EMBARQUÉ 0G / 1G</text>
+          <text x="190" y="233" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="8" fill="#b85800" font-weight="700" opacity=".7">IMTS / MTS · Téléphonie Automobile Analogique</text>
+        </svg>
+      </div>
+      <p class="illus-cap">Poste téléphonique embarqué dans l'automobile — IMTS/MTS, sans handover ni cellules</p>
+      <div class="arch-panel">
+        <div class="ap-title">Architecture 0G / 1G — Réseau Mono-Cellulaire</div>
+        <svg viewBox="0 0 330 70" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+          <defs><marker id="ar2" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#888"/></marker></defs>
+          <rect x="3" y="25" width="40" height="22" rx="3" fill="#b85800" opacity=".9"/>
+          <text x="23" y="39" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="white" font-weight="600">Mobile</text>
+          <line x1="43" y1="36" x2="75" y2="36" stroke="#888" stroke-width="1.5" marker-end="url(#ar2)"/>
+          <text x="59" y="31" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="5.5" fill="#888">RF Analogique</text>
+          <rect x="76" y="17" width="52" height="38" rx="3" fill="#7A4500" opacity=".85"/>
+          <text x="102" y="33" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="white" font-weight="600">Station</text>
+          <text x="102" y="43" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="white" font-weight="600">de Base</text>
+          <line x1="128" y1="36" x2="162" y2="36" stroke="#888" stroke-width="1.5" marker-end="url(#ar2)"/>
+          <rect x="163" y="17" width="58" height="38" rx="3" fill="#553010" opacity=".85"/>
+          <text x="192" y="33" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="white" font-weight="600">MTSO</text>
+          <text x="192" y="43" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.7)">Commutateur</text>
+          <line x1="221" y1="36" x2="256" y2="36" stroke="#888" stroke-width="1.5" marker-end="url(#ar2)"/>
+          <rect x="257" y="22" width="68" height="28" rx="3" fill="#333" opacity=".85"/>
+          <text x="291" y="39" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="white" font-weight="600">RTCP/PSTN</text>
+          <text x="165" y="66" text-anchor="middle" font-family="'Barlow',sans-serif" font-size="6" fill="#b85800" font-style="italic">⚠ Pas de cellules ni de handover — une seule station couvre la zone</text>
+        </svg>
+      </div>
+    </div>
+    <div class="tc-grid2">
+      <div class="tc"><div class="tc-yr">1946–1970</div><div class="tc-name">0G — Radiotéléphone Mobile</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Téléphone installé en voiture, ~10–14 kg</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Téléphonie mobile analogique, half-duplex</span></div>
+        <div class="tc-r"><span class="tc-l">Réseau</span><span class="tc-v">MTS — Mobile Telephone System, opérateur fixe requis</span></div></div>
+      <div class="tc"><div class="tc-yr">1950–1960</div><div class="tc-name">PMR — Private Mobile Radio</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Radios professionnelles portables</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Communication de groupe — sécurité, transport</span></div>
+        <div class="tc-r"><span class="tc-l">Réseau</span><span class="tc-v">Réseau privé, push-to-talk, fréquences dédiées</span></div></div>
+      <div class="tc"><div class="tc-yr">1964</div><div class="tc-name">IMTS — Improved Mobile Telephone</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Téléphone embarqué dans véhicule</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Appel téléphonique mobile avec connexion au RTCP</span></div>
+        <div class="tc-r"><span class="tc-l">Réseau</span><span class="tc-v">Mono-cellulaire, sélection manuelle de canal</span></div></div>
+      <div class="tc"><div class="tc-yr">1979–1990</div><div class="tc-name">1G — Première Génération Cellulaire</div>
+        <div class="tc-r"><span class="tc-l">Terminaux</span><span class="tc-v">Motorola DynaTAC 8000X (1983)</span></div>
+        <div class="tc-r"><span class="tc-l">Services</span><span class="tc-v">Voix analogique, handover entre cellules</span></div>
+        <div class="tc-r"><span class="tc-l">Réseau</span><span class="tc-v">AMPS, NMT, TACS — FDMA, ~850 MHz</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ÈRE III ══════════ -->
+<section class="era-sec e3">
+  <div class="sec-hdr">
+    <span class="sec-tag">Ère III</span>
+    <span class="sec-title">Numérique — Réseaux Cellulaires Mobiles Modernes (Famille GSM)</span>
+    <span class="sec-period">1991 – Aujourd'hui</span>
+  </div>
+
+  <!-- 8 columns: 2G, 2.5G, 2.75G, 3G UMTS, 3.5G HSDPA, 3.75G HSPA+, 4G LTE, 4G LTE+ -->
+  <div class="gen-grid">
+
+    <!-- 2G GSM -->
+    <div class="gen g2">
+      <div class="gen-hdr">
+        <div class="gen-badge">2G</div>
+        <div class="gen-std">GSM</div>
+        <div class="gen-yrs">1991 – 2000</div>
+      </div>
+      <div class="gen-terminal">
+        <svg viewBox="0 0 62 100" xmlns="http://www.w3.org/2000/svg" style="height:90px">
+          <rect x="4" y="3" width="54" height="95" rx="8" fill="#e0e4f0" stroke="#8898c8" stroke-width="1.5"/>
+          <rect x="18" y="1" width="6" height="14" rx="3" fill="#7080b0"/>
+          <rect x="12" y="14" width="38" height="30" rx="3" fill="#0a1a3a"/>
+          <rect x="14" y="16" width="34" height="26" rx="2" fill="#060e28"/>
+          <text x="31" y="28" text-anchor="middle" font-family="monospace" font-size="5" fill="rgba(255,255,255,.5)">GSM</text>
+          <text x="31" y="35" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#80c0ff" font-weight="bold">Nokia 3310</text>
+          <text x="31" y="41" text-anchor="middle" font-family="monospace" font-size="4" fill="rgba(255,255,255,.4)">9.6 kb/s</text>
+          <rect x="10" y="48" width="42" height="7" rx="3" fill="#3040a0"/>
+          <rect x="10" y="59" width="12" height="8" rx="2" fill="#c0c8e0"/>
+          <rect x="25" y="59" width="12" height="8" rx="2" fill="#c0c8e0"/>
+          <rect x="40" y="59" width="12" height="8" rx="2" fill="#c0c8e0"/>
+          <rect x="10" y="70" width="12" height="8" rx="2" fill="#c8d0e8"/>
+          <rect x="25" y="70" width="12" height="8" rx="2" fill="#c8d0e8"/>
+          <rect x="40" y="70" width="12" height="8" rx="2" fill="#c8d0e8"/>
+          <rect x="10" y="81" width="12" height="8" rx="2" fill="#c8d0e8"/>
+          <rect x="25" y="81" width="12" height="8" rx="2" fill="#c8d0e8"/>
+          <rect x="40" y="81" width="12" height="8" rx="2" fill="#c8d0e8"/>
+          <rect x="10" y="91" width="12" height="5" rx="2" fill="#b0b8d0"/>
+          <rect x="25" y="91" width="12" height="5" rx="2" fill="#c0c8e0"/>
+          <rect x="40" y="91" width="12" height="5" rx="2" fill="#b0b8d0"/>
+        </svg>
+      </div>
+      <div class="gen-arch">
+        <div class="ga-title">Architecture GSM</div>
+        <svg viewBox="0 0 175 110" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <defs><marker id="ag2" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#888"/></marker></defs>
+          <rect x="1" y="10" width="22" height="15" rx="2" fill="#1452a0" opacity=".9"/>
+          <text x="12" y="20.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">MS</text>
+          <line x1="23" y1="17" x2="35" y2="17" stroke="#888" stroke-width="1.2" marker-end="url(#ag2)"/>
+          <rect x="36" y="10" width="24" height="15" rx="2" fill="#1452a0" opacity=".75"/>
+          <text x="48" y="20.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">BTS</text>
+          <line x1="60" y1="17" x2="72" y2="17" stroke="#888" stroke-width="1.2" marker-end="url(#ag2)"/>
+          <rect x="73" y="10" width="24" height="15" rx="2" fill="#0e3a80" opacity=".85"/>
+          <text x="85" y="20.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">BSC</text>
+          <line x1="97" y1="14" x2="109" y2="10" stroke="#888" stroke-width="1.2" marker-end="url(#ag2)"/>
+          <rect x="110" y="4" width="28" height="14" rx="2" fill="#0a2860" opacity=".9"/>
+          <text x="124" y="14" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">MSC</text>
+          <line x1="138" y1="11" x2="150" y2="11" stroke="#888" stroke-width="1.2" marker-end="url(#ag2)"/>
+          <rect x="151" y="4" width="22" height="14" rx="2" fill="#333"/>
+          <text x="162" y="14" text-anchor="middle" font-family="monospace" font-size="5" fill="white">RTC</text>
+          <text x="2" y="40" font-family="monospace" font-size="5" fill="#555">MS = Mobile Station</text>
+          <text x="2" y="49" font-family="monospace" font-size="5" fill="#555">BTS = Base Transceiver Station</text>
+          <text x="2" y="58" font-family="monospace" font-size="5" fill="#555">BSC = Base Station Controller</text>
+          <text x="2" y="67" font-family="monospace" font-size="5" fill="#555">MSC = Mobile Switching Centre</text>
+          <rect x="1" y="75" width="86" height="10" rx="2" fill="rgba(20,82,160,.1)" stroke="rgba(20,82,160,.3)" stroke-width=".5"/>
+          <text x="44" y="83" text-anchor="middle" font-family="monospace" font-size="5" fill="#1452a0">BSS (Base Station Subsystem)</text>
+        </svg>
+      </div>
+      <div class="gen-specs">
+        <div class="sp-row"><span class="sp-k">Débit</span><span class="sp-v">9,6 kb/s</span></div>
+        <div class="sp-row"><span class="sp-k">Accès</span><span class="sp-v">TDMA/FDMA</span></div>
+        <div class="sp-row"><span class="sp-k">Fréq.</span><span class="sp-v">900/1800 MHz</span></div>
+        <div class="gen-feats">
+          <div class="gf">Voix numérique (codec)</div>
+          <div class="gf">SMS — Short Message Service</div>
+          <div class="gf">SIM card — identité abonné</div>
+          <div class="gf">Roaming international</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.5G GPRS -->
+    <div class="gen g25">
+      <div class="gen-hdr">
+        <div class="gen-badge">2.5G</div>
+        <div class="gen-std">GPRS</div>
+        <div class="gen-yrs">1998 – 2003</div>
+      </div>
+      <div class="gen-terminal">
+        <svg viewBox="0 0 62 100" xmlns="http://www.w3.org/2000/svg" style="height:90px">
+          <rect x="4" y="3" width="54" height="95" rx="8" fill="#e4eef0" stroke="#8ab0bc" stroke-width="1.5"/>
+          <rect x="38" y="1" width="5" height="14" rx="2.5" fill="#7aab"/>
+          <rect x="12" y="14" width="38" height="30" rx="3" fill="#1a4a5c"/>
+          <rect x="14" y="16" width="34" height="26" rx="2" fill="#0f3040"/>
+          <text x="31" y="25" text-anchor="middle" font-family="monospace" font-size="5" fill="rgba(255,255,255,.5)">GPRS</text>
+          <text x="31" y="32" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#60d0b8" font-weight="bold">Nokia 6310</text>
+          <text x="31" y="39" text-anchor="middle" font-family="monospace" font-size="4.5" fill="rgba(255,255,255,.7)">G ■ ■ ■</text>
+          <rect x="20" y="48" width="22" height="6" rx="3" fill="#045060"/>
+          <rect x="10" y="58" width="12" height="8" rx="2" fill="#b8d0d4"/>
+          <rect x="25" y="58" width="12" height="8" rx="2" fill="#b8d0d4"/>
+          <rect x="40" y="58" width="12" height="8" rx="2" fill="#b8d0d4"/>
+          <rect x="10" y="69" width="12" height="8" rx="2" fill="#c0d8dc"/>
+          <rect x="25" y="69" width="12" height="8" rx="2" fill="#c0d8dc"/>
+          <rect x="40" y="69" width="12" height="8" rx="2" fill="#c0d8dc"/>
+          <rect x="10" y="80" width="12" height="8" rx="2" fill="#c0d8dc"/>
+          <rect x="25" y="80" width="12" height="8" rx="2" fill="#c0d8dc"/>
+          <rect x="40" y="80" width="12" height="8" rx="2" fill="#c0d8dc"/>
+          <rect x="10" y="91" width="12" height="5" rx="2" fill="#a8c8cc"/>
+          <rect x="25" y="91" width="12" height="5" rx="2" fill="#b8d8dc"/>
+          <rect x="40" y="91" width="12" height="5" rx="2" fill="#a8c8cc"/>
+        </svg>
+      </div>
+      <div class="gen-arch">
+        <div class="ga-title">GSM + domaine paquet</div>
+        <svg viewBox="0 0 175 110" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <defs><marker id="ag25" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#888"/></marker></defs>
+          <rect x="1" y="15" width="24" height="14" rx="2" fill="#056078" opacity=".9"/>
+          <text x="13" y="24.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MS</text>
+          <line x1="25" y1="22" x2="37" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag25)"/>
+          <rect x="38" y="15" width="24" height="14" rx="2" fill="#056078" opacity=".75"/>
+          <text x="50" y="24.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">BTS</text>
+          <line x1="62" y1="22" x2="74" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag25)"/>
+          <rect x="75" y="15" width="22" height="14" rx="2" fill="#044a5c" opacity=".85"/>
+          <text x="86" y="24.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">BSC</text>
+          <line x1="97" y1="19" x2="109" y2="14" stroke="#888" stroke-width="1.2" marker-end="url(#ag25)"/>
+          <rect x="110" y="8" width="24" height="14" rx="2" fill="#033a4a" opacity=".9"/>
+          <text x="122" y="18" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MSC</text>
+          <line x1="134" y1="15" x2="146" y2="15" stroke="#888" stroke-width="1.2" marker-end="url(#ag25)"/>
+          <rect x="147" y="8" width="22" height="14" rx="2" fill="#333"/>
+          <text x="158" y="18" text-anchor="middle" font-family="monospace" font-size="5" fill="white">PSTN</text>
+          <line x1="97" y1="25" x2="109" y2="32" stroke="#056078" stroke-width="1.2" marker-end="url(#ag25)"/>
+          <rect x="110" y="26" width="28" height="14" rx="2" fill="#056078" opacity=".9"/>
+          <text x="124" y="35.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">SGSN</text>
+          <line x1="138" y1="33" x2="150" y2="33" stroke="#056078" stroke-width="1.2" marker-end="url(#ag25)"/>
+          <rect x="151" y="26" width="22" height="14" rx="2" fill="#044a60" opacity=".9"/>
+          <text x="162" y="35.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">GGSN</text>
+          <text x="2" y="56" font-family="monospace" font-size="5" fill="#555">SGSN = Serving GPRS Support Node</text>
+          <text x="2" y="64" font-family="monospace" font-size="5" fill="#555">GGSN = Gateway GPRS Support Node</text>
+          <text x="2" y="76" font-family="monospace" font-size="5" fill="#056078">■ Voix circuit → MSC → PSTN</text>
+          <text x="2" y="84" font-family="monospace" font-size="5" fill="#056078">■ Données paquet → SGSN/GGSN</text>
+        </svg>
+      </div>
+      <div class="gen-specs">
+        <div class="sp-row"><span class="sp-k">Débit</span><span class="sp-v">114 kb/s</span></div>
+        <div class="sp-row"><span class="sp-k">Latence</span><span class="sp-v">600–1000 ms</span></div>
+        <div class="sp-row"><span class="sp-k">Accès</span><span class="sp-v">TDMA multi-slots</span></div>
+        <div class="gen-feats">
+          <div class="gf">1er Internet mobile (WAP)</div>
+          <div class="gf">MMS — Multimedia Messaging</div>
+          <div class="gf">Always-on packet data</div>
+          <div class="gf">Email mobile basique</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.75G EDGE -->
+    <div class="gen g275">
+      <div class="gen-hdr">
+        <div class="gen-badge">2.75G</div>
+        <div class="gen-std">EDGE</div>
+        <div class="gen-yrs">2003 – 2007</div>
+      </div>
+      <div class="gen-terminal">
+        <svg viewBox="0 0 62 100" xmlns="http://www.w3.org/2000/svg" style="height:90px">
+          <rect x="4" y="3" width="54" height="95" rx="7" fill="#dce8dc" stroke="#8aaa8a" stroke-width="1.5"/>
+          <rect x="38" y="2" width="4" height="12" rx="2" fill="#7a9a7a"/>
+          <rect x="11" y="14" width="40" height="32" rx="3" fill="#1a3a20"/>
+          <rect x="13" y="16" width="36" height="28" rx="2" fill="#0e2818"/>
+          <text x="31" y="25" text-anchor="middle" font-family="monospace" font-size="5" fill="rgba(255,255,255,.5)">EDGE</text>
+          <text x="31" y="32" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#60d880" font-weight="bold">SE W810i</text>
+          <text x="31" y="39" text-anchor="middle" font-family="monospace" font-size="4.5" fill="rgba(255,255,255,.6)">E ■■■■ 384k</text>
+          <circle cx="31" cy="54" r="7" fill="#2a4a2a"/>
+          <circle cx="31" cy="54" r="4.5" fill="#3a6a3a"/>
+          <rect x="10" y="65" width="12" height="8" rx="2" fill="#b0c8b0"/>
+          <rect x="25" y="65" width="12" height="8" rx="2" fill="#b0c8b0"/>
+          <rect x="40" y="65" width="12" height="8" rx="2" fill="#b0c8b0"/>
+          <rect x="10" y="76" width="12" height="8" rx="2" fill="#b8d0b8"/>
+          <rect x="25" y="76" width="12" height="8" rx="2" fill="#b8d0b8"/>
+          <rect x="40" y="76" width="12" height="8" rx="2" fill="#b8d0b8"/>
+          <rect x="10" y="87" width="12" height="8" rx="2" fill="#b8d0b8"/>
+          <rect x="25" y="87" width="12" height="8" rx="2" fill="#b8d0b8"/>
+          <rect x="40" y="87" width="12" height="8" rx="2" fill="#b8d0b8"/>
+        </svg>
+      </div>
+      <div class="gen-arch">
+        <div class="ga-title">GPRS + modulation 8PSK</div>
+        <svg viewBox="0 0 175 90" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <defs><marker id="ag275" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#888"/></marker></defs>
+          <rect x="1" y="12" width="30" height="14" rx="2" fill="#236a40" opacity=".9"/>
+          <text x="16" y="21.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MS/EDGE</text>
+          <line x1="31" y1="19" x2="43" y2="19" stroke="#888" stroke-width="1.2" marker-end="url(#ag275)"/>
+          <text x="37" y="15" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#236a40">8PSK</text>
+          <rect x="44" y="12" width="30" height="14" rx="2" fill="#236a40" opacity=".8"/>
+          <text x="59" y="21.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">BTS+EDGE</text>
+          <line x1="74" y1="19" x2="86" y2="19" stroke="#888" stroke-width="1.2" marker-end="url(#ag275)"/>
+          <rect x="87" y="12" width="22" height="14" rx="2" fill="#1a5030" opacity=".85"/>
+          <text x="98" y="21.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">BSC</text>
+          <line x1="109" y1="16" x2="119" y2="12" stroke="#888" stroke-width="1.2" marker-end="url(#ag275)"/>
+          <rect x="120" y="6" width="22" height="13" rx="2" fill="#0f3820" opacity=".85"/>
+          <text x="131" y="15" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MSC</text>
+          <line x1="142" y1="12" x2="154" y2="12" stroke="#888" stroke-width="1.2" marker-end="url(#ag275)"/>
+          <rect x="155" y="6" width="18" height="13" rx="2" fill="#333"/>
+          <text x="164" y="15" text-anchor="middle" font-family="monospace" font-size="4.5" fill="white">RTC</text>
+          <text x="2" y="40" font-family="monospace" font-size="5" fill="#236a40" font-weight="600">Améliorations EDGE vs GPRS :</text>
+          <text x="2" y="49" font-family="monospace" font-size="5" fill="#555">▸ Modulation 8PSK (GMSK → 8PSK)</text>
+          <text x="2" y="57" font-family="monospace" font-size="5" fill="#555">▸ 3× plus de bits par symbole</text>
+          <text x="2" y="65" font-family="monospace" font-size="5" fill="#555">▸ Schémas MCS-1 à MCS-9</text>
+          <text x="2" y="73" font-family="monospace" font-size="5" fill="#555">▸ Rétrocompatible GSM/GPRS</text>
+        </svg>
+      </div>
+      <div class="gen-specs">
+        <div class="sp-row"><span class="sp-k">Débit</span><span class="sp-v">384 kb/s</span></div>
+        <div class="sp-row"><span class="sp-k">Modulation</span><span class="sp-v">8PSK</span></div>
+        <div class="sp-row"><span class="sp-k">Latence</span><span class="sp-v">300–500 ms</span></div>
+        <div class="gen-feats">
+          <div class="gf">Débit 3× supérieur à GPRS</div>
+          <div class="gf">Navigation web améliorée</div>
+          <div class="gf">Transition vers la 3G</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3G UMTS -->
+    <div class="gen g3">
+      <div class="gen-hdr">
+        <div class="gen-badge">3G</div>
+        <div class="gen-std">UMTS / W-CDMA</div>
+        <div class="gen-yrs">2001 – 2006</div>
+        <div class="sub-label">IMT-2000 · 3GPP Rel.99</div>
+      </div>
+      <div class="gen-terminal">
+        <svg viewBox="0 0 68 100" xmlns="http://www.w3.org/2000/svg" style="height:90px">
+          <rect x="4" y="3" width="60" height="95" rx="8" fill="#dcd0e8" stroke="#9070b8" stroke-width="1.5"/>
+          <rect x="10" y="14" width="48" height="40" rx="4" fill="#1a0a2a"/>
+          <rect x="12" y="16" width="44" height="36" rx="3" fill="#12081a"/>
+          <rect x="14" y="18" width="10" height="10" rx="2" fill="#3a1060"/>
+          <rect x="27" y="18" width="10" height="10" rx="2" fill="#002040"/>
+          <rect x="40" y="18" width="10" height="10" rx="2" fill="#003020"/>
+          <text x="19" y="25.5" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#d8a0ff">📷</text>
+          <text x="32" y="25.5" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#80c0ff">🌐</text>
+          <text x="45" y="25.5" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#80ff80">📞</text>
+          <rect x="12" y="30" width="44" height="7" rx="0" fill="#0d0620"/>
+          <text x="34" y="36" text-anchor="middle" font-family="monospace" font-size="5" fill="rgba(255,255,255,.6)">3G ■■■ UMTS</text>
+          <text x="34" y="46" text-anchor="middle" font-family="monospace" font-size="5" fill="#d8a0ff">Nokia N-Series</text>
+          <circle cx="34" cy="60" r="9" fill="#7860a0"/>
+          <circle cx="34" cy="60" r="5.5" fill="#5840a0"/>
+          <rect x="10" y="73" width="15" height="7" rx="3" fill="#1a4028"/>
+          <rect x="43" y="73" width="15" height="7" rx="3" fill="#601020"/>
+          <rect x="10" y="84" width="12" height="6" rx="2" fill="#c0b8d0"/>
+          <rect x="28" y="84" width="12" height="6" rx="2" fill="#c8c0d8"/>
+          <rect x="46" y="84" width="12" height="6" rx="2" fill="#c0b8d0"/>
+          <rect x="10" y="92" width="12" height="4" rx="2" fill="#b8b0c8"/>
+          <rect x="28" y="92" width="12" height="4" rx="2" fill="#c0b8d0"/>
+          <rect x="46" y="92" width="12" height="4" rx="2" fill="#b8b0c8"/>
+        </svg>
+      </div>
+      <div class="gen-arch">
+        <div class="ga-title">Architecture UTRAN / CN</div>
+        <svg viewBox="0 0 175 100" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <defs><marker id="ag3" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#888"/></marker></defs>
+          <rect x="1" y="15" width="22" height="14" rx="2" fill="#5e1f96" opacity=".9"/>
+          <text x="12" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">UE</text>
+          <line x1="23" y1="22" x2="35" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag3)"/>
+          <text x="29" y="18" text-anchor="middle" font-family="monospace" font-size="4" fill="#888">Uu</text>
+          <rect x="36" y="13" width="26" height="18" rx="2" fill="#5e1f96" opacity=".75"/>
+          <text x="49" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">Node B</text>
+          <line x1="62" y1="22" x2="74" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag3)"/>
+          <rect x="75" y="13" width="24" height="18" rx="2" fill="#4a1878" opacity=".85"/>
+          <text x="87" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">RNC</text>
+          <line x1="99" y1="18" x2="111" y2="12" stroke="#888" stroke-width="1.2" marker-end="url(#ag3)"/>
+          <rect x="112" y="6" width="26" height="14" rx="2" fill="#301060" opacity=".85"/>
+          <text x="125" y="15.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">MSC</text>
+          <line x1="138" y1="13" x2="150" y2="13" stroke="#888" stroke-width="1.2" marker-end="url(#ag3)"/>
+          <rect x="151" y="6" width="22" height="14" rx="2" fill="#333"/>
+          <text x="162" y="15.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">PSTN</text>
+          <line x1="99" y1="28" x2="111" y2="34" stroke="#5e1f96" stroke-width="1.2" marker-end="url(#ag3)"/>
+          <rect x="112" y="28" width="26" height="14" rx="2" fill="#5e1f96" opacity=".9"/>
+          <text x="125" y="37.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">SGSN</text>
+          <line x1="138" y1="35" x2="150" y2="35" stroke="#5e1f96" stroke-width="1.2" marker-end="url(#ag3)"/>
+          <rect x="151" y="28" width="22" height="14" rx="2" fill="#3a1060"/>
+          <text x="162" y="37.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">GGSN</text>
+          <text x="2" y="60" font-family="monospace" font-size="5" fill="#555">UE = User Equipment</text>
+          <text x="2" y="68" font-family="monospace" font-size="5" fill="#555">RNC = Radio Network Controller</text>
+          <text x="2" y="76" font-family="monospace" font-size="5" fill="#555">W-CDMA sur interface radio</text>
+          <text x="2" y="86" font-family="monospace" font-size="5" fill="#5e1f96">UTRAN (UMTS Terrestrial RAN)</text>
+        </svg>
+      </div>
+      <div class="gen-specs">
+        <div class="sp-row"><span class="sp-k">Débit</span><span class="sp-v">384 kb/s</span></div>
+        <div class="sp-row"><span class="sp-k">Accès</span><span class="sp-v">W-CDMA</span></div>
+        <div class="sp-row"><span class="sp-k">Latence</span><span class="sp-v">~100–200 ms</span></div>
+        <div class="gen-feats">
+          <div class="gf">Appels vidéo 3G</div>
+          <div class="gf">Internet mobile rapide</div>
+          <div class="gf">TV mobile (MBMS)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.5G HSDPA -->
+    <div class="gen g35">
+      <div class="gen-hdr">
+        <div class="gen-badge">3.5G</div>
+        <div class="gen-std">HSDPA / HSUPA</div>
+        <div class="gen-yrs">2006 – 2009</div>
+        <div class="sub-label">3GPP Rel.5 & 6</div>
+      </div>
+      <div class="gen-terminal">
+        <svg viewBox="0 0 68 100" xmlns="http://www.w3.org/2000/svg" style="height:90px">
+          <rect x="4" y="3" width="60" height="95" rx="7" fill="#e0d0e8" stroke="#a060c0" stroke-width="1.5"/>
+          <rect x="10" y="12" width="48" height="44" rx="4" fill="#1a0830"/>
+          <rect x="12" y="14" width="44" height="40" rx="3" fill="#110620"/>
+          <text x="34" y="26" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#c080ff" font-weight="bold">H+ ■■■■</text>
+          <text x="34" y="33" text-anchor="middle" font-family="monospace" font-size="5" fill="rgba(255,255,255,.6)">HSDPA 7.2 Mb/s</text>
+          <text x="34" y="40" text-anchor="middle" font-family="monospace" font-size="5" fill="rgba(255,255,255,.5)">HTC TyTN II</text>
+          <text x="34" y="47" text-anchor="middle" font-family="monospace" font-size="5" fill="#d0a0ff">3GPP Rel.5</text>
+          <rect x="10" y="59" width="48" height="8" rx="4" fill="#6a30a0"/>
+          <rect x="10" y="71" width="48" height="7" rx="2" fill="#500a80"/>
+          <text x="34" y="77" text-anchor="middle" font-family="monospace" font-size="5" fill="rgba(255,255,255,.6)">Windows Mobile</text>
+          <rect x="10" y="82" width="12" height="6" rx="2" fill="#c0a8d8"/>
+          <rect x="28" y="82" width="12" height="6" rx="2" fill="#c8b0e0"/>
+          <rect x="46" y="82" width="12" height="6" rx="2" fill="#c0a8d8"/>
+          <rect x="10" y="91" width="48" height="6" rx="3" fill="#b090c8"/>
+        </svg>
+      </div>
+      <div class="gen-arch">
+        <div class="ga-title">UTRAN amélioré — HS-DSCH</div>
+        <svg viewBox="0 0 175 95" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <defs><marker id="ag35" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#888"/></marker></defs>
+          <rect x="1" y="15" width="22" height="14" rx="2" fill="#7a1080" opacity=".9"/>
+          <text x="12" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">UE</text>
+          <line x1="23" y1="22" x2="35" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag35)"/>
+          <rect x="36" y="13" width="28" height="18" rx="2" fill="#7a1080" opacity=".8"/>
+          <text x="50" y="22" text-anchor="middle" font-family="monospace" font-size="5" fill="white">Node B</text>
+          <text x="50" y="28" text-anchor="middle" font-family="monospace" font-size="4" fill="rgba(255,255,255,.7)">+HS-DSCH</text>
+          <line x1="64" y1="22" x2="76" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag35)"/>
+          <rect x="77" y="13" width="24" height="18" rx="2" fill="#5a0870" opacity=".85"/>
+          <text x="89" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">RNC</text>
+          <line x1="101" y1="22" x2="113" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag35)"/>
+          <rect x="114" y="13" width="58" height="18" rx="2" fill="#400060" opacity=".85"/>
+          <text x="143" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">CN (MSC/SGSN)</text>
+          <text x="2" y="48" font-family="monospace" font-size="5" fill="#7a1080" font-weight="600">HSDPA (DL) — Rel.5 :</text>
+          <text x="2" y="57" font-family="monospace" font-size="5" fill="#555">▸ HS-DSCH (High Speed DL Shared Ch.)</text>
+          <text x="2" y="65" font-family="monospace" font-size="5" fill="#555">▸ AMC : QPSK, 16QAM</text>
+          <text x="2" y="73" font-family="monospace" font-size="5" fill="#555">▸ HARQ : retransmission rapide</text>
+          <text x="2" y="81" font-family="monospace" font-size="5" fill="#555">HSUPA (UL) — Rel.6 : E-DCH ajouté</text>
+        </svg>
+      </div>
+      <div class="gen-specs">
+        <div class="sp-row"><span class="sp-k">DL max</span><span class="sp-v">14,4 Mb/s</span></div>
+        <div class="sp-row"><span class="sp-k">UL max</span><span class="sp-v">5,76 Mb/s</span></div>
+        <div class="sp-row"><span class="sp-k">Modulation</span><span class="sp-v">QPSK/16QAM</span></div>
+        <div class="gen-feats">
+          <div class="gf">Téléchargement rapide</div>
+          <div class="gf">Streaming vidéo mobile</div>
+          <div class="gf">HSUPA upload amélioré</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.75G HSPA+ -->
+    <div class="gen g375">
+      <div class="gen-hdr">
+        <div class="gen-badge">3.75G</div>
+        <div class="gen-std">HSPA+ / DC-HSPA</div>
+        <div class="gen-yrs">2009 – 2012</div>
+        <div class="sub-label">3GPP Rel.7 & 8</div>
+      </div>
+      <div class="gen-terminal">
+        <svg viewBox="0 0 68 100" xmlns="http://www.w3.org/2000/svg" style="height:90px">
+          <rect x="4" y="3" width="60" height="95" rx="7" fill="#e8d0dc" stroke="#c030a0" stroke-width="1.5"/>
+          <rect x="10" y="10" width="48" height="50" rx="4" fill="#1a0818"/>
+          <rect x="12" y="12" width="44" height="46" rx="3" fill="#120610"/>
+          <text x="34" y="25" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#ff80e0" font-weight="bold">H+ ■■■■■</text>
+          <text x="34" y="33" text-anchor="middle" font-family="monospace" font-size="4.5" fill="rgba(255,255,255,.6)">HSPA+ 21 Mb/s</text>
+          <text x="34" y="40" text-anchor="middle" font-family="monospace" font-size="4.5" fill="rgba(255,255,255,.5)">HTC Desire HD</text>
+          <text x="34" y="47" text-anchor="middle" font-family="monospace" font-size="4" fill="#ff90d0">Android 2.2</text>
+          <text x="34" y="53" text-anchor="middle" font-family="monospace" font-size="4" fill="rgba(255,255,255,.4)">64QAM / MIMO</text>
+          <rect x="20" y="63" width="28" height="5" rx="2.5" fill="#a02060"/>
+          <rect x="10" y="71" width="48" height="8" rx="4" fill="#800050"/>
+          <rect x="10" y="83" width="22" height="6" rx="3" fill="#c020a0"/>
+          <rect x="36" y="83" width="22" height="6" rx="3" fill="#901050"/>
+          <rect x="10" y="92" width="48" height="5" rx="2.5" fill="#b030a0"/>
+        </svg>
+      </div>
+      <div class="gen-arch">
+        <div class="ga-title">UTRAN + 64QAM + MIMO 2×2</div>
+        <svg viewBox="0 0 175 95" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <defs><marker id="ag375" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#888"/></marker></defs>
+          <rect x="1" y="15" width="22" height="14" rx="2" fill="#a01060" opacity=".9"/>
+          <text x="12" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">UE</text>
+          <line x1="23" y1="22" x2="35" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag375)"/>
+          <rect x="36" y="13" width="28" height="18" rx="2" fill="#a01060" opacity=".8"/>
+          <text x="50" y="22" text-anchor="middle" font-family="monospace" font-size="5" fill="white">Node B</text>
+          <text x="50" y="28" text-anchor="middle" font-family="monospace" font-size="4" fill="rgba(255,255,255,.7)">64QAM</text>
+          <line x1="64" y1="22" x2="76" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag375)"/>
+          <rect x="77" y="13" width="24" height="18" rx="2" fill="#701040" opacity=".85"/>
+          <text x="89" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">RNC</text>
+          <line x1="101" y1="22" x2="113" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag375)"/>
+          <rect x="114" y="13" width="58" height="18" rx="2" fill="#500030" opacity=".85"/>
+          <text x="143" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">CN (MSC/SGSN)</text>
+          <text x="2" y="48" font-family="monospace" font-size="5" fill="#a01060" font-weight="600">HSPA+ améliorations :</text>
+          <text x="2" y="57" font-family="monospace" font-size="5" fill="#555">▸ 64QAM en DL → 21 Mb/s</text>
+          <text x="2" y="65" font-family="monospace" font-size="5" fill="#555">▸ 16QAM en UL → 11 Mb/s</text>
+          <text x="2" y="73" font-family="monospace" font-size="5" fill="#555">▸ MIMO 2×2 antennes</text>
+          <text x="2" y="81" font-family="monospace" font-size="5" fill="#555">▸ DC-HSPA : dual carrier 42 Mb/s</text>
+        </svg>
+      </div>
+      <div class="gen-specs">
+        <div class="sp-row"><span class="sp-k">DL max</span><span class="sp-v">42 Mb/s</span></div>
+        <div class="sp-row"><span class="sp-k">UL max</span><span class="sp-v">22 Mb/s</span></div>
+        <div class="sp-row"><span class="sp-k">Modulation</span><span class="sp-v">64QAM</span></div>
+        <div class="gen-feats">
+          <div class="gf">MIMO 2×2 antennes</div>
+          <div class="gf">Dual Carrier HSPA</div>
+          <div class="gf">Streaming HD mobile</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4G LTE -->
+    <div class="gen g4">
+      <div class="gen-hdr">
+        <div class="gen-badge">4G</div>
+        <div class="gen-std">LTE</div>
+        <div class="gen-yrs">2009 – 2015</div>
+        <div class="sub-label">3GPP Rel.8 & 9</div>
+      </div>
+      <div class="gen-terminal">
+        <svg viewBox="0 0 68 100" xmlns="http://www.w3.org/2000/svg" style="height:90px">
+          <rect x="4" y="3" width="60" height="95" rx="8" fill="#e8e0d8" stroke="#c87040" stroke-width="1.5"/>
+          <rect x="10" y="10" width="48" height="52" rx="4" fill="#0a1220"/>
+          <rect x="12" y="12" width="44" height="48" rx="3" fill="#060a18"/>
+          <rect x="14" y="14" width="40" height="7" rx="1" fill="#1a2030"/>
+          <text x="34" y="19" text-anchor="middle" font-family="monospace" font-size="4.5" fill="rgba(255,255,255,.4)">LTE ■■■■  14:25</text>
+          <rect x="14" y="23" width="18" height="16" rx="2" fill="#1a1030"/>
+          <rect x="34" y="23" width="18" height="16" rx="2" fill="#0a1820"/>
+          <rect x="14" y="42" width="18" height="16" rx="2" fill="#1a0810"/>
+          <rect x="34" y="42" width="18" height="16" rx="2" fill="#0a1020"/>
+          <text x="23" y="33" text-anchor="middle" font-family="monospace" font-size="8" fill="white">📷</text>
+          <text x="43" y="33" text-anchor="middle" font-family="monospace" font-size="8" fill="white">📞</text>
+          <text x="23" y="52" text-anchor="middle" font-family="monospace" font-size="8" fill="white">🌐</text>
+          <text x="43" y="52" text-anchor="middle" font-family="monospace" font-size="8" fill="white">🎵</text>
+          <rect x="22" y="64" width="24" height="4" rx="2" fill="#d08030"/>
+          <rect x="10" y="72" width="48" height="20" rx="3" fill="#e8d8c8"/>
+          <rect x="14" y="76" width="12" height="12" rx="2" fill="#c87040"/>
+          <rect x="28" y="76" width="12" height="12" rx="2" fill="#a05020"/>
+          <rect x="42" y="76" width="12" height="12" rx="2" fill="#c87040"/>
+          <rect x="10" y="95" width="48" height="4" rx="2" fill="#a08060"/>
+        </svg>
+      </div>
+      <div class="gen-arch">
+        <div class="ga-title">Architecture EPC (Evolved Packet Core)</div>
+        <svg viewBox="0 0 175 100" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <defs><marker id="ag4" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#888"/></marker></defs>
+          <rect x="1" y="15" width="22" height="14" rx="2" fill="#b04500" opacity=".9"/>
+          <text x="12" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">UE</text>
+          <line x1="23" y1="22" x2="35" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag4)"/>
+          <text x="29" y="18" text-anchor="middle" font-family="monospace" font-size="4" fill="#888">LTE-Uu</text>
+          <rect x="36" y="12" width="26" height="20" rx="2" fill="#b04500" opacity=".8"/>
+          <text x="49" y="23.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">eNodeB</text>
+          <line x1="62" y1="20" x2="74" y2="15" stroke="#888" stroke-width="1.2" marker-end="url(#ag4)"/>
+          <rect x="75" y="8" width="28" height="14" rx="2" fill="#803a00" opacity=".85"/>
+          <text x="89" y="17.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">MME</text>
+          <line x1="103" y1="15" x2="115" y2="15" stroke="#888" stroke-width="1.2" marker-end="url(#ag4)"/>
+          <rect x="116" y="8" width="26" height="14" rx="2" fill="#602a00" opacity=".9"/>
+          <text x="129" y="17.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">HSS</text>
+          <line x1="62" y1="28" x2="74" y2="34" stroke="#b04500" stroke-width="1.2" marker-end="url(#ag4)"/>
+          <rect x="75" y="28" width="26" height="14" rx="2" fill="#b04500" opacity=".9"/>
+          <text x="88" y="37.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">S-GW</text>
+          <line x1="101" y1="35" x2="113" y2="35" stroke="#b04500" stroke-width="1.2" marker-end="url(#ag4)"/>
+          <rect x="114" y="28" width="26" height="14" rx="2" fill="#903a00" opacity=".9"/>
+          <text x="127" y="37.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">P-GW</text>
+          <line x1="140" y1="35" x2="152" y2="35" stroke="#b04500" stroke-width="1.2" marker-end="url(#ag4)"/>
+          <rect x="153" y="28" width="20" height="14" rx="2" fill="#333"/>
+          <text x="163" y="37.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">WWW</text>
+          <text x="2" y="58" font-family="monospace" font-size="5" fill="#555">eNodeB = Evolved Node B (LTE BTS)</text>
+          <text x="2" y="66" font-family="monospace" font-size="5" fill="#555">MME = Mobility Management Entity</text>
+          <text x="2" y="74" font-family="monospace" font-size="5" fill="#555">S-GW/P-GW = Serving/PDN Gateway</text>
+          <text x="2" y="82" font-family="monospace" font-size="5" fill="#b04500">Tout-IP — pas de circuit voix (VoLTE)</text>
+        </svg>
+      </div>
+      <div class="gen-specs">
+        <div class="sp-row"><span class="sp-k">DL max</span><span class="sp-v">100 Mb/s</span></div>
+        <div class="sp-row"><span class="sp-k">UL max</span><span class="sp-v">50 Mb/s</span></div>
+        <div class="sp-row"><span class="sp-k">Latence</span><span class="sp-v">~30–50 ms</span></div>
+        <div class="gen-feats">
+          <div class="gf">OFDMA — voie radio tout-IP</div>
+          <div class="gf">VoLTE — voix sur LTE</div>
+          <div class="gf">MIMO 4×4 antennes</div>
+          <div class="gf">Streaming HD/Full HD</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4G LTE+ -->
+    <div class="gen g4p">
+      <div class="gen-hdr">
+        <div class="gen-badge">4G+</div>
+        <div class="gen-std">LTE-Advanced</div>
+        <div class="gen-yrs">2013 – 2019</div>
+        <div class="sub-label">3GPP Rel.10-15</div>
+      </div>
+      <div class="gen-terminal">
+        <svg viewBox="0 0 68 100" xmlns="http://www.w3.org/2000/svg" style="height:90px">
+          <rect x="4" y="3" width="60" height="95" rx="8" fill="#1a1a1a" stroke="#e04000" stroke-width="1.5"/>
+          <rect x="10" y="10" width="48" height="55" rx="4" fill="#0a0a10"/>
+          <rect x="14" y="14" width="40" height="7" rx="1" fill="#1a1a2a"/>
+          <text x="34" y="19" text-anchor="middle" font-family="monospace" font-size="4.5" fill="rgba(255,255,255,.5)">LTE+ ■■■■■ 15:40</text>
+          <rect x="14" y="23" width="40" height="22" rx="2" fill="#0a1820"/>
+          <text x="34" y="33" text-anchor="middle" font-family="monospace" font-size="5" fill="#ff8040" font-weight="bold">4G+</text>
+          <text x="34" y="40" text-anchor="middle" font-family="monospace" font-size="4.5" fill="rgba(255,255,255,.5)">300 Mb/s</text>
+          <text x="34" y="47" text-anchor="middle" font-family="monospace" font-size="4" fill="rgba(255,255,255,.4)">Carrier Aggregation</text>
+          <rect x="14" y="47" width="40" height="14" rx="2" fill="#0a0808"/>
+          <text x="34" y="57" text-anchor="middle" font-family="monospace" font-size="8" fill="white">📱</text>
+          <rect x="22" y="66" width="24" height="4" rx="2" fill="#e04000"/>
+          <rect x="10" y="73" width="48" height="24" rx="3" fill="#111"/>
+          <text x="34" y="84" text-anchor="middle" font-family="monospace" font-size="5" fill="#ff8040">Samsung Galaxy S5</text>
+          <text x="34" y="91" text-anchor="middle" font-family="monospace" font-size="4" fill="rgba(255,255,255,.4)">LTE-A Cat 6</text>
+          <rect x="10" y="95" width="48" height="4" rx="2" fill="#c03000"/>
+        </svg>
+      </div>
+      <div class="gen-arch">
+        <div class="ga-title">EPC + Carrier Aggregation</div>
+        <svg viewBox="0 0 175 100" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <defs><marker id="ag4p" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#888"/></marker></defs>
+          <rect x="1" y="15" width="22" height="14" rx="2" fill="#c83000" opacity=".9"/>
+          <text x="12" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">UE</text>
+          <line x1="23" y1="19" x2="35" y2="14" stroke="#c83000" stroke-width="1.2" marker-end="url(#ag4p)"/>
+          <line x1="23" y1="23" x2="35" y2="28" stroke="#c83000" stroke-width="1.2" marker-end="url(#ag4p)"/>
+          <rect x="36" y="7" width="26" height="14" rx="2" fill="#c83000" opacity=".85"/>
+          <text x="49" y="16.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">eNB PCell</text>
+          <rect x="36" y="23" width="26" height="14" rx="2" fill="#a02000" opacity=".75"/>
+          <text x="49" y="32.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">eNB SCell</text>
+          <line x1="62" y1="14" x2="74" y2="22" stroke="#c83000" stroke-width="1.2" marker-end="url(#ag4p)"/>
+          <line x1="62" y1="30" x2="74" y2="22" stroke="#a02000" stroke-width="1.2" marker-end="url(#ag4p)"/>
+          <rect x="75" y="15" width="50" height="14" rx="2" fill="#800a00" opacity=".9"/>
+          <text x="100" y="24.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">EPC (MME/S-GW/P-GW)</text>
+          <line x1="125" y1="22" x2="137" y2="22" stroke="#888" stroke-width="1.2" marker-end="url(#ag4p)"/>
+          <rect x="138" y="15" width="35" height="14" rx="2" fill="#333"/>
+          <text x="155" y="24.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">Internet</text>
+          <text x="2" y="48" font-family="monospace" font-size="5" fill="#c83000" font-weight="600">LTE-Advanced (Rel.10+) :</text>
+          <text x="2" y="57" font-family="monospace" font-size="5" fill="#555">▸ Carrier Aggregation (5 CC × 20 MHz)</text>
+          <text x="2" y="65" font-family="monospace" font-size="5" fill="#555">▸ MIMO 8×8 (DL) · MIMO 4×4 (UL)</text>
+          <text x="2" y="73" font-family="monospace" font-size="5" fill="#555">▸ CoMP (Coordinated MultiPoint)</text>
+          <text x="2" y="81" font-family="monospace" font-size="5" fill="#555">▸ eICIC : brouillage inter-cellules</text>
+        </svg>
+      </div>
+      <div class="gen-specs">
+        <div class="sp-row"><span class="sp-k">DL max</span><span class="sp-v">300 Mb/s</span></div>
+        <div class="sp-row"><span class="sp-k">UL max</span><span class="sp-v">150 Mb/s</span></div>
+        <div class="sp-row"><span class="sp-k">Latence</span><span class="sp-v">~10–30 ms</span></div>
+        <div class="gen-feats">
+          <div class="gf">Carrier Aggregation multi-bandes</div>
+          <div class="gf">MIMO 8×8 antennes</div>
+          <div class="gf">VoLTE HD + Video call</div>
+          <div class="gf">IoT NB-IoT / LTE-MTC</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /gen-grid 8 cols -->
+
+  <!-- 5G full-width band -->
+  <div style="margin-top:3mm;background:var(--card-bg);border-radius:3mm;border:1px solid var(--rule);overflow:hidden">
+    <div style="background:var(--g5);padding:3mm 5mm;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8mm">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:34pt;font-weight:900;color:#fff;line-height:1">5G</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8pt;color:rgba(255,255,255,.75);margin-top:1mm">NR — New Radio</div>
+        <div style="font-size:7pt;color:rgba(255,255,255,.5);margin-top:.5mm">2019 – Aujourd'hui · 3GPP Rel.15+</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3mm">
+        <div style="background:rgba(255,255,255,.08);border-radius:2mm;padding:2.5mm 3mm">
+          <div style="font-size:6pt;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:1mm">eMBB</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:10pt;font-weight:700;color:#ff8080">20 Gb/s</div>
+          <div style="font-size:6pt;color:rgba(255,255,255,.5)">Enhanced Mobile Broadband</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border-radius:2mm;padding:2.5mm 3mm">
+          <div style="font-size:6pt;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:1mm">URLLC</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:10pt;font-weight:700;color:#80c0ff">&lt; 1 ms</div>
+          <div style="font-size:6pt;color:rgba(255,255,255,.5)">Ultra Reliable Low Latency</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border-radius:2mm;padding:2.5mm 3mm">
+          <div style="font-size:6pt;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:1mm">mMTC</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:10pt;font-weight:700;color:#80ff80">10⁶/km²</div>
+          <div style="font-size:6pt;color:rgba(255,255,255,.5)">Massive Machine Type Comm.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border-radius:2mm;padding:2.5mm 3mm">
+          <div style="font-size:6pt;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:1mm">Spectre</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:10pt;font-weight:700;color:#ffd080">Sub-6/mmW</div>
+          <div style="font-size:6pt;color:rgba(255,255,255,.5)">Sub-6 GHz + mmWave</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2mm">
+        <div style="font-size:6.5pt;color:rgba(255,255,255,.6)">▸ gNB (Next Gen Node B)</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,.6)">▸ Architecture SBA (Service Based)</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,.6)">▸ Network Slicing</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,.6)">▸ SA (Standalone) / NSA</div>
+        <div style="font-size:6.5pt;color:rgba(255,255,255,.6)">▸ IoT massif · V2X · Industrie 4.0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Speed comparison -->
+  <div class="speed-compare">
+    <div class="sc-title">Évolution des Débits Descendants — 2G → 5G</div>
+    <div class="sc-row"><span class="sc-gen">2G GSM</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:.005%;background:var(--g2)"></div></div><span class="sc-val" style="color:var(--g2)">9,6 kb/s</span></div>
+    <div class="sc-row"><span class="sc-gen">2.5G GPRS</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:.55%;background:var(--g25)"></div></div><span class="sc-val" style="color:var(--g25)">114 kb/s</span></div>
+    <div class="sc-row"><span class="sc-gen">2.75G EDGE</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:1.9%;background:var(--g275)"></div></div><span class="sc-val" style="color:var(--g275)">384 kb/s</span></div>
+    <div class="sc-row"><span class="sc-gen">3G UMTS</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:1.9%;background:var(--g3)"></div></div><span class="sc-val" style="color:var(--g3)">384 kb/s</span></div>
+    <div class="sc-row"><span class="sc-gen">3.5G HSDPA</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:7%;background:var(--g35)"></div></div><span class="sc-val" style="color:var(--g35)">14,4 Mb/s</span></div>
+    <div class="sc-row"><span class="sc-gen">3.75G HSPA+</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:21%;background:var(--g375)"></div></div><span class="sc-val" style="color:var(--g375)">42 Mb/s</span></div>
+    <div class="sc-row"><span class="sc-gen">4G LTE</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:50%;background:var(--g4)"></div></div><span class="sc-val" style="color:var(--g4)">100 Mb/s</span></div>
+    <div class="sc-row"><span class="sc-gen">4G LTE+</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:75%;background:var(--g4p)"></div></div><span class="sc-val" style="color:var(--g4p)">300 Mb/s</span></div>
+    <div class="sc-row"><span class="sc-gen">5G NR</span><div class="sc-bar-wrap"><div class="sc-bar" style="width:100%;background:linear-gradient(90deg,var(--g5),#ff4444)"></div></div><span class="sc-val" style="color:var(--g5)">20 Gb/s</span></div>
+  </div>
+
+</section>
+
+<!-- ══════════ ÈRE IV — IoT & RÉSEAUX SPÉCIALISÉS ══════════ -->
+<section class="era-sec e4">
+  <div class="sec-hdr">
+    <span class="sec-tag">Ère IV</span>
+    <span class="sec-title">Internet des Objets (IoT) &amp; Réseaux Radio Spécialisés — WiFi, Bluetooth, LoRa, Sigfox, ZigBee, NB-IoT</span>
+    <span class="sec-period">1991 – Aujourd'hui</span>
+  </div>
+
+
+
+  <!-- 2-col: left = arch stack + info text stacked; right = chart spanning full height -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-bottom:4mm;align-items:stretch">
+
+    <!-- LEFT COL: arch stack then info text -->
+    <div style="display:flex;flex-direction:column;gap:5mm">
+
+      <!-- Architecture IoT en Couches -->
+      <div class="iot-arch-wrap" style="padding:4mm 5mm">
+        <div class="iot-arch-title">Architecture IoT en Couches</div>
+
+        <div style="background:rgba(26,107,58,.07);border:1px solid rgba(26,107,58,.25);border-radius:2mm;padding:2mm 2.5mm;margin-bottom:1.5mm;font-size:6.5pt;color:var(--ink2);line-height:1.4">
+          <b style="color:#1a6b3a">Applications métier, dashboards, cloud IoT</b> (AWS IoT, Azure IoT Hub) · Protocoles : MQTT, CoAP, HTTP/REST, AMQP
+        </div>
+        <div style="background:#1a6b3a;border-radius:2mm;padding:2mm 3mm;display:flex;align-items:center;gap:3mm">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:12pt;font-weight:800;color:#fff">Couche Applicative</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:6pt;color:rgba(255,255,255,.6)">Application Layer</div>
+        </div>
+        <div style="text-align:center;color:var(--era4);font-size:10pt;line-height:1;margin:.8mm 0">↕</div>
+
+        <div style="background:rgba(42,138,80,.07);border:1px solid rgba(42,138,80,.25);border-radius:2mm;padding:2mm 2.5mm;margin-bottom:1.5mm;font-size:6.5pt;color:var(--ink2);line-height:1.4">
+          <b style="color:#2a8a50">Edge / fog computing, analyse temps réel, stockage</b> · Sécurité, authentification, gestion des identités
+        </div>
+        <div style="background:#2a8a50;border-radius:2mm;padding:2mm 3mm;display:flex;align-items:center;gap:3mm">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:12pt;font-weight:800;color:#fff">Couche Traitement</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:6pt;color:rgba(255,255,255,.6)">Data Processing Layer</div>
+        </div>
+        <div style="text-align:center;color:var(--era4);font-size:10pt;line-height:1;margin:.8mm 0">↕</div>
+
+        <div style="background:rgba(58,170,104,.07);border:1px solid rgba(58,170,104,.25);border-radius:2mm;padding:2mm 2.5mm;margin-bottom:1.5mm;font-size:6.5pt;color:var(--ink2);line-height:1.4">
+          <b style="color:#3aaa68">WiFi, BT, LoRa, Sigfox, ZigBee, NB-IoT</b> · Routage, adressage IPv6, transmission adaptée aux contraintes
+        </div>
+        <div style="background:#3aaa68;border-radius:2mm;padding:2mm 3mm;display:flex;align-items:center;gap:3mm">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:12pt;font-weight:800;color:#fff">Couche Réseau</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:6pt;color:rgba(255,255,255,.6)">Network Layer</div>
+        </div>
+        <div style="text-align:center;color:var(--era4);font-size:10pt;line-height:1;margin:.8mm 0">↕</div>
+
+        <div style="background:rgba(80,200,128,.07);border:1px solid rgba(80,200,128,.3);border-radius:2mm;padding:2mm 2.5mm;margin-bottom:1.5mm;font-size:6.5pt;color:var(--ink2);line-height:1.4">
+          <b style="color:#3aaa68">Capteurs, actionneurs, objets physiques</b> — thermomètres, caméras, RFID, GPS, accéléromètres
+        </div>
+        <div style="background:#50c880;border-radius:2mm;padding:2mm 3mm;display:flex;align-items:center;gap:3mm">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:12pt;font-weight:800;color:#fff">Couche Perception</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:6pt;color:rgba(255,255,255,.7)">Perception Layer</div>
+        </div>
+      </div>
+
+      <!-- IoT en chiffres & enjeux -->
+      <div class="iot-arch-wrap" style="padding:4mm 5mm">
+        <div class="iot-arch-title">L'IoT en chiffres &amp; enjeux</div>
+        <div style="font-size:7.5pt;color:var(--ink2);line-height:1.6">
+          <p style="margin-bottom:3mm">En 2024, on estimait à <b style="color:var(--era4)">16 milliards</b> le nombre d'objets connectés dans le monde — un chiffre qui devrait dépasser <b style="color:var(--era4)">32 milliards</b> d'ici 2030, alimenté par la 5G, les réseaux LPWAN et la miniaturisation des capteurs.</p>
+          <div style="background:rgba(26,107,58,.07);border-left:3px solid var(--era4);padding:2mm 3mm;border-radius:0 2mm 2mm 0;margin-bottom:3mm;font-size:7pt">
+            <b style="color:var(--era4)">Critères de choix d'un protocole IoT</b><br>
+            Portée · Débit · Consommation d'énergie · Coût du module · Infrastructure existante · Latence tolérable · Volume de données
+          </div>
+          <div style="margin-bottom:2.5mm"><b style="color:var(--era4)">LPWAN</b> <span style="font-family:'JetBrains Mono',monospace;font-size:6pt;color:var(--ink3)">(Low Power Wide Area Network)</span><br>
+          Catégorie regroupant LoRa, Sigfox, NB-IoT et LTE-MTC. Conçue pour des objets qui transmettent peu de données mais sur de grandes distances, avec une autonomie de pile de 5 à 10 ans.</div>
+          <div style="margin-bottom:2.5mm"><b style="color:var(--era4)">PAN / WPAN</b> <span style="font-family:'JetBrains Mono',monospace;font-size:6pt;color:var(--ink3)">(Personal/Wireless PAN)</span><br>
+          Bluetooth, BLE, ZigBee et Z-Wave couvrent quelques mètres à quelques dizaines de mètres. Idéaux pour la domotique, les wearables et la santé connectée.</div>
+          <div style="background:rgba(26,107,58,.07);border-left:3px solid var(--era4);padding:2mm 3mm;border-radius:0 2mm 2mm 0;font-size:7pt">
+            <b style="color:var(--era4)">5G &amp; IoT</b> — La 5G intègre nativement deux modes IoT : <b>NB-IoT</b> (objets statiques basse consommation, Rel.13) et <b>LTE-MTC/eMTC</b> (mobilité, voix possible, Cat-M1). Ces standards coexistent avec les réseaux LPWAN privés pour des déploiements complémentaires.
+          </div>
+        </div>
+      </div>
+
+      <!-- Sécurité & défis de l'IoT — flex:1 pour remplir l'espace restant -->
+      <div class="iot-arch-wrap" style="padding:5mm 6mm;flex:1;display:flex;flex-direction:column;gap:4mm">
+        <div class="iot-arch-title">Sécurité &amp; Défis de l'IoT</div>
+
+        <!-- Vulnérabilités / Bonnes pratiques -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm">
+          <div style="background:rgba(168,32,32,.06);border-left:3px solid #a82020;border-radius:0 2mm 2mm 0;padding:3mm 3.5mm;font-size:7pt;color:var(--ink2);line-height:1.6">
+            <b style="color:#a82020;display:block;margin-bottom:1.5mm">⚠ Vulnérabilités courantes</b>
+            Mots de passe par défaut non changés, firmware rarement mis à jour, protocoles sans chiffrement, manque de validation des entrées, surface d'attaque étendue. Le botnet <b>Mirai</b> (2016) a compromis plus de 600 000 objets connectés (caméras, routeurs, DVR) pour lancer une attaque DDoS record de 1,1 Tb/s contre le fournisseur DNS Dyn, coupant l'accès à Twitter, Netflix et Spotify.
+          </div>
+          <div style="background:rgba(26,107,58,.06);border-left:3px solid var(--era4);border-radius:0 2mm 2mm 0;padding:3mm 3.5mm;font-size:7pt;color:var(--ink2);line-height:1.6">
+            <b style="color:var(--era4);display:block;margin-bottom:1.5mm">✓ Bonnes pratiques</b>
+            Chiffrement TLS/DTLS bout-en-bout, authentification par certificat X.509, mises à jour OTA signées cryptographiquement, segmentation VLAN dédiée IoT, principe du moindre privilège, secure boot avec chaîne de confiance, désactivation des services non utilisés, journalisation des accès.
+          </div>
+        </div>
+
+        <!-- Normes -->
+        <div style="background:rgba(26,107,58,.07);border-left:3px solid var(--era4);padding:3mm 4mm;border-radius:0 2mm 2mm 0;font-size:7pt;color:var(--ink2);line-height:1.6">
+          <b style="color:var(--era4)">Normes &amp; réglementations</b> — <b>ETSI EN 303 645</b> (13 lignes directrices de sécurité IoT grand public, dont l'interdiction des mots de passe universels par défaut), <b>EU Cyber Resilience Act</b> (2024 : obligation légale de sécurité sur tout produit connecté mis sur le marché européen, avec support de 5 ans minimum), <b>IoT Cybersecurity Improvement Act</b> (USA, 2020). Ces textes imposent le principe <i>Security by Design</i> — la sécurité doit être intégrée dès la conception, pas ajoutée après coup.
+        </div>
+
+        <!-- Énergie + Edge + Interopérabilité + IPv6 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm">
+          <div style="background:rgba(26,107,58,.06);border-radius:2mm;padding:3mm 3.5mm;font-size:7pt;color:var(--ink2);line-height:1.6">
+            <b style="color:var(--era4);display:block;margin-bottom:1.5mm">🔋 Autonomie énergétique</b>
+            Energy harvesting : solaire, piézoélectrique, thermique (gradient de température), cinétique. Modes veille profonde <b>PSM</b> (Power Saving Mode) et <b>eDRX</b> (extended Discontinuous Reception) définis par 3GPP. Objectif : <b>10 ans</b> d'autonomie sur pile bouton CR2032 pour les capteurs les plus sobres — NB-IoT, LoRa et Sigfox y parviennent en envoyant quelques octets par jour.
+          </div>
+          <div style="background:rgba(26,107,58,.06);border-radius:2mm;padding:3mm 3.5mm;font-size:7pt;color:var(--ink2);line-height:1.6">
+            <b style="color:var(--era4);display:block;margin-bottom:1.5mm">📡 Edge &amp; Fog Computing</b>
+            Traiter les données au plus près du capteur (<b>edge</b>) ou dans des nœuds intermédiaires proches (<b>fog</b>) réduit la latence, la bande passante consommée et le coût cloud. Indispensable pour l'industrie 4.0 (temps réel machine), les véhicules autonomes V2X (décision en &lt; 10 ms) et la chirurgie robotique à distance via réseaux 5G URLLC.
+          </div>
+          <div style="background:rgba(26,107,58,.06);border-radius:2mm;padding:3mm 3.5mm;font-size:7pt;color:var(--ink2);line-height:1.6">
+            <b style="color:var(--era4);display:block;margin-bottom:1.5mm">🔗 Interopérabilité &amp; standardisation</b>
+            Défi majeur : des centaines de protocoles incompatibles coexistent. <b>Matter</b> (2022, alliance Apple/Google/Amazon/Samsung/IKEA) unifie la domotique sur IP. <b>oneM2M</b> standardise les plateformes IoT industrielles. <b>LwM2M</b> (OMA SpecWorks) gère les objets à ressources très limitées. <b>OCF</b> (Open Connectivity Foundation) vise l'interopérabilité entre fabricants.
+          </div>
+          <div style="background:rgba(26,107,58,.06);border-radius:2mm;padding:3mm 3.5mm;font-size:7pt;color:var(--ink2);line-height:1.6">
+            <b style="color:var(--era4);display:block;margin-bottom:1.5mm">🌐 IPv6 &amp; adressage</b>
+            L'IoT a épuisé l'espace IPv4 (4,3 milliards d'adresses, officiellement épuisées en 2011). IPv6 offre 3,4×10³⁸ adresses — assez pour attribuer une adresse unique à chaque atome de la surface de la Terre. <b>6LoWPAN</b> (RFC 4944) adapte IPv6 aux réseaux radio contraints à faible MTU (IEEE 802.15.4, ZigBee) par compression d'en-tête et fragmentation.
+          </div>
+        </div>
+
+        <!-- Gestion du cycle de vie -->
+        <div style="background:rgba(26,107,58,.07);border-left:3px solid var(--era4);padding:3mm 4mm;border-radius:0 2mm 2mm 0;font-size:7pt;color:var(--ink2);line-height:1.6">
+          <b style="color:var(--era4)">Gestion du cycle de vie des objets connectés</b> — Un objet IoT industriel doit être provisionné (identité, clés cryptographiques), surveillé en continu (uptime, santé batterie, anomalies), mis à jour à distance (OTA firmware), et décommissionné de façon sécurisée (effacement des credentials). Des plateformes comme <b>AWS IoT Device Management</b>, <b>Azure IoT Hub</b> et <b>ThingsBoard</b> orchestrent ces étapes pour des flottes de millions d'objets.
+        </div>
+
+        <!-- Afrique / pays en développement -->
+        <div style="background:rgba(26,107,58,.07);border-left:3px solid var(--era4);padding:3mm 4mm;border-radius:0 2mm 2mm 0;font-size:7pt;color:var(--ink2);line-height:1.6">
+          <b style="color:var(--era4)">IoT en Afrique &amp; pays en développement</b> — LoRa et Sigfox présentent un fort potentiel dans les zones rurales non couvertes par la 4G/5G : suivi des cultures et de l'humidité du sol, gestion des ressources en eau, compteurs prépayés d'électricité (smart metering), télémédecine rurale et suivi de la chaîne du froid pour les vaccins. Des réseaux LoRaWAN sont déployés au Kenya, Nigeria, Afrique du Sud, Madagascar et au Bénin. Le coût réduit des modules (2–5 $), l'autonomie de la batterie (5–10 ans) et l'absence d'abonnement opérateur en font des solutions particulièrement adaptées aux contraintes économiques et infrastructurelles locales.
+        </div>
+
+      </div>
+
+    </div><!-- /LEFT COL, height:100% so it fills the grid row -->
+
+    <!-- RIGHT COL: chart + extra info panels, stretches to fill -->
+    <div style="display:flex;flex-direction:column;gap:5mm">
+
+      <!-- Bubble chart -->
+      <div class="iot-arch-wrap" style="padding:4mm 5mm">
+        <div class="iot-arch-title" style="margin-bottom:3mm">Réseaux IoT — Portée vs Débit</div>
+        <svg viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <line x1="45" y1="30"  x2="255" y2="30"  stroke="#eee" stroke-width=".8" stroke-dasharray="3,3"/>
+          <line x1="45" y1="60"  x2="255" y2="60"  stroke="#eee" stroke-width=".8" stroke-dasharray="3,3"/>
+          <line x1="45" y1="90"  x2="255" y2="90"  stroke="#eee" stroke-width=".8" stroke-dasharray="3,3"/>
+          <line x1="45" y1="120" x2="255" y2="120" stroke="#eee" stroke-width=".8" stroke-dasharray="3,3"/>
+          <line x1="45" y1="150" x2="255" y2="150" stroke="#eee" stroke-width=".8" stroke-dasharray="3,3"/>
+          <line x1="45" y1="160" x2="252" y2="160" stroke="#bbb" stroke-width="1.5"/>
+          <line x1="45" y1="160" x2="45"  y2="14"  stroke="#bbb" stroke-width="1.5"/>
+          <polygon points="252,157 257,160 252,163" fill="#bbb"/>
+          <polygon points="42,14 45,9 48,14" fill="#bbb"/>
+          <text x="150" y="175" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#888">Portée →</text>
+          <text x="13"  y="90"  text-anchor="middle" font-family="monospace" font-size="6.5" fill="#888" transform="rotate(-90,13,90)">Débit →</text>
+          <text x="65"  y="169" text-anchor="middle" font-family="monospace" font-size="5" fill="#aaa">1 m</text>
+          <text x="95"  y="169" text-anchor="middle" font-family="monospace" font-size="5" fill="#aaa">10 m</text>
+          <text x="130" y="169" text-anchor="middle" font-family="monospace" font-size="5" fill="#aaa">100 m</text>
+          <text x="168" y="169" text-anchor="middle" font-family="monospace" font-size="5" fill="#aaa">1 km</text>
+          <text x="210" y="169" text-anchor="middle" font-family="monospace" font-size="5" fill="#aaa">10 km</text>
+          <text x="245" y="169" text-anchor="middle" font-family="monospace" font-size="5" fill="#aaa">50 km</text>
+          <text x="42" y="163" text-anchor="end" font-family="monospace" font-size="4.5" fill="#aaa">100 b/s</text>
+          <text x="42" y="150" text-anchor="end" font-family="monospace" font-size="4.5" fill="#aaa">1 kb/s</text>
+          <text x="42" y="120" text-anchor="end" font-family="monospace" font-size="4.5" fill="#aaa">100 kb/s</text>
+          <text x="42" y="90"  text-anchor="end" font-family="monospace" font-size="4.5" fill="#aaa">1 Mb/s</text>
+          <text x="42" y="60"  text-anchor="end" font-family="monospace" font-size="4.5" fill="#aaa">100 Mb/s</text>
+          <text x="42" y="30"  text-anchor="end" font-family="monospace" font-size="4.5" fill="#aaa">1 Gb/s</text>
+          <!-- Sigfox: portée 50km, débit ~100b/s → cy=148, r=10 → bord bas=158, au-dessus de l'axe -->
+          <circle cx="242" cy="148" r="10" fill="rgba(68,34,0,.18)" stroke="var(--sigfox)" stroke-width="1.5"/>
+          <text x="242" y="148" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="5" fill="var(--sigfox)" font-weight="bold">Sigfox</text>
+          <!-- LoRa: portée 15km, débit ~50kb/s -->
+          <circle cx="210" cy="127" r="11" fill="rgba(0,96,96,.18)" stroke="var(--lora)" stroke-width="1.5"/>
+          <text x="210" y="127" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="5" fill="var(--lora)" font-weight="bold">LoRa</text>
+          <!-- NB-IoT: portée 10km, débit ~200kb/s -->
+          <circle cx="192" cy="115" r="12" fill="rgba(0,68,136,.18)" stroke="var(--nbiot)" stroke-width="1.5"/>
+          <text x="192" y="115" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="5" fill="var(--nbiot)" font-weight="bold">NB-IoT</text>
+          <!-- ZigBee: portée 100m, débit ~250kb/s -->
+          <circle cx="128" cy="112" r="11" fill="rgba(224,112,0,.18)" stroke="var(--zigbee)" stroke-width="1.5"/>
+          <text x="128" y="112" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="5.5" fill="var(--zigbee)" font-weight="bold">ZigBee</text>
+          <!-- BT/BLE: portée 10m, débit ~2Mb/s -->
+          <circle cx="93" cy="82" r="11" fill="rgba(64,64,170,.18)" stroke="var(--bt)" stroke-width="1.5"/>
+          <text x="93" y="82" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="5" fill="var(--bt)" font-weight="bold">BT/BLE</text>
+          <!-- LTE-M: portée 5km, débit ~1Mb/s -->
+          <circle cx="172" cy="87" r="12" fill="rgba(146,18,18,.18)" stroke="var(--g5)" stroke-width="1.5"/>
+          <text x="172" y="84" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="5" fill="var(--g5)" font-weight="bold">LTE-M</text>
+          <text x="172" y="92" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="4" fill="var(--g5)">mMTC</text>
+          <!-- WiFi: portée 100m, débit ~1Gb/s -->
+          <circle cx="140" cy="32" r="14" fill="rgba(0,119,204,.18)" stroke="var(--wifi)" stroke-width="1.5"/>
+          <text x="140" y="32" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="5.5" fill="var(--wifi)" font-weight="bold">WiFi</text>
+        </svg>
+        <div style="font-size:6pt;color:var(--ink3);font-style:italic;text-align:center;margin-top:1mm">Axes logarithmiques · taille des bulles indicative</div>
+      </div>
+
+      <!-- Tableau comparatif des protocoles -->
+      <div class="iot-arch-wrap" style="padding:4mm 5mm">
+        <div class="iot-arch-title" style="margin-bottom:3mm">Comparatif rapide des protocoles IoT</div>
+        <table style="width:100%;border-collapse:collapse;font-size:6.5pt">
+          <thead>
+            <tr style="background:var(--era4);color:#fff">
+              <th style="padding:2mm 2.5mm;text-align:left;border-radius:2mm 0 0 0">Protocole</th>
+              <th style="padding:2mm 2.5mm;text-align:center">Portée</th>
+              <th style="padding:2mm 2.5mm;text-align:center">Débit max</th>
+              <th style="padding:2mm 2.5mm;text-align:center">Conso.</th>
+              <th style="padding:2mm 2.5mm;text-align:center">Topologie</th>
+              <th style="padding:2mm 2.5mm;text-align:left;border-radius:0 2mm 0 0">Usage typique</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:rgba(0,119,204,.06)">
+              <td style="padding:1.5mm 2.5mm;font-weight:700;color:var(--wifi)">WiFi 6</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">~100 m</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center;font-family:'JetBrains Mono',monospace">9,6 Gb/s</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Élevée</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Étoile</td>
+              <td style="padding:1.5mm 2.5mm">Maison, bureau, caméras IP</td>
+            </tr>
+            <tr style="background:rgba(64,64,170,.06)">
+              <td style="padding:1.5mm 2.5mm;font-weight:700;color:var(--bt)">BLE 5.0</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">~100 m</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center;font-family:'JetBrains Mono',monospace">2 Mb/s</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Très faible</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Étoile/Mesh</td>
+              <td style="padding:1.5mm 2.5mm">Wearables, santé, beacons</td>
+            </tr>
+            <tr style="background:rgba(224,112,0,.06)">
+              <td style="padding:1.5mm 2.5mm;font-weight:700;color:var(--zigbee)">ZigBee</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">10–100 m</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center;font-family:'JetBrains Mono',monospace">250 kb/s</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Très faible</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Mesh</td>
+              <td style="padding:1.5mm 2.5mm">Domotique, éclairage smart</td>
+            </tr>
+            <tr style="background:rgba(0,96,96,.06)">
+              <td style="padding:1.5mm 2.5mm;font-weight:700;color:var(--lora)">LoRaWAN</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">2–15 km</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center;font-family:'JetBrains Mono',monospace">50 kb/s</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Ultra faible</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Étoile</td>
+              <td style="padding:1.5mm 2.5mm">Smart city, agriculture, eau</td>
+            </tr>
+            <tr style="background:rgba(0,68,136,.06)">
+              <td style="padding:1.5mm 2.5mm;font-weight:700;color:var(--nbiot)">NB-IoT</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">5–15 km</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center;font-family:'JetBrains Mono',monospace">200 kb/s</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Très faible</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Cellulaire</td>
+              <td style="padding:1.5mm 2.5mm">Compteurs, alarmes, trackers</td>
+            </tr>
+            <tr style="background:rgba(68,34,0,.06)">
+              <td style="padding:1.5mm 2.5mm;font-weight:700;color:var(--sigfox)">Sigfox</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">10–50 km</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center;font-family:'JetBrains Mono',monospace">100 b/s</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Ultra faible</td>
+              <td style="padding:1.5mm 2.5mm;text-align:center">Étoile</td>
+              <td style="padding:1.5mm 2.5mm">Logistique, géolocalisation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Domaines d'application IoT -->
+      <div class="iot-arch-wrap" style="padding:4mm 5mm">
+        <div class="iot-arch-title" style="margin-bottom:3mm">Domaines d'Application de l'IoT</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2mm;font-size:6.5pt;color:var(--ink2)">
+          <div style="background:rgba(26,107,58,.07);border-radius:2mm;padding:2mm 2.5mm">
+            <div style="font-weight:700;color:var(--era4);margin-bottom:1mm">🏙 Smart City</div>
+            Éclairage public intelligent, gestion des déchets, capteurs de stationnement, qualité de l'air, inondations
+          </div>
+          <div style="background:rgba(26,107,58,.07);border-radius:2mm;padding:2mm 2.5mm">
+            <div style="font-weight:700;color:var(--era4);margin-bottom:1mm">🏥 Santé connectée</div>
+            Montres cardiaques, monitoring à distance, piluliers intelligents, implants connectés, télédiagnostic
+          </div>
+          <div style="background:rgba(26,107,58,.07);border-radius:2mm;padding:2mm 2.5mm">
+            <div style="font-weight:700;color:var(--era4);margin-bottom:1mm">🌾 Agriculture</div>
+            Capteurs d'humidité, drones, prévision météo locale, irrigation automatisée, suivi du bétail
+          </div>
+          <div style="background:rgba(26,107,58,.07);border-radius:2mm;padding:2mm 2.5mm">
+            <div style="font-weight:700;color:var(--era4);margin-bottom:1mm">🏭 Industrie 4.0</div>
+            Maintenance prédictive, jumeaux numériques, robots collaboratifs, chaîne logistique, contrôle qualité
+          </div>
+          <div style="background:rgba(26,107,58,.07);border-radius:2mm;padding:2mm 2.5mm">
+            <div style="font-weight:700;color:var(--era4);margin-bottom:1mm">🏠 Maison connectée</div>
+            Thermostats, serrures, caméras, aspirateurs, assistants vocaux, gestion énergétique
+          </div>
+          <div style="background:rgba(26,107,58,.07);border-radius:2mm;padding:2mm 2.5mm">
+            <div style="font-weight:700;color:var(--era4);margin-bottom:1mm">🚗 Mobilité / V2X</div>
+            Voitures connectées, péages automatiques, flottes, signalisation routière, parkings intelligents
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /RIGHT COL -->
+
+  </div>
+  <div class="iot-grid">
+
+    <!-- WiFi -->
+    <div class="iot-card wifi">
+      <div class="iot-badge">WiFi</div>
+      <div class="iot-yr">IEEE 802.11 · depuis 1997</div>
+      <div class="iot-r"><span class="iot-l">Portée</span><span class="iot-v">~50–100 m (intérieur)</span></div>
+      <div class="iot-r"><span class="iot-l">Débit</span><span class="iot-v">802.11b 11Mb → WiFi 6E 9.6Gb/s</span></div>
+      <div class="iot-r"><span class="iot-l">Fréquence</span><span class="iot-v">2.4 GHz, 5 GHz, 6 GHz</span></div>
+      <div class="iot-r"><span class="iot-l">Conso.</span><span class="iot-v">Élevée (WiFi) / Faible (WiFi HaLow)</span></div>
+      <div class="iot-r"><span class="iot-l">Usages</span><span class="iot-v">Réseau local, maison connectée, caméras IP, streaming</span></div>
+      <div style="margin-top:2mm;font-size:6pt;background:rgba(0,119,204,.08);border-radius:1.5mm;padding:2mm;color:#005599">
+        <b>Versions clés :</b> 802.11b (1999) · 802.11g (2003) · 802.11n/WiFi4 (2009) · 802.11ac/WiFi5 (2013) · 802.11ax/WiFi6 (2019) · WiFi 6E (2021) · WiFi 7 (2024)
+      </div>
+    </div>
+
+    <!-- Bluetooth -->
+    <div class="iot-card bt">
+      <div class="iot-badge">Bluetooth</div>
+      <div class="iot-yr">IEEE 802.15.1 · depuis 1994</div>
+      <div class="iot-r"><span class="iot-l">Portée</span><span class="iot-v">~10 m (classique) / 100 m (BLE)</span></div>
+      <div class="iot-r"><span class="iot-l">Débit</span><span class="iot-v">1–3 Mb/s (BT 5.0 : 2 Mb/s)</span></div>
+      <div class="iot-r"><span class="iot-l">Fréquence</span><span class="iot-v">2.4 GHz (79 canaux FHSS)</span></div>
+      <div class="iot-r"><span class="iot-l">Conso.</span><span class="iot-v">Très faible (BLE : µA)</span></div>
+      <div class="iot-r"><span class="iot-l">Usages</span><span class="iot-v">Écouteurs, montres, capteurs, médical, beacons</span></div>
+      <div style="margin-top:2mm;font-size:6pt;background:rgba(64,64,170,.08);border-radius:1.5mm;padding:2mm;color:#303090">
+        <b>BLE (Bluetooth Low Energy)</b> — BT 4.0 (2010) : révolution IoT basse conso. BT 5.0 (2016) : 4× portée, 2× débit, mesh. BT Mesh (2017) : réseau maillé jusqu'à 32 767 nœuds.
+      </div>
+    </div>
+
+    <!-- ZigBee -->
+    <div class="iot-card zigbee">
+      <div class="iot-badge">ZigBee</div>
+      <div class="iot-yr">IEEE 802.15.4 · depuis 2003</div>
+      <div class="iot-r"><span class="iot-l">Portée</span><span class="iot-v">10–100 m (mesh étend)</span></div>
+      <div class="iot-r"><span class="iot-l">Débit</span><span class="iot-v">250 kb/s</span></div>
+      <div class="iot-r"><span class="iot-l">Fréquence</span><span class="iot-v">2.4 GHz / 868–915 MHz</span></div>
+      <div class="iot-r"><span class="iot-l">Conso.</span><span class="iot-v">Très faible (pile dure 2 ans+)</span></div>
+      <div class="iot-r"><span class="iot-l">Usages</span><span class="iot-v">Domotique, éclairage smart, automatisation industrielle</span></div>
+      <div style="margin-top:2mm;font-size:6pt;background:rgba(224,112,0,.08);border-radius:1.5mm;padding:2mm;color:#804000">
+        <b>Topologie mesh</b> — réseau maillé auto-cicatrisant. Z-Wave : concurrent 868/908 MHz, domotique. Matter (2022) : standard unifié IoT maison (Apple/Google/Amazon/Samsung).
+      </div>
+    </div>
+
+    <!-- LoRa / LoRaWAN -->
+    <div class="iot-card lora">
+      <div class="iot-badge">LoRa / LoRaWAN</div>
+      <div class="iot-yr">Semtech · LoRa Alliance · depuis 2013</div>
+      <div class="iot-r"><span class="iot-l">Portée</span><span class="iot-v">2–15 km (ville) / 40+ km (rural)</span></div>
+      <div class="iot-r"><span class="iot-l">Débit</span><span class="iot-v">0.3 – 50 kb/s</span></div>
+      <div class="iot-r"><span class="iot-l">Fréquence</span><span class="iot-v">433/868/915 MHz (ISM)</span></div>
+      <div class="iot-r"><span class="iot-l">Conso.</span><span class="iot-v">Ultra faible (pile 5–10 ans)</span></div>
+      <div class="iot-r"><span class="iot-l">Usages</span><span class="iot-v">Smart city, agriculture, compteurs, suivi colis, eau</span></div>
+      <div style="margin-top:2mm;font-size:6pt;background:rgba(0,96,96,.08);border-radius:1.5mm;padding:2mm;color:#004040">
+        <b>LPWAN (Low Power Wide Area Network)</b> — LoRa : couche physique (chirp spread spectrum). LoRaWAN : protocole MAC réseau. Réseau étoile : terminaux → passerelles → serveur. Idéal Africa/milieu rural.
+      </div>
+    </div>
+
+    <!-- NB-IoT / LTE-MTC -->
+    <div class="iot-card nbiot">
+      <div class="iot-badge">NB-IoT / LTE-MTC</div>
+      <div class="iot-yr">3GPP Rel.13 · depuis 2016</div>
+      <div class="iot-r"><span class="iot-l">Portée</span><span class="iot-v">5–15 km (cellulaire)</span></div>
+      <div class="iot-r"><span class="iot-l">Débit</span><span class="iot-v">NB-IoT 200 kb/s · LTE-M 1 Mb/s</span></div>
+      <div class="iot-r"><span class="iot-l">Fréquence</span><span class="iot-v">Bandes LTE (700–2100 MHz)</span></div>
+      <div class="iot-r"><span class="iot-l">Conso.</span><span class="iot-v">Très faible (PSM, eDRX)</span></div>
+      <div class="iot-r"><span class="iot-l">Usages</span><span class="iot-v">Compteurs smart, alarmes, trackers GPS, wearables</span></div>
+      <div style="margin-top:2mm;font-size:6pt;background:rgba(0,68,136,.08);border-radius:1.5mm;padding:2mm;color:#003060">
+        <b>Dans la 5G :</b> NB-IoT et LTE-MTC (eMTC) intégrés dans 5G Rel.15 comme composantes mMTC. NB-IoT : masse d'objets statiques. LTE-MTC : mobilité + voix possible. Déploiement sur infra LTE existante.
+      </div>
+    </div>
+
+    <!-- Sigfox -->
+    <div class="iot-card sigfox">
+      <div class="iot-badge">Sigfox</div>
+      <div class="iot-yr">Sigfox SAS · France · depuis 2009</div>
+      <div class="iot-r"><span class="iot-l">Portée</span><span class="iot-v">30–50 km (rural) / 3–10 km (ville)</span></div>
+      <div class="iot-r"><span class="iot-l">Débit</span><span class="iot-v">100 bits/s (12 msg/j de 12 octets)</span></div>
+      <div class="iot-r"><span class="iot-l">Fréquence</span><span class="iot-v">868 MHz (EU) / 915 MHz (US)</span></div>
+      <div class="iot-r"><span class="iot-l">Conso.</span><span class="iot-v">Ultra faible (µA en veille)</span></div>
+      <div class="iot-r"><span class="iot-l">Usages</span><span class="iot-v">Alarmes, géolocalisation, compteurs, logistique</span></div>
+      <div style="margin-top:2mm;font-size:6pt;background:rgba(68,34,0,.08);border-radius:1.5mm;padding:2mm;color:#402000">
+        <b>Ultra Narrowband (UNB)</b> — messages très courts mais ultra longue portée. Modèle opérateur : réseau déployé par Sigfox, abonnement par objet. Couverture 75 pays (2023). Concurrent principal : LoRa (technologie ouverte).
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <span>© Évolution des Réseaux Radio Mobiles · 1780 – 2025 · Poster Pédagogique v2</span>
+  <div class="ft-eras">
+    <span><span class="ft-dot" style="background:var(--era1)"></span>Ère I · Radio Pionnière</span>
+    <span><span class="ft-dot" style="background:var(--era2)"></span>Ère II · Mobile Analogique</span>
+    <span><span class="ft-dot" style="background:var(--era3)"></span>Ère III · Numérique Cellulaire (2G→5G)</span>
+    <span><span class="ft-dot" style="background:var(--era4)"></span>Ère IV · IoT &amp; Réseaux Spécialisés</span>
+  </div>
+  <span>Format A1 · 594 × 841 mm · Impression couleur recommandée</span>
+</footer>
+
+</body>
+</html>
