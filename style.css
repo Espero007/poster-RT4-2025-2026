@@ -98,10 +98,29 @@ header::after {
 .hdr-inner {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-rows: max-content max-content max-content max-content;
     gap: 10mm;
     align-items: start
 }
+
+.hdr-inner .row-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hdr-inner .row-2{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 10mm;
+}
+
+.hdr-inner .row-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .hdr-eyebrow {
     font-family: 'JetBrains Mono', monospace;
@@ -141,6 +160,12 @@ header::after {
     letter-spacing: .5px
 }
 
+.hdr-promo-image{
+    width: 1000px;
+    height: 200px;
+    background-color: #000;
+}
+
 h1 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 55pt;
@@ -152,7 +177,7 @@ h1 {
 
 h1 em {
     color: #79bff7;
-    font-style: italic
+    font-style: italic;
 }
 
 .hdr-sub {
@@ -161,7 +186,8 @@ h1 em {
     color: white;
     margin-top: 3mm;
     max-width: 260mm;
-    line-height: 1.6
+    line-height: 1.6;
+    text-align: center;
 }
 
 .hdr-stats {
@@ -196,7 +222,7 @@ h1 em {
 
 .hdr-legend {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 2.5mm;
     padding-top: 5mm;
     justify-content: flex-end
