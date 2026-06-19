@@ -46,10 +46,11 @@
     --ink3: #8888a8;
     --rule: #dedbd0;
     --card-bg: #ffffff;
+    --text-size : 10pt;
 }
 
 body {
-    width: 594mm;
+    width: 841mm;
     background: var(--bg);
     font-family: 'Barlow', sans-serif;
     color: var(--ink);
@@ -64,8 +65,12 @@ body {
     }
 
     body {
-        width: 594mm
+        width: 841mm
     }
+}
+
+.body-text {
+    font-size: 10pt !important;
 }
 
 /* ══ HEADER ══ */
@@ -103,19 +108,19 @@ header::after {
     align-items: start
 }
 
-.hdr-inner .row-1{
+.hdr-inner .row-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.hdr-inner .row-2{
+.hdr-inner .row-2 {
     display: grid;
-    grid-template-columns: 1fr max-content;
-    gap: 10mm;
+    grid-template-columns: 1fr 1fr;
+    gap: 20mm;
 }
 
-.hdr-inner .row-3{
+.hdr-inner .row-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,7 +129,7 @@ header::after {
 
 .hdr-eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 7.5pt;
+    font-size: 8pt;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 1);
@@ -141,12 +146,12 @@ header::after {
     border: 1px solid rgba(121, 191, 247, .3);
     border-radius: 2mm;
     padding: 1.5mm 3mm;
-    margin-bottom:3mm
+    margin-bottom: 3mm
 }
 
 .hdr-promo-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 6pt;
+    font-size: 8pt;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 1);
@@ -154,16 +159,30 @@ header::after {
 
 .hdr-promo-value {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 9pt;
+    font-size: 10pt;
     font-weight: 700;
     color: #79bff7;
     letter-spacing: .5px
 }
 
-.hdr-promo-image{
-    width: 1000px;
-    height: 200px;
-    background-color: #000;
+.row-2 .poster-title{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* .hdr-promo-image { */
+    /* width: 1000px; */
+    /* height: 200px; */
+    /* background-color: #000; */
+    /* background-image: url("photo-ensemble.jpg"); */
+    /* overflow: hidden; */
+/* } */
+
+.hdr-promo-image img{
+    height: 500px;
+    border-radius: 10px;
 }
 
 h1 {
@@ -181,7 +200,7 @@ h1 em {
 }
 
 .hdr-sub {
-    font-size: 9.5pt;
+    font-size: 10pt;
     font-weight: 300;
     color: white;
     margin-top: 3mm;
@@ -213,7 +232,7 @@ h1 em {
 }
 
 .hdr-stat-l {
-    font-size: 5.5pt;
+    font-size: 10pt;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: white;
@@ -225,14 +244,14 @@ h1 em {
     /* flex-direction: column; */
     gap: 2.5mm;
     padding-top: 5mm;
-    justify-content: flex-end
+    justify-content: center
 }
 
 .lg-item {
     display: flex;
     align-items: center;
     gap: 2.5mm;
-    font-size: 7.5pt;
+    font-size: 10pt;
     color: rgba(255, 255, 255, .52)
 }
 
@@ -277,7 +296,8 @@ h1 em {
     top: 0;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    top: 20%;
 }
 
 .t-e .d {
@@ -299,14 +319,14 @@ h1 em {
 
 .t-e .lbl {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 5.5pt;
+    font-size: 10pt;
     color: rgba(255, 255, 255, .35);
     white-space: nowrap
 }
 
 .t-e.M .lbl {
     color: rgba(255, 255, 255, .78);
-    font-size: 6pt;
+    font-size: 10pt;
     font-weight: 600
 }
 
@@ -385,7 +405,7 @@ section.era-sec {
 
 .sec-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20pt;
+    font-size: 23pt;
     font-weight: 800;
     line-height: 1
 }
@@ -497,7 +517,7 @@ section.era-sec {
 
 .tc-name {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11pt;
+    font-size: 13.5pt;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 2mm
@@ -510,7 +530,7 @@ section.era-sec {
 }
 
 .tc-l {
-    font-size: 6pt;
+    font-size: 9.5pt;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -521,7 +541,7 @@ section.era-sec {
 }
 
 .tc-v {
-    font-size: 7pt;
+    font-size: 10.5pt;
     color: var(--ink2);
     line-height: 1.45
 }
@@ -666,7 +686,7 @@ section.era-sec {
 }
 
 .sp-k {
-    font-size: 5.5pt;
+    font-size: 9.5pt;
     letter-spacing: .8px;
     text-transform: uppercase;
     color: var(--ink3);
@@ -675,7 +695,7 @@ section.era-sec {
 
 .sp-v {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 7pt;
+    font-size: 10.5pt;
     font-weight: 700
 }
 
@@ -722,7 +742,7 @@ section.era-sec {
 }
 
 .gf {
-    font-size: 6.5pt;
+    font-size: 10.5pt;
     color: var(--ink2);
     padding: 0.6mm 0 0.6mm 3mm;
     position: relative;
