@@ -561,6 +561,10 @@ section.era-sec {
     border-radius: 5px;
 }
 
+.era-sec.e2 .tc-img img{
+    height: 200px;
+}
+
 /* ══ ARCH PANELS ══ */
 .arch-panel {
     background: var(--card-bg);
@@ -962,7 +966,7 @@ section.era-sec {
     background: rgba(255, 255, 255, .07);
     border-radius: 2mm;
     padding: 2.5mm;
-    font-size: 8pt;
+    font-size: 10pt;
     color: rgba(255, 255, 255, .55);
     line-height: 1.6
 }
