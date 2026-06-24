@@ -561,7 +561,7 @@ section.era-sec {
     border-radius: 5px;
 }
 
-.era-sec.e2 .tc-img img{
+.era-sec.e2 .tc-img img {
     height: 200px;
 }
 
@@ -895,7 +895,7 @@ section.era-sec {
 
 .wimax-hdr-std {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9pt;
+    font-size: 10pt;
     color: rgba(255, 255, 255, .75);
     margin-top: 1mm
 }
@@ -1010,7 +1010,7 @@ section.era-sec {
 }
 
 .g5-hdr-period {
-    font-size: 7pt;
+    font-size: 8pt;
     color: rgba(255, 255, 255, .5);
     margin-top: .5mm
 }
@@ -1018,7 +1018,8 @@ section.era-sec {
 /* ══ 5G STAT CHIPS ══ */
 .g5-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 3mm
 }
 
@@ -1029,7 +1030,7 @@ section.era-sec {
 }
 
 .g5-stat-lbl {
-    font-size: 6pt;
+    font-size: 8pt;
     color: rgba(255, 255, 255, .5);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1038,7 +1039,7 @@ section.era-sec {
 
 .g5-stat-val {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 10pt;
+    font-size: 14pt;
     font-weight: 700
 }
 
@@ -1059,7 +1060,7 @@ section.era-sec {
 }
 
 .g5-stat-sub {
-    font-size: 6pt;
+    font-size: 8pt;
     color: rgba(255, 255, 255, .5)
 }
 
@@ -1079,12 +1080,16 @@ section.era-sec {
 .g5-sba {
     background: #0e0e1a;
     padding: 4mm 5mm;
-    border-top: 1px solid rgba(255, 255, 255, .07)
+    border-top: 1px solid rgba(255, 255, 255, .07);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6mm;
+    align-items: start;
 }
 
 .g5-sba-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 6pt;
+    font-size: 8pt;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, .3);
@@ -1097,17 +1102,50 @@ section.era-sec {
     display: block
 }
 
+.g5-sba-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
+    padding-top: 1mm;
+}
+
+.g5-sba-desc-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5mm;
+}
+
+.g5-sba-desc-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .5)
+}
+
+.g5-sba-desc-text {
+    font-size: 10pt;
+    color: rgba(255, 255, 255, .7);
+    line-height: 1.6
+}
+
+.g5-sba-desc-text b {
+    color: #79bff7;
+    font-weight: 600
+}
+
 /* ══ SPEED BAR ══ */
 .speed-compare {
     background: var(--dark);
     border-radius: 3mm;
     padding: 4mm 5mm;
-    margin-top: 4mm
+    margin-top: 3mm
 }
 
 .sc-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11pt;
+    font-size: 14pt;
     font-weight: 800;
     color: #fff;
     margin-bottom: 2.5mm;
@@ -1118,12 +1156,12 @@ section.era-sec {
     display: flex;
     align-items: center;
     gap: 2.5mm;
-    margin-bottom: 1.6mm
+    margin-bottom: 3mm
 }
 
 .sc-gen {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 6.5pt;
+    font-size: 7.5pt;
     color: rgba(255, 255, 255, .55);
     width: 16mm;
     flex-shrink: 0;
@@ -1149,6 +1187,37 @@ section.era-sec {
     color: rgba(255, 255, 255, .8);
     width: 18mm;
     flex-shrink: 0
+}
+
+/* ══ 5G + SPEED COMPARE WRAPPER ══ */
+.g5-speed-wrap {
+    display: flex;
+    align-items: stretch;
+    gap: 5mm
+}
+
+.g5-speed-wrap .g5-band {
+    flex: 1;
+    min-width: 0
+}
+
+.g5-speed-wrap .speed-compare {
+    flex-shrink: 0;
+    width: 250mm;
+    /* margin-top: 0; */
+    /* border-radius: 0 */
+}
+
+/* ══ SPEED COMPARE NOTE ══ */
+.sc-note {
+    margin-top: 3mm;
+    padding-top: 2.5mm;
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    font-size: 10pt;
+    color: rgba(255, 255, 255, .55);
+    line-height: 1.8;
+    text-align: justify;
+    font-style: italic
 }
 
 /* ══ IOT SECTION ══ */
