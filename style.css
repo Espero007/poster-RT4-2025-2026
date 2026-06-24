@@ -647,14 +647,14 @@ section.era-sec {
 
 .gen-std {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 7pt;
+    font-size: 8pt;
     opacity: .85;
     margin-top: 1mm;
     font-weight: 600
 }
 
 .gen-yrs {
-    font-size: 6.5pt;
+    font-size: 8pt;
     opacity: .65;
     margin-top: .5mm
 }
