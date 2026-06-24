@@ -1341,7 +1341,7 @@ section.era-sec {
 
 .iot-arch-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13pt;
+    font-size: 16pt;
     font-weight: 800;
     color: var(--era4);
     margin-bottom: 3mm
@@ -1384,6 +1384,410 @@ section.era-sec {
     color: var(--ink2);
     line-height: 1.45;
     flex: 1
+}
+
+/* ══ CENTRALISATION ÈRE IV (STYLES NETTOYÉS) ══ */
+
+/* Mises en page globales */
+.iot-main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm;
+    margin-bottom: 4mm;
+    align-items: stretch;
+}
+
+.iot-col {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+}
+
+/* Modificateurs généraux & textuels */
+.iot-arch-wrap .tbl-margin {
+    margin-bottom: 3mm;
+}
+
+.highlight-app {
+    color: #1a6b3a;
+}
+
+.highlight-processing {
+    color: #2a8a50;
+}
+
+.highlight-network {
+    color: #3aaa68;
+}
+
+.highlight-era4 {
+    color: var(--era4);
+}
+
+/* Architecture en Couches (Previews & Badges) */
+.iot-layer-preview {
+    border: 1px solid;
+    border-radius: 2mm;
+    padding: 2mm 2.5mm;
+    margin-bottom: 1.5mm;
+    font-size: 6.5pt;
+    color: var(--ink2);
+    line-height: 1.4;
+}
+
+.preview-app {
+    background: rgba(26, 107, 58, .07);
+    border-color: rgba(26, 107, 58, .25);
+}
+
+.preview-processing {
+    background: rgba(42, 138, 80, .07);
+    border-color: rgba(42, 138, 80, .25);
+}
+
+.preview-network {
+    background: rgba(58, 170, 104, .07);
+    border-color: rgba(58, 170, 104, .25);
+}
+
+.preview-perception {
+    background: rgba(80, 200, 128, .07);
+    border-color: rgba(80, 200, 128, .3);
+}
+
+.iot-layer-badge {
+    border-radius: 2mm;
+    padding: 2mm 3mm;
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+}
+
+.badge-app {
+    background: #1a6b3a;
+}
+
+.badge-processing {
+    background: #2a8a50;
+}
+
+.badge-network {
+    background: #3aaa68;
+}
+
+.badge-perception {
+    background: #50c880;
+}
+
+.iot-layer-name-large {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12pt;
+    font-weight: 800;
+    color: #fff;
+}
+
+.iot-layer-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6pt;
+    color: rgba(255, 255, 255, .6);
+}
+
+.badge-perception .iot-layer-mono {
+    color: rgba(255, 255, 255, .7);
+}
+
+.iot-layer-separator {
+    text-align: center;
+    color: var(--era4);
+    font-size: 10pt;
+    line-height: 1;
+    margin: .8mm 0;
+}
+
+/* Section chiffres & enjeux */
+.iot-stats-body {
+    font-size: 7.5pt;
+    color: var(--ink2);
+    line-height: 1.6;
+}
+
+.iot-stats-intro {
+    margin-bottom: 3mm;
+}
+
+.iot-callout {
+    background: rgba(26, 107, 58, .07);
+    border-left: 3px solid var(--era4);
+    padding: 2mm 3mm;
+    border-radius: 0 2mm 2mm 0;
+    margin-bottom: 3mm;
+    font-size: 7pt;
+}
+
+.iot-stats-body .iot-callout:last-of-type {
+    margin-bottom: 0;
+    /* Évite le double margin en bas */
+}
+
+.iot-def-block {
+    margin-bottom: 2.5mm;
+}
+
+.iot-def-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6pt;
+    color: var(--ink3);
+}
+
+/* Tableau Comparatif */
+.iot-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 6.5pt;
+}
+
+.iot-comparison-table thead tr {
+    background: var(--era4);
+    color: #fff;
+}
+
+.iot-comparison-table th {
+    padding: 2mm 2.5mm;
+}
+
+.iot-comparison-table .th-left {
+    text-align: left;
+    border-radius: 2mm 0 0 0;
+}
+
+.iot-comparison-table .th-center {
+    text-align: center;
+}
+
+.iot-comparison-table .th-right {
+    text-align: left;
+    border-radius: 0 2mm 0 0;
+}
+
+.iot-comparison-table tbody tr {
+    padding: 1.5mm 2.5mm;
+}
+
+.iot-comparison-table tbody td {
+    padding: 1.5mm 2.5mm;
+}
+
+.iot-comparison-table .row-wifi {
+    background: rgba(0, 119, 204, .06);
+}
+
+.iot-comparison-table .row-bt {
+    background: rgba(64, 64, 170, .06);
+}
+
+.iot-comparison-table .row-zigbee {
+    background: rgba(224, 112, 0, .06);
+}
+
+.iot-comparison-table .row-lora {
+    background: rgba(0, 96, 96, .06);
+}
+
+.iot-comparison-table .row-nbiot {
+    background: rgba(0, 68, 136, .06);
+}
+
+.iot-comparison-table .row-sigfox {
+    background: rgba(68, 34, 0, .06);
+}
+
+.td-protocol {
+    font-weight: 700;
+}
+
+.color-wifi {
+    color: var(--wifi);
+}
+
+.color-bt {
+    color: var(--bt);
+}
+
+.color-zigbee {
+    color: var(--zigbee);
+}
+
+.color-lora {
+    color: var(--lora);
+}
+
+.color-nbiot {
+    color: var(--nbiot);
+}
+
+.color-sigfox {
+    color: var(--sigfox);
+}
+
+.td-center {
+    text-align: center;
+}
+
+.td-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Grid des Domaines d'application */
+.iot-domains-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm;
+    font-size: 6.5pt;
+    color: var(--ink2);
+}
+
+.iot-domain-box {
+    background: rgba(26, 107, 58, .07);
+    border-radius: 2mm;
+    padding: 2mm 2.5mm;
+}
+
+.iot-domain-title {
+    font-weight: 700;
+    color: var(--era4);
+    margin-bottom: 1mm;
+}
+
+/* Dataviz / SVG Chart */
+.iot-chart-svg {
+    width: 100%;
+}
+
+.svg-grid-line {
+    stroke: #eee;
+    stroke-width: .8;
+    stroke-dasharray: 3, 3;
+}
+
+.svg-axis-main {
+    stroke: #bbb;
+    stroke-width: 1.5;
+}
+
+.svg-arrow {
+    fill: #bbb;
+}
+
+.svg-label-title {
+    font-family: monospace;
+    font-size: 6.5px;
+    fill: #888;
+}
+
+.svg-rot-90 {
+    transform: rotate(-90deg, 13px, 90px);
+}
+
+.svg-tick-label {
+    font-family: monospace;
+    font-size: 5px;
+    fill: #aaa;
+}
+
+/* Bulles SVG & Couleurs de fond */
+.iot-chart-svg circle {
+    stroke-width: 1.5;
+}
+
+.bubble-sigfox {
+    fill: rgba(68, 34, 0, .18);
+    stroke: var(--sigfox);
+}
+
+.bubble-lora {
+    fill: rgba(0, 96, 96, .18);
+    stroke: var(--lora);
+}
+
+.bubble-nbiot {
+    fill: rgba(0, 68, 136, .18);
+    stroke: var(--nbiot);
+}
+
+.bubble-zigbee {
+    fill: rgba(224, 112, 0, .18);
+    stroke: var(--zigbee);
+}
+
+.bubble-bt {
+    fill: rgba(64, 64, 170, .18);
+    stroke: var(--bt);
+}
+
+.bubble-lte {
+    fill: rgba(146, 18, 18, .18);
+    stroke: var(--g5);
+}
+
+.bubble-wifi {
+    fill: rgba(0, 119, 204, .18);
+    stroke: var(--wifi);
+}
+
+/* Textes dans les bulles */
+.bubble-txt {
+    font-family: monospace;
+    font-size: 5px;
+    font-weight: bold;
+}
+
+.bubble-txt.font-zigbee {
+    font-size: 5.5px;
+}
+
+.bubble-txt.font-wifi {
+    font-size: 5.5px;
+}
+
+.bubble-subtxt {
+    font-family: monospace;
+    font-size: 4px;
+}
+
+.font-sigfox {
+    fill: var(--sigfox);
+}
+
+.font-lora {
+    fill: var(--lora);
+}
+
+.font-nbiot {
+    fill: var(--nbiot);
+}
+
+.font-zigbee {
+    fill: var(--zigbee);
+}
+
+.font-bt {
+    fill: var(--bt);
+}
+
+.font-lte {
+    fill: var(--g5);
+}
+
+.font-wifi {
+    fill: var(--wifi);
+}
+
+.iot-chart-caption {
+    font-size: 6pt;
+    color: var(--ink3);
+    font-style: italic;
+    text-align: center;
+    margin-top: 1mm;
 }
 
 /* ══ FOOTER ══ */
