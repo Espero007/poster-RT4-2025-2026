@@ -50,7 +50,11 @@
 }
 
 body {
-    width: 841mm;
+    /* Zoom uniforme de 1.3 pour agrandir tout le poster proportionnellement.
+       La largeur est réduite à 841mm / 1.3 ≈ 647mm pour que
+       zoom × largeur = 841mm (format A1 landscape préservé à l'impression). */
+    width: 647mm;
+    zoom: 1.3;
     background: var(--bg);
     font-family: 'Barlow', sans-serif;
     color: var(--ink);
@@ -65,7 +69,8 @@ body {
     }
 
     body {
-        width: 841mm
+        width: 647mm;
+        zoom: 1.3
     }
 }
 
@@ -181,13 +186,13 @@ header::after {
 /* } */
 
 .hdr-promo-image img {
-    height: 450px;
+    height: 346px;
     border-radius: 10px;
 }
 
 h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 55pt;
+    font-size: 42pt;
     font-weight: 900;
     line-height: .9;
     color: #fff;
@@ -225,7 +230,7 @@ h1 em {
 
 .hdr-stat-n {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20pt;
+    font-size: 15pt;
     font-weight: 800;
     color: #79bff7;
     line-height: 1
@@ -378,7 +383,7 @@ section.era-sec {
 
 .sec-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 7pt;
+    font-size: 10pt;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 1.5mm 3.5mm;
@@ -405,7 +410,7 @@ section.era-sec {
 
 .sec-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 23pt;
+    font-size: 22pt;
     font-weight: 800;
     line-height: 1
 }
@@ -429,7 +434,7 @@ section.era-sec {
 .sec-period {
     margin-left: auto;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9pt;
+    font-size: 11pt;
     font-weight: 900;
     color: var(--ink3)
 }
@@ -514,7 +519,7 @@ section.era-sec {
 
 .tc-yr {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 7.5pt;
+    font-size: 9.5pt;
     color: var(--ink3);
     margin-bottom: 1.5mm
 }
@@ -557,12 +562,12 @@ section.era-sec {
 }
 
 .tc-img img {
-    height: 150px;
+    height: 115px;
     border-radius: 5px;
 }
 
 .era-sec.e2 .tc-img img {
-    height: 200px;
+    height: 154px;
 }
 
 /* ══ ARCH PANELS ══ */
@@ -575,7 +580,7 @@ section.era-sec {
 }
 
 .ap-title {
-    font-size: 6.5pt;
+    font-size: 9pt;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--ink3);
@@ -678,8 +683,18 @@ section.era-sec {
     border-bottom: 1px solid var(--rule)
 }
 
+/* Scaling SVG text inside architectures to compensate for browser zoom issues on SVGs */
+.gen-arch svg text[font-size="3.5"] { font-size: 4.6px !important; }
+.gen-arch svg text[font-size="4"] { font-size: 5.2px !important; }
+.gen-arch svg text[font-size="4.5"] { font-size: 5.9px !important; }
+.gen-arch svg text[font-size="5"] { font-size: 6.5px !important; }
+.gen-arch svg text[font-size="5.5"] { font-size: 7.2px !important; }
+.gen-arch svg text[font-size="6"] { font-size: 7.8px !important; }
+.gen-arch svg text[font-size="7"] { font-size: 9.1px !important; }
+
+
 .ga-title {
-    font-size: 5.5pt;
+    font-size: 8pt;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--ink3);
@@ -786,11 +801,11 @@ section.era-sec {
 }
 
 .wimax-hdr {
-    padding: 3.5mm 5mm;
+    padding: 2.7mm 3.8mm;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 8mm;
+    gap: 6mm;
     border-bottom: 1px solid rgba(255, 255, 255, .1)
 }
 
@@ -831,7 +846,7 @@ section.era-sec {
 }
 
 .wimax-lbl {
-    font-size: 9pt;
+    font-size: 10.5pt;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -866,7 +881,7 @@ section.era-sec {
 
 .wimax-desc-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9pt;
+    font-size: 10.5pt;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -887,7 +902,7 @@ section.era-sec {
 /* ══ WIMAX HEADER GRID ══ */
 .wimax-hdr-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 34pt;
+    font-size: 26pt;
     font-weight: 900;
     color: #fff;
     line-height: 1
@@ -901,7 +916,7 @@ section.era-sec {
 }
 
 .wimax-hdr-period {
-    font-size: 8pt;
+    font-size: 10pt;
     color: rgba(255, 255, 255, .45);
     margin-top: .5mm
 }
@@ -921,7 +936,7 @@ section.era-sec {
 }
 
 .wimax-stat-lbl {
-    font-size: 9pt;
+    font-size: 10.5pt;
     color: rgba(255, 255, 255, .45);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -936,7 +951,7 @@ section.era-sec {
 }
 
 .wimax-stat-sub {
-    font-size: 8pt;
+    font-size: 9.5pt;
     color: rgba(255, 255, 255, .4)
 }
 
@@ -987,16 +1002,16 @@ section.era-sec {
 /* ══ 5G HEADER ══ */
 .g5-hdr {
     background: var(--g5);
-    padding: 3mm 5mm;
+    padding: 2.3mm 3.8mm;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 8mm
+    gap: 6mm
 }
 
 .g5-hdr-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 34pt;
+    font-size: 26pt;
     font-weight: 900;
     color: #fff;
     line-height: 1
@@ -1004,13 +1019,13 @@ section.era-sec {
 
 .g5-hdr-std {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
+    font-size: 10pt;
     color: rgba(255, 255, 255, .75);
     margin-top: 1mm
 }
 
 .g5-hdr-period {
-    font-size: 8pt;
+    font-size: 10pt;
     color: rgba(255, 255, 255, .5);
     margin-top: .5mm
 }
@@ -1018,8 +1033,7 @@ section.era-sec {
 /* ══ 5G STAT CHIPS ══ */
 .g5-stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 3mm
 }
 
@@ -1030,7 +1044,7 @@ section.era-sec {
 }
 
 .g5-stat-lbl {
-    font-size: 8pt;
+    font-size: 10pt;
     color: rgba(255, 255, 255, .5);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1039,7 +1053,7 @@ section.era-sec {
 
 .g5-stat-val {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14pt;
+    font-size: 13pt;
     font-weight: 700
 }
 
@@ -1060,7 +1074,7 @@ section.era-sec {
 }
 
 .g5-stat-sub {
-    font-size: 8pt;
+    font-size: 9.5pt;
     color: rgba(255, 255, 255, .5)
 }
 
@@ -1079,17 +1093,17 @@ section.era-sec {
 /* ══ 5G SBA DIAGRAM PANEL ══ */
 .g5-sba {
     background: #0e0e1a;
-    padding: 4mm 5mm;
+    padding: 3mm 3.8mm;
     border-top: 1px solid rgba(255, 255, 255, .07);
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 6mm;
+    gap: 4.6mm;
     align-items: start;
 }
 
 .g5-sba-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
+    font-size: 10pt;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, .3);
@@ -1117,7 +1131,7 @@ section.era-sec {
 
 .g5-sba-desc-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9pt;
+    font-size: 10.5pt;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1161,7 +1175,7 @@ section.era-sec {
 
 .sc-gen {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 7.5pt;
+    font-size: 9.5pt;
     color: rgba(255, 255, 255, .55);
     width: 16mm;
     flex-shrink: 0;
@@ -1182,7 +1196,7 @@ section.era-sec {
 
 .sc-val {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 7pt;
+    font-size: 9pt;
     font-weight: 600;
     color: rgba(255, 255, 255, .8);
     width: 18mm;
@@ -1203,7 +1217,7 @@ section.era-sec {
 
 .g5-speed-wrap .speed-compare {
     flex-shrink: 0;
-    width: 250mm;
+    width: 192mm;
     /* margin-top: 0; */
     /* border-radius: 0 */
 }
@@ -1272,7 +1286,7 @@ section.era-sec {
 
 .iot-badge {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14pt;
+    font-size: 18pt;
     font-weight: 800;
     margin-bottom: 1mm
 }
@@ -1303,7 +1317,7 @@ section.era-sec {
 
 .iot-yr {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 6pt;
+    font-size: 8.5pt;
     color: var(--ink3);
     margin-bottom: 2mm
 }
@@ -1315,7 +1329,7 @@ section.era-sec {
 }
 
 .iot-l {
-    font-size: 5.5pt;
+    font-size: 8pt;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -1325,7 +1339,7 @@ section.era-sec {
 }
 
 .iot-v {
-    font-size: 6.5pt;
+    font-size: 9pt;
     color: var(--ink2);
     line-height: 1.4
 }
@@ -1374,13 +1388,13 @@ section.era-sec {
 }
 
 .iot-layer-sub {
-    font-size: 6.5pt;
+    font-size: 9pt;
     color: rgba(255, 255, 255, .75);
     margin-top: .5mm
 }
 
 .iot-layer-desc {
-    font-size: 7.5pt;
+    font-size: 10pt;
     color: var(--ink2);
     line-height: 1.45;
     flex: 1
@@ -1488,7 +1502,7 @@ section.era-sec {
 
 .iot-layer-mono {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9pt;
+    font-size: 10.5pt;
     color: rgba(255, 255, 255, .6);
 }
 
@@ -1535,7 +1549,7 @@ section.era-sec {
 
 .iot-def-mono {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
+    font-size: 9.5pt;
     color: var(--ink3);
 }
 
@@ -1783,7 +1797,7 @@ section.era-sec {
 }
 
 .iot-chart-caption {
-    font-size: 6pt;
+    font-size: 8.5pt;
     color: var(--ink3);
     font-style: italic;
     text-align: center;
@@ -1799,7 +1813,7 @@ footer {
     align-items: center;
     color: white;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10pt;
+    font-size: 11pt;
     letter-spacing: 1px
 }
 
@@ -1820,7 +1834,7 @@ footer {
 /* ══ SUB-GEN LABEL ══ */
 .sub-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 5.5pt;
+    font-size: 8pt;
     color: rgba(255, 255, 255, .55);
     margin-top: 1mm;
     background: rgba(255, 255, 255, .1);
