@@ -978,15 +978,15 @@ section.era-sec {
 /* ══ 5G BAND ══ */
 .g5-band {
     margin-top: 3mm;
-    background: var(--card-bg);
+    background: #ffffff;
     border-radius: 3mm;
-    border: 1px solid var(--rule);
+    border: 1px solid #dde4f0;
     overflow: hidden
 }
 
 /* ══ 5G HEADER ══ */
 .g5-hdr {
-    background: var(--g5);
+    background: linear-gradient(135deg, #1e3a5f 0%, #0d2240 100%);
     padding: 3mm 5mm;
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -998,20 +998,20 @@ section.era-sec {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 34pt;
     font-weight: 900;
-    color: #fff;
+    color: #ffffff;
     line-height: 1
 }
 
 .g5-hdr-std {
     font-family: 'JetBrains Mono', monospace;
     font-size: 8pt;
-    color: rgba(255, 255, 255, .75);
+    color: rgba(255, 255, 255, .85);
     margin-top: 1mm
 }
 
 .g5-hdr-period {
     font-size: 8pt;
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .65);
     margin-top: .5mm
 }
 
@@ -1024,14 +1024,15 @@ section.era-sec {
 }
 
 .g5-stat {
-    background: rgba(255, 255, 255, .08);
+    background: rgba(255, 255, 255, .10);
     border-radius: 2mm;
-    padding: 2.5mm 3mm
+    padding: 2.5mm 3mm;
+    border: 1px solid rgba(255, 255, 255, .15)
 }
 
 .g5-stat-lbl {
     font-size: 8pt;
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .60);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 1mm
@@ -1043,25 +1044,14 @@ section.era-sec {
     font-weight: 700
 }
 
-.g5-stat-val--embb {
-    color: #ff8080
-}
-
-.g5-stat-val--urllc {
-    color: #80c0ff
-}
-
-.g5-stat-val--mmtc {
-    color: #80ff80
-}
-
-.g5-stat-val--spec {
-    color: #ffd080
-}
+.g5-stat-val--embb  { color: #ffb3b3 }
+.g5-stat-val--urllc { color: #b3d9ff }
+.g5-stat-val--mmtc  { color: #b3ffcc }
+.g5-stat-val--spec  { color: #ffe4b3 }
 
 .g5-stat-sub {
     font-size: 8pt;
-    color: rgba(255, 255, 255, .5)
+    color: rgba(255, 255, 255, .55)
 }
 
 /* ══ 5G BULLET LIST ══ */
@@ -1073,14 +1063,14 @@ section.era-sec {
 
 .g5-bullet {
     font-size: 9.5pt;
-    color: rgba(255, 255, 255, .6)
+    color: rgba(255, 255, 255, .80)
 }
 
 /* ══ 5G SBA DIAGRAM PANEL ══ */
 .g5-sba {
-    background: #0e0e1a;
+    background: #f4f7fc;
     padding: 4mm 5mm;
-    border-top: 1px solid rgba(255, 255, 255, .07);
+    border-top: 1px solid #dde4f0;
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 6mm;
@@ -1092,15 +1082,12 @@ section.era-sec {
     font-size: 8pt;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, .3);
+    color: #4a607f;
     margin-bottom: 3mm;
     text-align: center
 }
 
-.g5-sba-svg {
-    width: 100%;
-    display: block
-}
+.g5-sba-svg { width: 100%; display: block }
 
 .g5-sba-desc {
     display: flex;
@@ -1121,27 +1108,86 @@ section.era-sec {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, .5)
+    color: #1e3a5f
 }
 
 .g5-sba-desc-text {
     font-size: 10pt;
-    color: rgba(255, 255, 255, .7);
+    color: #2e3f58;
     line-height: 1.6
 }
 
 .g5-sba-desc-text b {
-    color: #79bff7;
+    color: #1565c0;
     font-weight: 600
 }
 
-/* ══ SPEED BAR ══ */
+/* ══ SPEED COMPARE ══ */
 .speed-compare {
-    background: var(--dark);
+    background: #f4f7fc;
     border-radius: 3mm;
     padding: 4mm 5mm;
-    margin-top: 3mm
+    margin-top: 3mm;
+    border: 1px solid #dde4f0
 }
+
+.sc-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1e3a5f;
+    margin-bottom: 3mm
+}
+
+.sc-gen {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: #2e3f58;
+    width: 28mm;
+    flex-shrink: 0
+}
+
+.sc-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10pt;
+    font-weight: 700;
+    width: 20mm;
+    text-align: right;
+    flex-shrink: 0
+}
+
+.sc-bar-wrap {
+    flex: 1;
+    background: #dde4f0;
+    border-radius: 1mm;
+    height: 4mm;
+    overflow: hidden
+}
+
+.sc-bar {
+    height: 100%;
+    border-radius: 1mm
+}
+
+.sc-row {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin-bottom: 2mm
+}
+
+.sc-note {
+    font-size: 8pt;
+    color: #3a4f6a;
+    line-height: 1.6;
+    margin-top: 3mm;
+    padding-top: 3mm;
+    border-top: 1px solid #dde4f0
+}
+
+.sc-note b { color: #1e3a5f }
 
 .sc-title {
     font-family: 'Barlow Condensed', sans-serif;
@@ -1214,7 +1260,7 @@ section.era-sec {
     padding-top: 2.5mm;
     border-top: 1px solid rgba(255, 255, 255, .3);
     font-size: 10pt;
-    color: rgba(255, 255, 255, .55);
+    color: #1e3a5f;
     line-height: 1.8;
     text-align: justify;
     font-style: italic
