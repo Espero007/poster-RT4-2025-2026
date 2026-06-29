@@ -567,8 +567,13 @@ section.era-sec {
 }
 
 .tc-img img {
-    height: 115px;
+    height: 45mm;
     border-radius: 5px;
+}
+
+.last{
+    grid-column-start: -4;
+    grid-column-end: -1;
 }
 
 .era-sec.e2 .tc-img img {
