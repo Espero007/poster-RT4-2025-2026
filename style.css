@@ -453,7 +453,7 @@ section.era-sec {
 
 .era2-body {
     display: grid;
-    grid-template-columns: 200mm 1fr;
+    grid-template-columns: 170mm 1fr;
     gap: 6mm;
     align-items: start
 }
@@ -577,7 +577,7 @@ section.era-sec {
 }
 
 .era-sec.e2 .tc-img img {
-    height: 154px;
+    height: 45mm;
 }
 
 /* ══ ARCH PANELS ══ */
