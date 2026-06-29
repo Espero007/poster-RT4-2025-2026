@@ -108,10 +108,31 @@ header::after {
     align-items: start
 }
 
+/* ── row-1 : logo UAC | contenu centré | logo EPAC ── */
 .hdr-inner .row-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Bloc central : eyebrow + badge promo */
+.hdr-row-1-center {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+/* Logos encadrants */
+.hdr-logo {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 6px;
 }
 
 .hdr-inner .row-2 {
@@ -129,7 +150,7 @@ header::after {
 
 .hdr-eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
+    font-size: 20pt;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 1);
@@ -151,7 +172,7 @@ header::after {
 
 .hdr-promo-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
+    font-size: 15pt;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 1);
@@ -159,7 +180,7 @@ header::after {
 
 .hdr-promo-value {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 10pt;
+    font-size: 19pt;
     font-weight: 700;
     color: #79bff7;
     letter-spacing: .5px
@@ -200,7 +221,7 @@ h1 em {
 }
 
 .hdr-sub {
-    font-size: 10pt;
+    font-size: 17pt;
     font-weight: 300;
     color: white;
     margin-top: 3mm;
