@@ -371,7 +371,8 @@
               d="M100,372 L100,316 Q106,260 176,244 L256,224 Q316,214 400,214 L500,220 Q560,228 616,248 L660,280 Q680,304 680,316 L680,372 Z"
               fill="#c8860a" />
             <path d="M216,244 L244,200 Q290,170 380,166 Q470,166 516,188 L564,224 L564,244 Z" fill="#e0960c" />
-            <path d="M230,240 L256,200 Q296,174 380,170 Q464,170 512,192 L556,224 L556,240 Z" fill="rgba(130,180,220,.5)" />
+            <path d="M230,240 L256,200 Q296,174 380,170 Q464,170 512,192 L556,224 L556,240 Z"
+              fill="rgba(130,180,220,.5)" />
             <line x1="390" y1="240" x2="390" y2="368" stroke="#a07000" stroke-width="3" />
             <rect x="84" y="376" width="36" height="24" rx="6" fill="#ccc" />
             <rect x="650" y="376" width="36" height="24" rx="6" fill="#ccc" />
@@ -383,8 +384,8 @@
             <circle cx="536" cy="416" r="16" fill="#888" />
             <rect x="386" y="156" width="6" height="64" rx="2" fill="#555" />
             <rect x="536" y="268" width="104" height="52" rx="4" fill="#3a2808" />
-            <path d="M552,280 Q548,274 544,280 L538,306 Q536,312 542,314 L558,312 Q564,310 566,304 L562,280 Z" fill="#1a1a1a"
-              stroke="#555" stroke-width="2" />
+            <path d="M552,280 Q548,274 544,280 L538,306 Q536,312 542,314 L558,312 Q564,310 566,304 L562,280 Z"
+              fill="#1a1a1a" stroke="#555" stroke-width="2" />
             <rect x="584" y="280" width="44" height="32" rx="4" fill="#2a2a2a" />
             <rect x="200" y="20" width="380" height="32" rx="6" fill="rgba(184,88,0,.12)" />
             <text x="380" y="42" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="25"
@@ -1665,110 +1666,111 @@
         <!-- Card 2 : Architecture -->
         <div class="wimax-card">
           <div class="wimax-card-title">Architecture WiMAX</div>
-          <svg viewBox="0 0 420 80" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <svg viewBox="0 0 350 160" xmlns="http://www.w3.org/2000/svg" style="width:100%">
             <defs>
               <marker id="awm" markerWidth="4" markerHeight="3" refX="3" refY="1.5" orient="auto">
                 <polygon points="0 0,4 1.5,0 3" fill="rgba(255,255,255,.5)" />
               </marker>
             </defs>
 
-            <!-- ── Colonne gauche : architecture ── -->
+            <!-- ── PARTIE HAUTE : Architecture pleine largeur ── -->
 
             <!-- SS/MS -->
-            <rect x="2" y="10" width="44" height="20" rx="2" fill="rgba(255,255,255,.18)" />
-            <text x="24" y="19" text-anchor="middle" font-family="monospace" font-size="4.5" fill="white"
+            <rect x="2" y="10" width="60" height="26" rx="2" fill="rgba(255,255,255,.18)" />
+            <text x="32" y="21" text-anchor="middle" font-family="monospace" font-size="8" fill="white"
               font-weight="600">SS /
               MS</text>
-            <text x="24" y="26" text-anchor="middle" font-family="monospace" font-size="3.5"
+            <text x="32" y="30" text-anchor="middle" font-family="monospace" font-size="6.5"
               fill="rgba(255,255,255,.5)">Subscriber</text>
 
-            <!-- BS -->
-            <rect x="58" y="6" width="52" height="28" rx="2" fill="rgba(255,255,255,.22)" />
-            <text x="84" y="16" text-anchor="middle" font-family="monospace" font-size="5" fill="white"
-              font-weight="600">BS</text>
-            <text x="84" y="23" text-anchor="middle" font-family="monospace" font-size="3.5"
-              fill="rgba(255,255,255,.7)">Base
-              Station</text>
-            <text x="84" y="30" text-anchor="middle" font-family="monospace" font-size="3.2"
-              fill="rgba(255,255,255,.5)">OFDM/OFDMA · MIMO</text>
-
-            <!-- ASN-GW -->
-            <rect x="122" y="6" width="62" height="28" rx="2" fill="rgba(255,255,255,.18)" />
-            <text x="153" y="16" text-anchor="middle" font-family="monospace" font-size="4.5" fill="white"
-              font-weight="600">ASN-GW</text>
-            <text x="153" y="23" text-anchor="middle" font-family="monospace" font-size="3.2"
-              fill="rgba(255,255,255,.5)">Access
-              Service Network</text>
-            <text x="153" y="29" text-anchor="middle" font-family="monospace" font-size="3.2"
-              fill="rgba(255,255,255,.5)">Gateway</text>
-
-            <!-- CSN -->
-            <rect x="196" y="6" width="44" height="28" rx="2" fill="rgba(255,255,255,.18)" />
-            <text x="218" y="16" text-anchor="middle" font-family="monospace" font-size="4.5" fill="white"
-              font-weight="600">CSN</text>
-            <text x="218" y="23" text-anchor="middle" font-family="monospace" font-size="3.2"
-              fill="rgba(255,255,255,.5)">Connectivity</text>
-            <text x="218" y="29" text-anchor="middle" font-family="monospace" font-size="3.2"
-              fill="rgba(255,255,255,.5)">Service
-              Net.</text>
-
-            <!-- Flèches -->
-            <line x1="46" y1="20" x2="57" y2="20" stroke="rgba(255,255,255,.4)" stroke-width=".8"
+            <!-- Flèche R1 -->
+            <line x1="62" y1="23" x2="82" y2="23" stroke="rgba(255,255,255,.4)" stroke-width=".8"
               marker-end="url(#awm)" />
-            <text x="52" y="17" text-anchor="middle" font-family="monospace" font-size="3"
+            <text x="72" y="20" text-anchor="middle" font-family="monospace" font-size="5"
               fill="rgba(255,255,255,.5)">R1
               Air</text>
 
-            <line x1="110" y1="20" x2="121" y2="20" stroke="rgba(255,255,255,.4)" stroke-width=".8"
+            <!-- BS -->
+            <rect x="84" y="6" width="72" height="34" rx="2" fill="rgba(255,255,255,.22)" />
+            <text x="120" y="18" text-anchor="middle" font-family="monospace" font-size="8" fill="white"
+              font-weight="600">BS</text>
+            <text x="120" y="26" text-anchor="middle" font-family="monospace" font-size="6"
+              fill="rgba(255,255,255,.7)">Base
+              Station</text>
+            <text x="120" y="34" text-anchor="middle" font-family="monospace" font-size="6.2"
+              fill="rgba(255,255,255,.5)">OFDM/OFDMA · MIMO</text>
+
+            <!-- Flèche R6 -->
+            <line x1="156" y1="23" x2="176" y2="23" stroke="rgba(255,255,255,.4)" stroke-width=".8"
               marker-end="url(#awm)" />
-            <text x="116" y="17" text-anchor="middle" font-family="monospace" font-size="3"
+            <text x="166" y="20" text-anchor="middle" font-family="monospace" font-size="5"
               fill="rgba(255,255,255,.5)">R6</text>
 
-            <line x1="184" y1="20" x2="195" y2="20" stroke="rgba(255,255,255,.4)" stroke-width=".8"
+            <!-- ASN-GW -->
+            <rect x="178" y="6" width="80" height="34" rx="2" fill="rgba(255,255,255,.18)" />
+            <text x="218" y="18" text-anchor="middle" font-family="monospace" font-size="8" fill="white"
+              font-weight="600">ASN-GW</text>
+            <text x="218" y="26" text-anchor="middle" font-family="monospace" font-size="6"
+              fill="rgba(255,255,255,.5)">Access
+              Service Network</text>
+            <text x="218" y="34" text-anchor="middle" font-family="monospace" font-size="6.5"
+              fill="rgba(255,255,255,.5)">Gateway</text>
+
+            <!-- Flèche R3 -->
+            <line x1="258" y1="23" x2="278" y2="23" stroke="rgba(255,255,255,.4)" stroke-width=".8"
               marker-end="url(#awm)" />
-            <text x="190" y="17" text-anchor="middle" font-family="monospace" font-size="3"
+            <text x="268" y="20" text-anchor="middle" font-family="monospace" font-size="5"
               fill="rgba(255,255,255,.5)">R3</text>
 
-            <!-- Zones -->
-            <rect x="2" y="38" width="114" height="8" rx="1" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.12)"
+            <!-- CSN -->
+            <rect x="280" y="6" width="70" height="34" rx="2" fill="rgba(255,255,255,.18)" />
+            <text x="315" y="18" text-anchor="middle" font-family="monospace" font-size="8" fill="white"
+              font-weight="600">CSN</text>
+            <text x="315" y="26" text-anchor="middle" font-family="monospace" font-size="6.5"
+              fill="rgba(255,255,255,.5)">Connectivity</text>
+            <text x="315" y="34" text-anchor="middle" font-family="monospace" font-size="6.5"
+              fill="rgba(255,255,255,.5)">Service
+              Net.</text>
+
+            <!-- Zones ASN / CSN -->
+            <rect x="2" y="46" width="170" height="10" rx="1" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.12)"
               stroke-width=".5" />
-            <text x="59" y="43.5" text-anchor="middle" font-family="monospace" font-size="3.2"
+            <text x="87" y="53.5" text-anchor="middle" font-family="monospace" font-size="6.2"
               fill="rgba(255,255,255,.5)">ASN
               (Access Service Network)</text>
 
-            <rect x="122" y="38" width="118" height="8" rx="1" fill="rgba(255,255,255,.06)"
+            <rect x="178" y="46" width="172" height="10" rx="1" fill="rgba(255,255,255,.06)"
               stroke="rgba(255,255,255,.12)" stroke-width=".5" />
-            <text x="181" y="43.5" text-anchor="middle" font-family="monospace" font-size="3.2"
+            <text x="264" y="53.5" text-anchor="middle" font-family="monospace" font-size="6.2"
               fill="rgba(255,255,255,.5)">CSN
               (Connectivity Service Network)</text>
 
-            <!-- ── Séparateur vertical ── -->
-            <line x1="256" y1="4" x2="256" y2="74" stroke="rgba(255,255,255,.12)" stroke-width=".5"
+            <!-- ── Séparateur horizontal ── -->
+            <line x1="0" y1="62" x2="420" y2="62" stroke="rgba(255,255,255,.12)" stroke-width=".5"
               stroke-dasharray="3,2" />
 
-            <!-- ── Colonne droite : couches radio ── -->
-            <text x="262" y="12" font-family="monospace" font-size="4" fill="rgba(255,255,255,.6)"
-              font-weight="600">Couches
-              radio
+            <!-- ── PARTIE BAS : Couches radio 802.16e ── -->
+            <text x="4" y="74" font-family="monospace" font-size="8" fill="rgba(255,255,255,.6)"
+              font-weight="600">Couches radio
               802.16e :</text>
-            <text x="262" y="22" font-family="monospace" font-size="3.5" fill="rgba(255,255,255,.45)">▸ PHY : OFDMA
-              scalable (128
-              à 2048 sous-porteuses)</text>
-            <text x="262" y="31" font-family="monospace" font-size="3.5" fill="rgba(255,255,255,.45)">▸ MAC :
-              sous-couches CS,
-              CPS, Security</text>
-            <text x="262" y="40" font-family="monospace" font-size="3.5" fill="rgba(255,255,255,.45)">▸ Modulation
-              adaptive : BPSK
-              → 64QAM selon SNR</text>
-            <text x="262" y="49" font-family="monospace" font-size="3.5" fill="rgba(255,255,255,.45)">▸ MIMO (2×2)
-              pour gain de
-              capacité</text>
-            <text x="262" y="58" font-family="monospace" font-size="3.5" fill="rgba(255,255,255,.45)">▸ QoS : UGS,
-              rtPS, nrtPS, BE
+            <text x="4" y="86" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.45)">▸ PHY : OFDMA
+              scalable (128 à
+              2048 sous-porteuses)</text>
+            <text x="4" y="97" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.45)">▸ MAC : sous-couches
+              CS, CPS,
+              Security</text>
+            <text x="4" y="108" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.45)">▸ QoS : UGS, rtPS,
+              nrtPS, BE
               (classes de service)</text>
-            <text x="262" y="67" font-family="monospace" font-size="3.5" fill="rgba(255,255,255,.45)">▸ Sécurité :
-              AES-CCM 128
-              bits, PKMv2, EAP</text>
+            <text x="4" y="119" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.45)">▸ Modulation
+            adaptive : BPSK
+            → 64QAM selon SNR</text>
+            <text x="4" y="130" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.45)">▸ MIMO (2×2) pour
+            gain de
+            capacité</text>
+            <text x="4" y="141" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.45)">▸ Sécurité :
+            AES-CCM 128
+            bits, PKMv2, EAP</text>
           </svg>
         </div>
 

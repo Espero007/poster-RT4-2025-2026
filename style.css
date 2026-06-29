@@ -571,7 +571,7 @@ section.era-sec {
     border-radius: 5px;
 }
 
-.last{
+.last {
     grid-column-start: -4;
     grid-column-end: -1;
 }
@@ -847,49 +847,72 @@ section.era-sec {
     align-items: stretch;
 }
 
-/* Nouveau wrapper pour les cards empilées */
-.wimax-body-stack {
-    display: grid;
-    grid-template-rows: max-content max-content;
-    gap: 5mm
-}
-
-.wimax-card {
-    background: rgba(255, 255, 255, .08);
-    border-radius: 2mm;
-    padding: 3mm 3.5mm;
-    border: 1px solid rgba(255, 255, 255, .12)
-}
-
-.wimax-card-title {
+/* ══ WIMAX HEADER GRID ══ */
+.wimax-hdr-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13pt;
-    font-weight: 700;
+    font-size: 26pt;
+    font-weight: 900;
     color: #fff;
-    margin-bottom: 2mm
+    line-height: 1
 }
 
-.wimax-row {
-    display: flex;
-    gap: 2mm;
-    margin-bottom: 1.2mm
+.wimax-hdr-std {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16pt;
+    color: rgba(255, 255, 255, .75);
+    margin-top: 2mm
 }
 
-.wimax-lbl {
-    font-size: 10.5pt;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+.wimax-hdr-period {
+    font-size: 13pt;
+    color: rgba(255, 255, 255, .45);
+    margin-top: 1.5mm
+}
+
+/* ══ WIMAX STAT CHIPS ══ */
+.wimax-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3mm
+}
+
+.wimax-stat {
+    background: rgba(255, 255, 255, .1);
+    border-radius: 2mm;
+    padding: 2.5mm 3mm;
+    text-align: center
+}
+
+.wimax-stat-lbl {
+    font-size: 13pt;
+    color: rgba(255, 255, 255, .45);
     text-transform: uppercase;
-    color: rgba(255, 255, 255, .4);
-    min-width: 14mm;
-    flex-shrink: 0;
-    padding-top: .5mm
+    letter-spacing: 1px;
+    margin-bottom: 1mm
 }
 
-.wimax-val {
-    font-size: 10pt;
-    color: rgba(255, 255, 255, .85);
-    line-height: 1.4
+.wimax-stat-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20pt;
+    font-weight: 800;
+    color: #a0d4ff
+}
+
+.wimax-stat-sub {
+    font-size: 13pt;
+    color: rgba(255, 255, 255, .4)
+}
+
+/* ══ WIMAX BULLET LIST ══ */
+.wimax-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 2mm
+}
+
+.wimax-bullet {
+    font-size: 16pt;
+    color: rgba(255, 255, 255, .65)
 }
 
 /* ══ WIMAX DESCRIPTION BAND ══ */
@@ -911,7 +934,7 @@ section.era-sec {
 
 .wimax-desc-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5pt;
+    font-size: 16pt;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -919,7 +942,7 @@ section.era-sec {
 }
 
 .wimax-desc-text {
-    font-size: 10.5pt;
+    font-size: 16pt;
     color: rgba(255, 255, 255, .7);
     line-height: 1.6
 }
@@ -929,80 +952,49 @@ section.era-sec {
     font-weight: 600
 }
 
-/* ══ WIMAX HEADER GRID ══ */
-.wimax-hdr-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 26pt;
-    font-weight: 900;
-    color: #fff;
-    line-height: 1
-}
-
-.wimax-hdr-std {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10pt;
-    color: rgba(255, 255, 255, .75);
-    margin-top: 1mm
-}
-
-.wimax-hdr-period {
-    font-size: 10pt;
-    color: rgba(255, 255, 255, .45);
-    margin-top: .5mm
-}
-
-/* ══ WIMAX STAT CHIPS ══ */
-.wimax-stats {
+/* Nouveau wrapper pour les cards empilées */
+.wimax-body-stack {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3mm
+    grid-template-rows: max-content max-content;
+    gap: 5mm
 }
 
-.wimax-stat {
-    background: rgba(255, 255, 255, .1);
+.wimax-card {
+    background: rgba(255, 255, 255, .08);
     border-radius: 2mm;
-    padding: 2.5mm 3mm;
-    text-align: center
+    padding: 3mm 3.5mm;
+    border: 1px solid rgba(255, 255, 255, .12)
 }
 
-.wimax-stat-lbl {
-    font-size: 10.5pt;
-    color: rgba(255, 255, 255, .45);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1mm
-}
-
-.wimax-stat-val {
+.wimax-card-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13pt;
-    font-weight: 800;
-    color: #a0d4ff
+    font-size: 20pt;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2mm
 }
 
-.wimax-stat-sub {
-    font-size: 9.5pt;
-    color: rgba(255, 255, 255, .4)
-}
-
-/* ══ WIMAX BULLET LIST ══ */
-.wimax-bullets {
+.wimax-row {
     display: flex;
-    flex-direction: column;
-    gap: 2mm
+    gap: 5mm;
+    margin-bottom: 3.2mm
 }
 
-.wimax-bullet {
-    font-size: 10pt;
-    color: rgba(255, 255, 255, .65)
+.wimax-lbl {
+    font-size: 16pt;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .4);
+    min-width: 14mm;
+    flex-shrink: 0;
+    padding-top: .5mm
 }
 
-/* ══ WIMAX CARD NOTE ══ */
-.wimax-card-note {
-    margin-top: 2mm;
-    font-size: 10pt;
-    color: rgba(255, 255, 255, .45);
-    line-height: 1.5
+.wimax-val {
+    font-size: 16pt;
+    color: rgba(255, 255, 255, .85);
+    line-height: 1.4
 }
 
 /* ══ WIMAX CONTEXT BOX ══ */
@@ -1011,13 +1003,21 @@ section.era-sec {
     background: rgba(255, 255, 255, .07);
     border-radius: 2mm;
     padding: 2.5mm;
-    font-size: 10pt;
+    font-size: 16pt;
     color: rgba(255, 255, 255, .55);
     line-height: 1.6
 }
 
 .wimax-context-box b {
     color: rgba(255, 255, 255, .8)
+}
+
+/* ══ WIMAX CARD NOTE ══ */
+.wimax-card-note {
+    margin-top: 2mm;
+    font-size: 16pt;
+    color: rgba(255, 255, 255, .45);
+    line-height: 1.5
 }
 
 /* ══ 5G BAND ══ */
