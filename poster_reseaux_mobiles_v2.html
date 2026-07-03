@@ -1718,198 +1718,204 @@ a<!DOCTYPE html>
         </div>
 
         <!-- SBA Architecture Diagram -->
+
+        
         <div class="g5-sba">
           <div style="width: 400mm;">
             <div class="g5-sba-title">
               Architecture 5G — Service Based Architecture (SBA) · 3GPP Release 15
             </div>
+
+
             <svg class="g5-sba-svg" viewBox="0 0 400 90" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <marker id="a5g" markerWidth="4" markerHeight="3" refX="3" refY="1.5" orient="auto">
-                  <polygon points="0 0,4 1.5,0 3" fill="rgba(121,191,247,.6)" />
-                </marker>
-                <marker id="a5gr" markerWidth="4" markerHeight="3" refX="3" refY="1.5" orient="auto">
-                  <polygon points="0 0,4 1.5,0 3" fill="rgba(255,150,100,.6)" />
-                </marker>
-              </defs>
+  <defs>
+    <marker id="a5g" markerWidth="4" markerHeight="3" refX="3" refY="1.5" orient="auto">
+      <polygon points="0 0,4 1.5,0 3" fill="#2563eb"/>
+    </marker>
+    <marker id="a5gr" markerWidth="4" markerHeight="3" refX="3" refY="1.5" orient="auto">
+      <polygon points="0 0,4 1.5,0 3" fill="#e05c1a"/>
+    </marker>
+  </defs>
 
-              <!-- ── SBA Bus ── -->
-              <rect x="2" y="30" width="380" height="8" rx="1.5" fill="rgba(121,191,247,.08)"
-                stroke="rgba(121,191,247,.25)" stroke-width=".6" />
-              <text x="191" y="36" text-anchor="middle" font-family="monospace" font-size="3"
-                fill="rgba(121,191,247,.5)" font-weight="600" letter-spacing=".8">SERVICE BASED INTERFACE (SBI) — HTTP/2
-                · JSON · REST</text>
+  <!-- ── SBA Bus ── -->
+  <rect x="2" y="30" width="380" height="9" rx="2"
+        fill="#2563eb" stroke="#1d4ed8" stroke-width=".5"/>
+  <text x="191" y="36.5" text-anchor="middle"
+        font-family="monospace" font-size="3.2" font-weight="700"
+        fill="#ffffff" letter-spacing=".8">
+    SERVICE BASED INTERFACE (SBI) — HTTP/2 · JSON · REST
+  </text>
 
-              <!-- AMF x=2 -->
-              <rect x="2" y="8" width="36" height="20" rx="1.5" fill="#1a2a5e" stroke="rgba(121,191,247,.3)"
-                stroke-width=".6" />
-              <text x="20" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#79bff7"
-                font-weight="700">AMF</text>
-              <text x="20" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.45)">Access
-                &amp; Mobility Mgmt</text>
-              <line x1="20" y1="28" x2="20" y2="30" stroke="rgba(121,191,247,.4)" stroke-width=".8" />
+  <!-- ── NF Boxes (Control Plane) ── -->
 
-              <!-- SMF x=44 -->
-              <rect x="44" y="8" width="36" height="20" rx="1.5" fill="#1a2a5e" stroke="rgba(121,191,247,.3)"
-                stroke-width=".6" />
-              <text x="62" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#79bff7"
-                font-weight="700">SMF</text>
-              <text x="62" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.45)">Session
-                Management</text>
-              <line x1="62" y1="28" x2="62" y2="30" stroke="rgba(121,191,247,.4)" stroke-width=".8" />
+  <!-- AMF -->
+  <rect x="2" y="8" width="38" height="20" rx="2"
+        fill="#ffffff" stroke="#93b4e0" stroke-width=".7"/>
+  <text x="21" y="17" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#1e3a6e">AMF</text>
+  <text x="21" y="23" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#5a7a9a">Access &amp; Mobility</text>
+  <line x1="21" y1="28" x2="21" y2="30"
+        stroke="#2563eb" stroke-width=".8"/>
 
-              <!-- UDM x=86 -->
-              <rect x="86" y="8" width="36" height="20" rx="1.5" fill="#1a2a5e" stroke="rgba(121,191,247,.3)"
-                stroke-width=".6" />
-              <text x="104" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#79bff7"
-                font-weight="700">UDM</text>
-              <text x="104" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.45)">Unified
-                Data Mgmt</text>
-              <line x1="104" y1="28" x2="104" y2="30" stroke="rgba(121,191,247,.4)" stroke-width=".8" />
+  <!-- SMF -->
+  <rect x="46" y="8" width="38" height="20" rx="2"
+        fill="#ffffff" stroke="#93b4e0" stroke-width=".7"/>
+  <text x="65" y="17" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#1e3a6e">SMF</text>
+  <text x="65" y="23" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#5a7a9a">Session Mgmt</text>
+  <line x1="65" y1="28" x2="65" y2="30"
+        stroke="#2563eb" stroke-width=".8"/>
 
-              <!-- AUSF x=128 -->
-              <rect x="128" y="8" width="36" height="20" rx="1.5" fill="#1a2a5e" stroke="rgba(121,191,247,.3)"
-                stroke-width=".6" />
-              <text x="146" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#79bff7"
-                font-weight="700">AUSF</text>
-              <text x="146" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.45)">Auth.
-                Server Function</text>
-              <line x1="146" y1="28" x2="146" y2="30" stroke="rgba(121,191,247,.4)" stroke-width=".8" />
+  <!-- UDM -->
+  <rect x="90" y="8" width="38" height="20" rx="2"
+        fill="#ffffff" stroke="#93b4e0" stroke-width=".7"/>
+  <text x="109" y="17" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#1e3a6e">UDM</text>
+  <text x="109" y="23" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#5a7a9a">Unified Data Mgmt</text>
+  <line x1="109" y1="28" x2="109" y2="30"
+        stroke="#2563eb" stroke-width=".8"/>
 
-              <!-- PCF x=170 -->
-              <rect x="170" y="8" width="36" height="20" rx="1.5" fill="#1a2a5e" stroke="rgba(121,191,247,.3)"
-                stroke-width=".6" />
-              <text x="188" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#79bff7"
-                font-weight="700">PCF</text>
-              <text x="188" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.45)">Policy
-                Control Function</text>
-              <line x1="188" y1="28" x2="188" y2="30" stroke="rgba(121,191,247,.4)" stroke-width=".8" />
+  <!-- AUSF -->
+  <rect x="134" y="8" width="38" height="20" rx="2"
+        fill="#ffffff" stroke="#93b4e0" stroke-width=".7"/>
+  <text x="153" y="17" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#1e3a6e">AUSF</text>
+  <text x="153" y="23" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#5a7a9a">Auth. Server Fn.</text>
+  <line x1="153" y1="28" x2="153" y2="30"
+        stroke="#2563eb" stroke-width=".8"/>
 
-              <!-- NRF x=212 -->
-              <rect x="212" y="8" width="36" height="20" rx="1.5" fill="#1a3a5e" stroke="rgba(121,191,247,.45)"
-                stroke-width=".8" />
-              <text x="230" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#a0d4ff"
-                font-weight="700">NRF</text>
-              <text x="230" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.55)">NF
-                Repository Function</text>
-              <line x1="230" y1="28" x2="230" y2="30" stroke="rgba(121,191,247,.5)" stroke-width=".8" />
+  <!-- PCF -->
+  <rect x="178" y="8" width="38" height="20" rx="2"
+        fill="#ffffff" stroke="#93b4e0" stroke-width=".7"/>
+  <text x="197" y="17" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#1e3a6e">PCF</text>
+  <text x="197" y="23" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#5a7a9a">Policy Control</text>
+  <line x1="197" y1="28" x2="197" y2="30"
+        stroke="#2563eb" stroke-width=".8"/>
 
-              <!-- NSSF x=254 -->
-              <rect x="254" y="8" width="36" height="20" rx="1.5" fill="#1a2a5e" stroke="rgba(121,191,247,.3)"
-                stroke-width=".6" />
-              <text x="272" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#79bff7"
-                font-weight="700">NSSF</text>
-              <text x="272" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.45)">Network
-                Slice Selection</text>
-              <line x1="272" y1="28" x2="272" y2="30" stroke="rgba(121,191,247,.4)" stroke-width=".8" />
+  <!-- NRF — accentué -->
+  <rect x="222" y="6" width="38" height="24" rx="2"
+        fill="#ebf2ff" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="241" y="16" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#1d4ed8">NRF</text>
+  <text x="241" y="22" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#3b6cc0">NF Repository</text>
+  <text x="241" y="27" text-anchor="middle"
+        font-family="monospace" font-size="2.5" fill="#6a90c0">Function</text>
+  <line x1="241" y1="30" x2="241" y2="30"
+        stroke="#2563eb" stroke-width=".8"/>
 
-              <!-- NEF x=296 -->
-              <rect x="296" y="8" width="36" height="20" rx="1.5" fill="#1a2a5e" stroke="rgba(121,191,247,.3)"
-                stroke-width=".6" />
-              <text x="314" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#79bff7"
-                font-weight="700">NEF</text>
-              <text x="314" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.45)">Network
-                Exposure Fn.</text>
-              <line x1="314" y1="28" x2="314" y2="30" stroke="rgba(121,191,247,.4)" stroke-width=".8" />
+  <!-- NSSF -->
+  <rect x="266" y="8" width="38" height="20" rx="2"
+        fill="#ffffff" stroke="#93b4e0" stroke-width=".7"/>
+  <text x="285" y="17" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#1e3a6e">NSSF</text>
+  <text x="285" y="23" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#5a7a9a">Slice Selection</text>
+  <line x1="285" y1="28" x2="285" y2="30"
+        stroke="#2563eb" stroke-width=".8"/>
 
-              <!-- UPF x=338 -->
-              <rect x="338" y="8" width="36" height="20" rx="1.5" fill="#3a1a1a" stroke="rgba(255,150,100,.35)"
-                stroke-width=".8" />
-              <text x="356" y="17" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#ff9060"
-                font-weight="700">UPF</text>
-              <text x="356" y="23" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,200,160,.6)">User
-                Plane Function</text>
-              <line x1="356" y1="28" x2="356" y2="30" stroke="rgba(255,150,100,.4)" stroke-width=".8" />
+  <!-- NEF -->
+  <rect x="310" y="8" width="38" height="20" rx="2"
+        fill="#ffffff" stroke="#93b4e0" stroke-width=".7"/>
+  <text x="329" y="17" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#1e3a6e">NEF</text>
+  <text x="329" y="23" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#5a7a9a">Network Exposure</text>
+  <line x1="329" y1="28" x2="329" y2="30"
+        stroke="#2563eb" stroke-width=".8"/>
 
-              <!-- ── Bas : gNB, UE, DN ── -->
+  <!-- UPF — user plane, accent orange -->
+  <rect x="354" y="8" width="38" height="20" rx="2"
+        fill="#fff5ef" stroke="#e05c1a" stroke-width="1"/>
+  <text x="373" y="17" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#b84010">UPF</text>
+  <text x="373" y="23" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#c06030">User Plane Fn.</text>
+  <line x1="373" y1="28" x2="373" y2="30"
+        stroke="#e05c1a" stroke-width=".8"/>
 
-              <!-- gNB -->
-              <rect x="2" y="46" width="52" height="26" rx="1.5" fill="#1f1a3a" stroke="rgba(180,130,255,.3)"
-                stroke-width=".6" />
-              <text x="28" y="57" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#c090ff"
-                font-weight="700">gNB</text>
-              <text x="28" y="63" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.5)">Next
-                Generation Node B</text>
-              <text x="28" y="68" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.4)">Sub-6 /
-                mmWave · M-MIMO</text>
+  <!-- ── Bas : gNB, UE, DN ── -->
 
-              <!-- UE -->
-              <rect x="58" y="46" width="52" height="26" rx="1.5" fill="#1a1a2a" stroke="rgba(255,255,255,.1)"
-                stroke-width=".6" />
-              <text x="84" y="57" text-anchor="middle" font-family="monospace" font-size="4.5"
-                fill="rgba(255,255,255,.6)" font-weight="600">UE</text>
-              <text x="84" y="63" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.35)">User
-                Equipment</text>
-              <text x="84" y="68" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.35)">smartphone · IoT</text>
+  <!-- gNB -->
+  <rect x="2" y="46" width="54" height="26" rx="2"
+        fill="#f0ebff" stroke="#7c3aed" stroke-width=".8"/>
+  <text x="29" y="57" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#5b21b6">gNB</text>
+  <text x="29" y="63" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#7c5aaa">Next Gen Node B</text>
+  <text x="29" y="68" text-anchor="middle"
+        font-family="monospace" font-size="2.6" fill="#9a7acc">Sub-6 / mmWave · M-MIMO</text>
 
-              <!-- DN — aligné sous UPF -->
-              <rect x="330" y="46" width="52" height="26" rx="1.5" fill="#1a2a1a" stroke="rgba(100,200,100,.25)"
-                stroke-width=".6" />
-              <text x="356" y="57" text-anchor="middle" font-family="monospace" font-size="4.5" fill="#80d880"
-                font-weight="700">DN</text>
-              <text x="356" y="63" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.45)">Data
-                Network</text>
-              <text x="356" y="68" text-anchor="middle" font-family="monospace" font-size="2.7"
-                fill="rgba(255,255,255,.35)">Internet / IMS / MEC</text>
+  <!-- UE -->
+  <rect x="62" y="46" width="54" height="26" rx="2"
+        fill="#f4f6fb" stroke="#8aa0c0" stroke-width=".7"/>
+  <text x="89" y="57" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="600" fill="#2a3a52">MS</text>
+  <text x="89" y="63" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#5a6a82">Mobile Station</text>
+  <text x="89" y="68" text-anchor="middle"
+        font-family="monospace" font-size="2.6" fill="#8090aa">smartphone · IoT</text>
 
-              <!-- ── Liens ── -->
+  <!-- DN -->
+  <rect x="346" y="46" width="54" height="26" rx="2"
+        fill="#edfaf0" stroke="#22a855" stroke-width=".8"/>
+  <text x="373" y="57" text-anchor="middle"
+        font-family="monospace" font-size="5" font-weight="700" fill="#166534">DN</text>
+  <text x="373" y="63" text-anchor="middle"
+        font-family="monospace" font-size="2.8" fill="#2d7a50">Data Network</text>
+  <text x="373" y="68" text-anchor="middle"
+        font-family="monospace" font-size="2.6" fill="#4a9a70">Internet / IMS / MEC</text>
 
-              <!-- N2 : gNB → AMF (vertical) -->
-              <line x1="20" y1="46" x2="20" y2="30" stroke="rgba(121,191,247,.5)" stroke-width=".8"
-                stroke-dasharray="2,2" marker-end="url(#a5g)" />
-              <text x="13" y="42" font-family="monospace" font-size="4.5" fill="rgba(121,191,247,.5)">N2</text>
+  <!-- ── Liens ── -->
 
-              <!-- N3 : gNB → UPF (horizontal sous le bus) -->
-              <line x1="54" y1="59" x2="330" y2="59" stroke="rgba(255,150,100,.4)" stroke-width=".8"
-                stroke-dasharray="3,2" marker-end="url(#a5gr)" />
-              <text x="192" y="56" text-anchor="middle" font-family="monospace" font-size="4.5"
-                fill="rgba(255,150,100,.5)">N3 —
-                User Plane (données)</text>
+  <!-- N2 : gNB → AMF -->
+  <line x1="21" y1="46" x2="21" y2="28"
+        stroke="#2563eb" stroke-width=".8" stroke-dasharray="2,2"
+        marker-end="url(#a5g)"/>
+  <text x="14" y="42" font-family="monospace" font-size="4" fill="#2563eb" font-weight="600">N2</text>
 
-              <!-- N6 : UPF → DN (vertical) -->
-              <line x1="356" y1="28" x2="356" y2="46" stroke="rgba(255,150,100,.4)" stroke-width=".8"
-                stroke-dasharray="3,2" marker-end="url(#a5gr)" />
-              <text x="362" y="43" font-family="monospace" font-size="4.5" fill="rgba(255,150,100,.4)">N6</text>
+  <!-- N3 : gNB → UPF (user plane) -->
+  <line x1="56" y1="59" x2="346" y2="59"
+        stroke="#e05c1a" stroke-width=".9" stroke-dasharray="3,2"
+        marker-end="url(#a5gr)"/>
+  <text x="200" y="56" text-anchor="middle"
+        font-family="monospace" font-size="4" fill="#e05c1a" font-weight="600">N3 — User Plane (données)</text>
 
-              <!-- N4 : SMF → UPF (au-dessus des NF boxes, en L) -->
-              <polyline points="62,8 62,3 356,3 356,8" fill="none" stroke="rgba(121,191,247,.4)" stroke-width=".7"
-                stroke-dasharray="2,2" marker-end="url(#a5g)" />
-              <text x="210" y="1.5" text-anchor="middle" font-family="monospace" font-size="4.5"
-                fill="rgba(121,191,247,.35)">N4</text>
+  <!-- N6 : UPF → DN -->
+  <line x1="373" y1="28" x2="373" y2="46"
+        stroke="#e05c1a" stroke-width=".8" stroke-dasharray="3,2"
+        marker-end="url(#a5gr)"/>
+  <text x="378" y="42" font-family="monospace" font-size="4" fill="#e05c1a">N6</text>
 
-              <!-- ── Légende ── -->
-              <rect x="2" y="76" width="380" height="12" rx="1.5" fill="rgba(255,255,255,.03)"
-                stroke="rgba(255,255,255,.06)" stroke-width=".5" />
-              <line x1="8" y1="80" x2="22" y2="80" stroke="rgba(121,191,247,.5)" stroke-width=".8" />
-              <text x="26" y="81" font-family="monospace" font-size="3" fill="rgba(255,255,255,.4)">Plan de contrôle
-                (SBI)</text>
-              <line x1="110" y1="80" x2="124" y2="80" stroke="rgba(255,150,100,.5)" stroke-width=".8"
-                stroke-dasharray="3,2" />
-              <text x="128" y="81" font-family="monospace" font-size="3" fill="rgba(255,255,255,.4)">Plan
-                utilisateur</text>
-              <line x1="200" y1="80" x2="214" y2="80" stroke="rgba(121,191,247,.4)" stroke-width=".7"
-                stroke-dasharray="2,2" />
-              <text x="218" y="81" font-family="monospace" font-size="3" fill="rgba(255,255,255,.4)">Signalisation
-                RAN↔CN</text>
-              <text x="8" y="86" font-family="monospace" font-size="2.8" fill="rgba(255,255,255,.25)">AMF · SMF · UDM ·
-                AUSF
-                · PCF ·
-                NRF · NSSF · NEF · UPF</text>
-            </svg>
+  <!-- N4 : SMF → UPF (arc au-dessus) -->
+  <polyline points="65,8 65,3 373,3 373,8"
+            fill="none" stroke="#2563eb" stroke-width=".7"
+            stroke-dasharray="2,2" marker-end="url(#a5g)"/>
+  <text x="219" y="2" text-anchor="middle"
+        font-family="monospace" font-size="3.5" fill="#4a80d0">N4</text>
+
+  <!-- ── Légende ── -->
+  <rect x="2" y="76" width="390" height="12" rx="1.5"
+        fill="#eef2f9" stroke="#c5d3e8" stroke-width=".5"/>
+  <line x1="8" y1="82" x2="22" y2="82"
+        stroke="#2563eb" stroke-width="1"/>
+  <text x="26" y="83.5" font-family="monospace" font-size="3" fill="#2a3a52">Plan de contrôle (SBI)</text>
+  <line x1="110" y1="82" x2="124" y2="82"
+        stroke="#e05c1a" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="128" y="83.5" font-family="monospace" font-size="3" fill="#2a3a52">Plan utilisateur</text>
+  <line x1="200" y1="82" x2="214" y2="82"
+        stroke="#2563eb" stroke-width=".7" stroke-dasharray="2,2"/>
+  <text x="218" y="83.5" font-family="monospace" font-size="3" fill="#2a3a52">Signalisation RAN↔CN</text>
+  <text x="8" y="86.5" font-family="monospace" font-size="2.6" fill="#6a7a92">
+    AMF · SMF · UDM · AUSF · PCF · NRF · NSSF · NEF · UPF
+  </text>
+</svg>
           </div>
 
           <!-- Description — colonne droite -->
@@ -1955,74 +1961,140 @@ a<!DOCTYPE html>
       </div>
 
       <!-- Speed comparison -->
-      <div class="speed-compare">
-        <div class="sc-title">Évolution des Débits Descendants — 2G → 5G</div>
-        <div class="sc-row"><span class="sc-gen">2G GSM</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:.005%;background:var(--g2)"></div>
-          </div><span class="sc-val" style="color:var(--g2)">9,6 kb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">2.5G GPRS</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:.55%;background:var(--g25)"></div>
-          </div><span class="sc-val" style="color:var(--g25)">114 kb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">2.75G EDGE</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:1.9%;background:var(--g275)"></div>
-          </div><span class="sc-val" style="color:var(--g275)">384 kb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">3G UMTS</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:1.9%;background:var(--g3)"></div>
-          </div><span class="sc-val" style="color:var(--g3)">384 kb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">WiMAX</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:37%;background:var(--wimax)"></div>
-          </div><span class="sc-val" style="color:var(--wimax)">75 Mb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">3.5G HSDPA</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:7%;background:var(--g35)"></div>
-          </div><span class="sc-val" style="color:var(--g35)">14,4 Mb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">3.75G HSPA+</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:21%;background:var(--g375)"></div>
-          </div><span class="sc-val" style="color:var(--g375)">42 Mb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">4G LTE</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:50%;background:var(--g4)"></div>
-          </div><span class="sc-val" style="color:var(--g4)">100 Mb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">4G LTE+</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:75%;background:var(--g4p)"></div>
-          </div><span class="sc-val" style="color:var(--g4p)">300 Mb/s</span>
-        </div>
-        <div class="sc-row"><span class="sc-gen">5G NR</span>
-          <div class="sc-bar-wrap">
-            <div class="sc-bar" style="width:100%;background:linear-gradient(90deg,var(--g5),#ff4444)"></div>
-          </div>
-          <span class="sc-val" style="color:var(--g5)">20 Gb/s</span>
-        </div>
+<div class="speed-compare">
 
-        <!-- Commentaire graphe débits -->
-        <div class="sc-note">
-          Les débits indiqués sont les valeurs de crête théoriques en conditions idéales. Les débits réels varient selon
-          la densité du réseau, la distance à l'antenne, le nombre d'utilisateurs simultanés et les conditions de
-          propagation. Le passage 3G→4G représente un bond ×260 ; le bond 4G→5G atteint ×200 en débit de pointe, avec en
-          sus une latence réduite à &lt; 1 ms contre ~30–50 ms en LTE. Ces sauts de plusieurs ordres de grandeur ne sont
-          pas le fruit du hasard : chaque génération a introduit une rupture technologique fondamentale — nouveau
-          paradigme d'accès radio, refonte de la modulation, redéfinition de l'architecture cœur. La 5G, en particulier,
-          ne se contente pas d'accélérer : elle change la nature même du réseau, passant d'un tuyau à débit variable à
-          une <b style="color:rgba(255,255,255,.6)">infrastructure programmable</b> capable de se découper, se
-          virtualiser et s'adapter en temps réel aux usages — une évolution qualitative autant que quantitative.
-        </div>
-      </div>
+  <!-- Titre visible -->
+  <div class="sc-title" style="font-family:'JetBrains Mono',monospace; font-size:9pt; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#1e3a5f; margin-bottom:3mm; border-bottom:2px solid #1e3a5f; padding-bottom:2mm;">
+    Évolution des Débits Descendants — 2G → 5G
+  </div>
+
+  <!-- En-tête axes -->
+  <div style="display:flex; align-items:center; gap:0; margin-bottom:1mm;">
+    <span style="font-family:'JetBrains Mono',monospace; font-size:6.5pt; color:#4a607f; font-style:italic; width:28mm; flex-shrink:0;">
+      Ordonnées (Y)
+    </span>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:6.5pt; color:#4a607f; font-style:italic; flex:1; text-align:center;">
+      Abscisses (X) — Débit de crête théorique · échelle linéaire · référence = 20 Gb/s (5G NR) →
+    </span>
+    <span style="width:20mm; flex-shrink:0;"></span>
+  </div>
+  <div style="display:flex; align-items:center; gap:0; margin-bottom:2mm;">
+    <span style="font-family:'JetBrains Mono',monospace; font-size:6.5pt; color:#4a607f; font-style:italic; width:28mm; flex-shrink:0;">
+      Génération mobile
+    </span>
+    <div style="flex:1; height:1px; background:linear-gradient(90deg,#c8d4e8,#1e3a5f);"></div>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:6.5pt; color:#1e3a5f; width:20mm; text-align:right; flex-shrink:0;">
+      Débit max ↓
+    </span>
+  </div>
+
+  <!-- Barres -->
+  <div class="sc-row">
+    <span class="sc-gen">2G GSM</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:.005%;background:#a8b8d0"></div>
     </div>
+    <span class="sc-val" style="color:#6a7f9a">9,6 kb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen">2.5G GPRS</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:.55%;background:#8eacc8"></div>
+    </div>
+    <span class="sc-val" style="color:#5a7090">114 kb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen">2.75G EDGE</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:1.9%;background:#7a9abf"></div>
+    </div>
+    <span class="sc-val" style="color:#4a6080">384 kb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen">3G UMTS</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:1.9%;background:#6a90b8"></div>
+    </div>
+    <span class="sc-val" style="color:#3a5070">384 kb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen">WiMAX</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:37%;background:#e09a50"></div>
+    </div>
+    <span class="sc-val" style="color:#a05c10">75 Mb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen">3.5G HSDPA</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:7%;background:#5888b0"></div>
+    </div>
+    <span class="sc-val" style="color:#2a5080">14,4 Mb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen">3.75G HSPA+</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:21%;background:#4878a8"></div>
+    </div>
+    <span class="sc-val" style="color:#1e4070">42 Mb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen">4G LTE</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:50%;background:#2a62a0"></div>
+    </div>
+    <span class="sc-val" style="color:#1a3a68">100 Mb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen">4G LTE+</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:75%;background:#1a4e8a"></div>
+    </div>
+    <span class="sc-val" style="color:#122f60">300 Mb/s</span>
+  </div>
+
+  <div class="sc-row">
+    <span class="sc-gen" style="font-weight:700;color:#1e3a5f;">5G NR</span>
+    <div class="sc-bar-wrap">
+      <div class="sc-bar" style="width:100%;background:linear-gradient(90deg,#1e3a5f,#c0440a)"></div>
+    </div>
+    <span class="sc-val" style="color:#c0440a;font-size:11pt;font-weight:700;">20 Gb/s</span>
+  </div>
+
+  <!-- Axe X bas -->
+  <div style="display:flex; align-items:center; margin-top:1.5mm; margin-bottom:1.5mm;">
+    <span style="width:28mm; flex-shrink:0;"></span>
+    <div style="flex:1; display:flex; justify-content:space-between; padding:0 1mm;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#8a9db8;">0</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#8a9db8;">5 Gb/s</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#8a9db8;">10 Gb/s</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#8a9db8;">15 Gb/s</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#1e3a5f; font-weight:700;">20 Gb/s</span>
+    </div>
+    <span style="width:20mm; flex-shrink:0;"></span>
+  </div>
+
+  <div class="sc-note">
+    Les débits indiqués sont les valeurs de crête théoriques en conditions idéales. Les débits réels varient selon
+    la densité du réseau, la distance à l'antenne, le nombre d'utilisateurs simultanés et les conditions de
+    propagation. Le passage 3G→4G représente un bond ×260 ; le bond 4G→5G atteint ×200 en débit de pointe, avec en
+    sus une latence réduite à &lt; 1 ms contre ~30–50 ms en LTE. Ces sauts de plusieurs ordres de grandeur ne sont
+    pas le fruit du hasard : chaque génération a introduit une rupture technologique fondamentale — nouveau
+    paradigme d'accès radio, refonte de la modulation, redéfinition de l'architecture cœur. La 5G, en particulier,
+    ne se contente pas d'accélérer : elle change la nature même du réseau, passant d'un tuyau à débit variable à
+    une <b>infrastructure programmable</b> capable de se découper, se virtualiser et s'adapter en temps réel
+    aux usages — une évolution qualitative autant que quantitative.
+  </div>
+
+</div>
   </section>
 
   <!-- ══════════ ÈRE IV — IoT & RÉSEAUX SPÉCIALISÉS ══════════ -->
