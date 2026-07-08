@@ -1244,53 +1244,157 @@ section.era-sec {
 
 .sc-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9pt;
+    font-size: 16pt;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #1e3a5f;
-    margin-bottom: 3mm
+    margin-bottom: 3mm;
+    border-bottom: 2px solid #1e3a5f;
+    padding-bottom: 2mm;
+}
+
+.sc-axis-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13pt;
+    color: #4a607f;
+    font-style: italic;
+}
+
+.sc-axis-y {
+    width: 58mm;
+    flex-shrink: 0;
+}
+
+.sc-axis-x {
+    flex: 1;
+    text-align: center;
+}
+
+.sc-axis-spacer {
+    width: 20mm;
+    flex-shrink: 0;
+}
+
+.sc-axis-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 1mm;
+}
+
+.sc-axis-row-2 {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 5mm;
+}
+
+.sc-axis-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #c8d4e8, #1e3a5f);
+}
+
+.sc-axis-max {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13pt;
+    color: #1e3a5f;
+    width: 40mm;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.sc-x-bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5mm;
+    margin-bottom: 1.5mm;
+}
+
+.sc-x-ticks {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1mm;
+}
+
+.sc-x-tick {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13pt;
+    color: #8a9db8;
+}
+
+.sc-x-tick-last {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13pt;
+    color: #1e3a5f;
+    font-weight: 700;
+}
+
+.sc-gen-highlight {
+    font-weight: 700;
+    color: #1e3a5f;
 }
 
 .sc-gen {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
+    font-size: 13pt;
     color: #2e3f58;
-    width: 28mm;
+    width: 38mm;
     flex-shrink: 0
 }
 
+/* .sc-gen {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5pt;
+    color: rgba(255, 255, 255, .55);
+    width: 16mm;
+    flex-shrink: 0;
+    text-align: right
+} */
+
 .sc-val {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 10pt;
-    font-weight: 700;
-    width: 20mm;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13pt;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .8);
+    width: 38mm;
     text-align: right;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .sc-bar-wrap {
     flex: 1;
     background: #dde4f0;
-    border-radius: 1mm;
+    border-radius: 2mm;
     height: 4mm;
     overflow: hidden
 }
 
 .sc-bar {
     height: 100%;
-    border-radius: 1mm
+    border-radius: 2mm
 }
 
 .sc-row {
     display: flex;
     align-items: center;
     gap: 3mm;
-    margin-bottom: 2mm
+    margin-bottom: 5mm
 }
 
 /* ══ SPEED COMPARE NOTE ══ */
 .sc-note {
+    font-size: 16pt;
+    color: #4a607f;
+    line-height: 1.6;
+    margin-top: 2mm;
+    padding-top: 2mm;
+    border-top: 1px solid #c8d4e8;
+}
+
+/* .sc-note {
     margin-top: 3mm;
     padding-top: 2.5mm;
     border-top: 1px solid rgba(255, 255, 255, .3);
@@ -1308,57 +1412,43 @@ section.era-sec {
     margin-top: 3mm;
     padding-top: 3mm;
     border-top: 1px solid #dde4f0
-}
+} */
 
 .sc-note b {
     color: #1e3a5f
 }
 
-.sc-title {
+.sc-note ul {
+    padding-left: 40px;
+}
+
+/* .sc-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 14pt;
     font-weight: 800;
     color: #fff;
     margin-bottom: 2.5mm;
     letter-spacing: .5px
-}
+} */
 
-.sc-row {
+/* .sc-row {
     display: flex;
     align-items: center;
     gap: 2.5mm;
     margin-bottom: 3mm
-}
+} */
 
-.sc-gen {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9.5pt;
-    color: rgba(255, 255, 255, .55);
-    width: 16mm;
-    flex-shrink: 0;
-    text-align: right
-}
-
-.sc-bar-wrap {
+/* .sc-bar-wrap {
     flex: 1;
     background: rgba(255, 255, 255, .07);
     border-radius: 2px;
     height: 5px
-}
+} */
 
-.sc-bar {
+/* .sc-bar {
     height: 100%;
     border-radius: 2px
-}
-
-.sc-val {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9pt;
-    font-weight: 600;
-    color: rgba(255, 255, 255, .8);
-    width: 18mm;
-    flex-shrink: 0
-}
+} */
 
 /* ══ IOT SECTION ══ */
 .iot-grid {

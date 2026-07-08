@@ -2158,37 +2158,22 @@
       <!-- Speed comparison -->
       <div class="speed-compare">
 
-        <!-- Titre visible -->
-        <div class="sc-title"
-          style="font-family:'JetBrains Mono',monospace; font-size:9pt; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#1e3a5f; margin-bottom:3mm; border-bottom:2px solid #1e3a5f; padding-bottom:2mm;">
-          Évolution des Débits Descendants — 2G → 5G
+        <div class="sc-title">Évolution des Débits Descendants — 2G → 5G</div>
+
+        <div class="sc-axis-row">
+          <span class="sc-axis-label sc-axis-y">Ordonnées (Y)</span>
+          <span class="sc-axis-label sc-axis-x">Abscisses (X) — Débit de crête théorique · échelle linéaire · référence
+            = 20
+            Gb/s (5G NR) →</span>
+          <span class="sc-axis-spacer"></span>
         </div>
 
-        <!-- En-tête axes -->
-        <div style="display:flex; align-items:center; gap:0; margin-bottom:1mm;">
-          <span
-            style="font-family:'JetBrains Mono',monospace; font-size:6.5pt; color:#4a607f; font-style:italic; width:28mm; flex-shrink:0;">
-            Ordonnées (Y)
-          </span>
-          <span
-            style="font-family:'JetBrains Mono',monospace; font-size:6.5pt; color:#4a607f; font-style:italic; flex:1; text-align:center;">
-            Abscisses (X) — Débit de crête théorique · échelle linéaire · référence = 20 Gb/s (5G NR) →
-          </span>
-          <span style="width:20mm; flex-shrink:0;"></span>
-        </div>
-        <div style="display:flex; align-items:center; gap:0; margin-bottom:2mm;">
-          <span
-            style="font-family:'JetBrains Mono',monospace; font-size:6.5pt; color:#4a607f; font-style:italic; width:28mm; flex-shrink:0;">
-            Génération mobile
-          </span>
-          <div style="flex:1; height:1px; background:linear-gradient(90deg,#c8d4e8,#1e3a5f);"></div>
-          <span
-            style="font-family:'JetBrains Mono',monospace; font-size:6.5pt; color:#1e3a5f; width:20mm; text-align:right; flex-shrink:0;">
-            Débit max ↓
-          </span>
+        <div class="sc-axis-row-2">
+          <span class="sc-axis-label sc-axis-y">Génération mobile</span>
+          <div class="sc-axis-line"></div>
+          <span class="sc-axis-max">Débit max ↓</span>
         </div>
 
-        <!-- Barres -->
         <div class="sc-row">
           <span class="sc-gen">2G GSM</span>
           <div class="sc-bar-wrap">
@@ -2262,43 +2247,41 @@
         </div>
 
         <div class="sc-row">
-          <span class="sc-gen" style="font-weight:700;color:#1e3a5f;">5G NR</span>
+          <span class="sc-gen sc-gen-highlight">5G NR</span>
           <div class="sc-bar-wrap">
             <div class="sc-bar" style="width:100%;background:linear-gradient(90deg,#1e3a5f,#c0440a)"></div>
           </div>
-          <span class="sc-val" style="color:#c0440a;font-size:11pt;font-weight:700;">20 Gb/s</span>
+          <span class="sc-val" style="color:#c0440a;">20 Gb/s</span>
         </div>
 
-        <!-- Axe X bas -->
-        <div style="display:flex; align-items:center; margin-top:1.5mm; margin-bottom:1.5mm;">
-          <span style="width:28mm; flex-shrink:0;"></span>
-          <div style="flex:1; display:flex; justify-content:space-between; padding:0 1mm;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#8a9db8;">0</span>
-            <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#8a9db8;">5 Gb/s</span>
-            <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#8a9db8;">10 Gb/s</span>
-            <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#8a9db8;">15 Gb/s</span>
-            <span style="font-family:'JetBrains Mono',monospace; font-size:6pt; color:#1e3a5f; font-weight:700;">20
-              Gb/s</span>
+        <div class="sc-x-bottom">
+          <span class="sc-axis-y"></span>
+          <div class="sc-x-ticks">
+            <span class="sc-x-tick">0</span>
+            <span class="sc-x-tick">5 Gb/s</span>
+            <span class="sc-x-tick">10 Gb/s</span>
+            <span class="sc-x-tick">15 Gb/s</span>
+            <span class="sc-x-tick-last">20 Gb/s</span>
           </div>
-          <span style="width:20mm; flex-shrink:0;"></span>
+          <span class="sc-axis-spacer"></span>
         </div>
 
         <div class="sc-note">
-          Les débits indiqués sont les valeurs de crête théoriques en conditions idéales. Les débits réels varient
-          selon
-          la densité du réseau, la distance à l'antenne, le nombre d'utilisateurs simultanés et les conditions de
-          propagation. Le passage 3G→4G représente un bond ×260 ; le bond 4G→5G atteint ×200 en débit de pointe, avec
-          en
-          sus une latence réduite à &lt; 1 ms contre ~30–50 ms en LTE. Ces sauts de plusieurs ordres de grandeur ne
-          sont
-          pas le fruit du hasard : chaque génération a introduit une rupture technologique fondamentale — nouveau
-          paradigme d'accès radio, refonte de la modulation, redéfinition de l'architecture cœur. La 5G, en
-          particulier,
-          ne se contente pas d'accélérer : elle change la nature même du réseau, passant d'un tuyau à débit variable à
-          une <b>infrastructure programmable</b> capable de se découper, se virtualiser et s'adapter en temps réel
-          aux usages — une évolution qualitative autant que quantitative.
+          <b>Des performances théoriques à la réalité du terrain</b> : Les débits affichés correspondent à des valeurs
+          de crête maximales. En pratique, l'expérience réelle dépend de la distance à l'antenne, de la saturation du
+          réseau et des obstacles environnementaux.
+          <br>
+          <b>La course aux sauts de géant</b> :
+          <ul>
+            <li>Le bond 3G → 4G : Une vitesse multipliée par 260.</li>
+            <li>Le bond 4G → 5G : Un débit de pointe multiplié par 200, doublé d'une réactivité foudroyante (la latence
+              s'effondre à &lt; 1 ms contre 30 à 50 ms en 4G).</li>
+          </ul>
+          <b>Une rupture plus qualitative que quantitative</b> : Ces progressions spectaculaires ne sont pas une simple
+          accélération. Chaque génération réinvente l'accès radio et l'architecture cœur. La 5G marque le point de
+          rupture ultime : le réseau cesse d'être un simple "tuyau" à débit variable pour devenir une infrastructure
+          programmable, virtualisée et capable de se découper sur mesure et en temps réel selon les usages.
         </div>
-
       </div>
   </section>
 
@@ -2555,7 +2538,6 @@
     <div class="iot-grid">
     </div>
   </section>
-
 
   <section class="era-sec e5">
     <div class="sec-hdr">
