@@ -1041,9 +1041,21 @@ section.era-sec {
     line-height: 1.5
 }
 
+/* ══ 5G + SPEED COMPARE WRAPPER ══ */
+.g5-speed-wrap {
+    display: grid;
+    grid-template-columns: 1fr 172mm;
+    grid-template-rows: 1fr auto;
+    gap: 5mm;
+    padding-top: 3mm;
+}
+
+.g5-speed-wrap .g5-band {
+    min-width: 0
+}
+
 /* ══ 5G BAND ══ */
 .g5-band {
-    margin-top: 3mm;
     background: linear-gradient(135deg, #1e3a5f 0%, #0d2240 100%);
     border-radius: 3mm;
     border: 1px solid #dde4f0;
@@ -1066,17 +1078,17 @@ section.era-sec {
     font-weight: 900;
     color: #ffffff;
     line-height: 1
-}   ²
+}
 
 .g5-hdr-std {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10pt;
+    font-size: 16pt;
     color: rgba(255, 255, 255, .75);
     margin-top: 1mm
 }
 
 .g5-hdr-period {
-    font-size: 10pt;
+    font-size: 13pt;
     color: rgba(255, 255, 255, .5);
     margin-top: .5mm
 }
@@ -1096,26 +1108,37 @@ section.era-sec {
 }
 
 .g5-stat-lbl {
-    font-size: 10pt;
+    font-size: 13pt;
     color: rgba(255, 255, 255, .5);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
     margin-bottom: 1mm
 }
 
 .g5-stat-val {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13pt;
+    font-size: 16pt;
     font-weight: 700
 }
 
-.g5-stat-val--embb  { color: #ffb3b3 }
-.g5-stat-val--urllc { color: #b3d9ff }
-.g5-stat-val--mmtc  { color: #b3ffcc }
-.g5-stat-val--spec  { color: #ffe4b3 }
+.g5-stat-val--embb {
+    color: #ffb3b3
+}
+
+.g5-stat-val--urllc {
+    color: #b3d9ff
+}
+
+.g5-stat-val--mmtc {
+    color: #b3ffcc
+}
+
+.g5-stat-val--spec {
+    color: #ffe4b3
+}
 
 .g5-stat-sub {
-    font-size: 9.5pt;
+    font-size: 13pt;
     color: rgba(255, 255, 255, .5)
 }
 
@@ -1127,24 +1150,18 @@ section.era-sec {
 }
 
 .g5-bullet {
-    font-size: 9.5pt;
+    font-size: 16pt;
     color: rgba(255, 255, 255, .80)
 }
 
 /* ══ 5G SBA DIAGRAM PANEL ══ */
 .g5-sba {
-    /* background: #f4f7fc; */
     padding: 4mm 5mm;
-    /* border-top: 1px solid #dde4f0; */
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 4.6mm;
-    align-items: start;
 }
 
 .g5-sba-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10pt;
+    font-size: 16pt;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #4a607f;
@@ -1152,48 +1169,61 @@ section.era-sec {
     text-align: center
 }
 
-.g5-sba-svg { width: 100%; display: block }
+.g5-sba-svg {
+    width: 100%;
+    display: block
+}
 
 .g5-sba-desc {
     display: flex;
     flex-direction: column;
     gap: 3mm;
-    padding-top: 1mm;
+    font-size: 16pt;
+    grid-template-rows: 1/2;
 }
 
 .g5-sba-desc-block {
     display: flex;
     flex-direction: column;
-    gap: 1.5mm;
+    gap: 3mm;
+    background: #fff;
+    border-radius: 3mm;
+    padding: 4mm 3mm;
+    border: 1px solid #dde4f0;
+    grid-column-start: 2;
 }
 
 .g5-sba-desc-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5pt;
+    /* font-size: 10.5pt; */
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #1e3a5f
+    color: #1e3a5f;
+    /* margin-bottom: 2mm; */
 }
 
 .g5-sba-desc-text {
-    font-size: 10pt;
+    /* font-size: 10pt; */
     color: #2e3f58;
-    line-height: 1.6
+    line-height: 1.6;
+    margin: 1mm 0;
 }
 
 .g5-sba-desc-text b {
     color: #1565c0;
-    font-weight: 600
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* ══ SPEED COMPARE ══ */
 .speed-compare {
-    background: #f4f7fc;
+    background: #fff;
     border-radius: 3mm;
     padding: 4mm 5mm;
     margin-top: 3mm;
-    border: 1px solid #dde4f0
+    border: 1px solid #dde4f0;
+    grid-column: 1/-1;
 }
 
 .sc-title {
@@ -1243,6 +1273,18 @@ section.era-sec {
     margin-bottom: 2mm
 }
 
+/* ══ SPEED COMPARE NOTE ══ */
+.sc-note {
+    margin-top: 3mm;
+    padding-top: 2.5mm;
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    font-size: 10pt;
+    color: #1e3a5f;
+    line-height: 1.8;
+    text-align: justify;
+    font-style: italic
+}
+
 .sc-note {
     font-size: 8pt;
     color: #3a4f6a;
@@ -1252,7 +1294,9 @@ section.era-sec {
     border-top: 1px solid #dde4f0
 }
 
-.sc-note b { color: #1e3a5f }
+.sc-note b {
+    color: #1e3a5f
+}
 
 .sc-title {
     font-family: 'Barlow Condensed', sans-serif;
@@ -1298,37 +1342,6 @@ section.era-sec {
     color: rgba(255, 255, 255, .8);
     width: 18mm;
     flex-shrink: 0
-}
-
-/* ══ 5G + SPEED COMPARE WRAPPER ══ */
-.g5-speed-wrap {
-    display: flex;
-    align-items: stretch;
-    gap: 5mm
-}
-
-.g5-speed-wrap .g5-band {
-    flex: 1;
-    min-width: 0
-}
-
-.g5-speed-wrap .speed-compare {
-    flex-shrink: 0;
-    width: 192mm;
-    /* margin-top: 0; */
-    /* border-radius: 0 */
-}
-
-/* ══ SPEED COMPARE NOTE ══ */
-.sc-note {
-    margin-top: 3mm;
-    padding-top: 2.5mm;
-    border-top: 1px solid rgba(255, 255, 255, .3);
-    font-size: 10pt;
-    color: #1e3a5f;
-    line-height: 1.8;
-    text-align: justify;
-    font-style: italic
 }
 
 /* ══ IOT SECTION ══ */
