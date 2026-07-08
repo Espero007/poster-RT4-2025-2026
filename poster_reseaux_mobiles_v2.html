@@ -2556,6 +2556,77 @@
     </div>
   </section>
 
+ 
+  <section class="era-sec e5">
+    <div class="sec-hdr">
+        <span class="sec-tag">Formules</span>
+        <span class="sec-title">Formules fondamentales des  mathématiques et physiques appliquées en radio télécommunication </span>
+    </div>
+    <div style="display: block; width: 100%; clear: both; margin-top: 15px;">
+    <div class="iot-arch-wrap" style="width: 100%; padding: 6px 12px; border-color: var(--era4);">
+      <div class="iot-arch-title" style="margin-bottom: 5px; font-size: 13pt; text-transform: uppercase; letter-spacing: 0.5px;">
+        Équations Fondamentales des Télécommunications &amp; Analyse Vectorielle
+      </div>
+      
+      <table style="width: 100%; table-layout: fixed; border-collapse: collapse; font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--ink);">
+        <tr>
+          
+          <td style="width: 25%; vertical-align: top; padding-right: 12px;">
+              <div style="border-left: 3px solid var(--wifi); padding-left: 6px; display: inline-block; width: 100%; height: 90px; vertical-align: top;">              
+              <b style="color: var(--wifi); font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">I. MAXWELL (LOCAL)</b>
+              <div style="margin-top: 3px; line-height: 1.35; background: rgba(0, 119, 204, 0.03); padding: 4px; border: 1px solid rgba(0,119,204,0.15); border-radius: 4px; height: 70px ; font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
+                div(E) = ρ / ε₀<br>
+                div(B) = 0<br>
+                rot(E) = -∂B / ∂t<br>
+                rot(B) = μ₀J + μ₀ε₀(∂E / ∂t)
+              </div>
+            </div>
+          </td>
+
+          <td style="width: 27%; vertical-align: top; padding-right: 12px;">
+              <div style="border-left: 3px solid var(--g4p); padding-left: 6px; display: inline-block; width: 100%; height: 90px; vertical-align: top;">              
+              <b style="color: var(--wifi); font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">I. MAXWELL (LOCAL)</b>
+              <b style="color: var(--g4p); font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">II. TÉLÉGRAPHISTES (TEM)</b>
+              <div style="margin-top: 3px; line-height: 1.35; background: rgba(200, 48, 0, 0.03); padding: 4px; border: 1px solid rgba(200,48,0,0.15); border-radius: 4px; height: 70px;  font-weight: bold; width: 100%;display: flex; flex-direction: column; justify-content: center;">
+                ∂V/∂x = -R·I - L·(∂I/∂t)<br>
+                ∂I/∂x = -G·V - C·(∂V/∂t)<br>
+                <span style="font-size: 8pt;">γ = √[(R + jωL)(G + jωC)]</span>
+              </div>
+            </div>
+          </td>
+
+          <td style="width: 23%; vertical-align: top; padding-right: 12px;">
+              <div style="border-left: 3px solid var(--g375); padding-left: 6px; display: inline-block; width: 100%; height: 90px; vertical-align: top;">              
+              <b style="font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">III. PROPAGATION &amp; ATTÉNUATION</b>
+              <div style="margin-top: 3px; line-height: 1.35; background: rgba(160, 16, 96, 0.03); padding: 4px; border: 1px solid rgba(160,16,96,0.15); border-radius: 4px; height: 70px;  font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
+                Equation de diffusion du champ : <b>ΔE = μ·σ·(∂E / ∂t)</b><br>
+                <b style="font-size: 8.5pt;">Effet de peau :</b>
+                <b>δ = 1 / √(π·f·μ·σ)</b>
+              </div>
+            </div>
+          </td>
+
+          <td style="width: 25%; vertical-align: top;">
+              <div style="border-left: 3px solid var(--ink2); padding-left: 6px; display: inline-block; width: 100%; height: 90px; vertical-align: top;">              
+              <b style="color: var(--ink2); font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">IV. ANALYSE &amp; JACOBIEN</b>
+              <div style="margin-top: 3px; line-height: 1.35; background: rgba(0, 0, 0, 0.02); padding: 4px; border: 1px solid rgba(0,0,0,0.12); border-radius: 4px; height: 70px; font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
+                <b>Opérateurs : Gradient (∇f), Divergence (∇·A), Rotationnel (∇×A), Laplacien (Δf = ∇²f)</b><br>
+                <b style=" font-weight: bold; font-size: 8pt;">Jacobien Sphérique (Antenne) :</b>
+                <b>J(r,θ,φ) = r²·sin(θ)</b>
+              </div>
+            </div>
+          </td>
+
+        </tr>
+      </table>
+
+      <div style="margin-top: 6px; padding-top: 4px; border-top: 1px dashed var(--rule); font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--era4);">
+        <b>LOIS DE CANAL :</b> Formule de Friis : Pr = Pt·Gt·Gr·(λ / (4π·d))² &nbsp;|&nbsp; Capacité de Shannon-Hartley : <b>C = B · log₂(1 + S/N)</b>
+      </div>
+    </div>
+  </div>
+  </section>
+
   <!-- ══════════ FOOTER ══════════ -->
   <footer>
     <span>© Génie Informatique et Télécommunications (GIT) 4ème Année · Option Réseaux & Télécommunications (RT) ·

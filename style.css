@@ -25,6 +25,9 @@
     --era3-lt: #dfe9f7;
     --era4: #1a6b3a;
     --era4-bg: #edf7f1;
+    --era5:#e07000;
+    --era5-bg: #eef3fb;
+    --era5-lt: #dfe9f7;
     --g2: #1452a0;
     --g25: #05607a;
     --g275: #236a40;
@@ -406,6 +409,10 @@ section.era-sec {
     border-color: var(--era4)
 }
 
+.e5 .sec-hdr {
+    border-color: var(--era5)
+}
+
 .sec-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10pt;
@@ -433,6 +440,10 @@ section.era-sec {
     background: var(--era4)
 }
 
+.e5 .sec-tag {
+    background: var(--era5)
+}
+
 .sec-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 22pt;
@@ -455,6 +466,11 @@ section.era-sec {
 .e4 .sec-title {
     color: var(--era4)
 }
+
+.e5 .sec-title {
+    color: var(--era5)
+}
+
 
 .sec-period {
     margin-left: auto;
