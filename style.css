@@ -25,7 +25,7 @@
     --era3-lt: #dfe9f7;
     --era4: #1a6b3a;
     --era4-bg: #edf7f1;
-    --era5:#e07000;
+    --era5: #e07000;
     --era5-bg: #eef3fb;
     --era5-lt: #dfe9f7;
     --g2: #1452a0;
@@ -1930,17 +1930,29 @@ section.era-sec {
     margin-top: 1mm;
 }
 
+
+
+/* ══ SUB-GEN LABEL ══ */
+.sub-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: rgba(255, 255, 255, .55);
+    margin-top: 1mm;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 1mm;
+    padding: .5mm 2mm;
+    display: inline-block
+}
+
 /* ══ FOOTER ══ */
 footer {
     background: var(--dark);
     padding: 3.5mm 12mm;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     color: white;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11pt;
-    letter-spacing: 1px
+    font-size: 16pt;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 .ft-eras {
@@ -1955,16 +1967,4 @@ footer {
     border-radius: 2px;
     display: inline-block;
     margin-right: 2mm
-}
-
-/* ══ SUB-GEN LABEL ══ */
-.sub-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
-    color: rgba(255, 255, 255, .55);
-    margin-top: 1mm;
-    background: rgba(255, 255, 255, .1);
-    border-radius: 1mm;
-    padding: .5mm 2mm;
-    display: inline-block
 }
