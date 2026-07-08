@@ -2295,15 +2295,13 @@
     </div>
 
     <div class="iot-main-layout">
-      <div class="iot-col">
-
+      <div class="iot-col iot-col-1">
         <div class="iot-arch-wrap">
           <div class="iot-arch-title">Architecture IoT en Couches</div>
 
           <div class="iot-layer-preview preview-app">
-            <b class="highlight-app">Applications métier, dashboards, cloud IoT</b> (AWS IoT, Azure IoT Hub) ·
-            Protocoles
-            : MQTT, CoAP, HTTP/REST, AMQP
+            <b class="highlight-app">Services, supervision et automatisation pour les utilisateurs</b> ·
+            MQTT, CoAP, HTTP/REST, AWS IoT, Azure IoT Hub, Tableaux de bord.
           </div>
           <div class="iot-layer-badge badge-app">
             <div class="iot-layer-name-large">Couche Applicative</div>
@@ -2313,8 +2311,8 @@
           <div class="iot-layer-separator">↕</div>
 
           <div class="iot-layer-preview preview-processing">
-            <b class="highlight-processing">Edge / fog computing, analyse temps réel, stockage</b> · Sécurité,
-            authentification, gestion des identités
+            <b class="highlight-processing">Analyse, traitement et stockage des données</b> · Edge Computing, Fog
+            Computing, Bases de données, IA/Analytics
           </div>
           <div class="iot-layer-badge badge-processing">
             <div class="iot-layer-name-large">Couche Traitement</div>
@@ -2324,8 +2322,8 @@
           <div class="iot-layer-separator">↕</div>
 
           <div class="iot-layer-preview preview-network">
-            <b class="highlight-network">WiFi, BT, LoRa, Sigfox, ZigBee, NB-IoT</b> · Routage, adressage IPv6,
-            transmission adaptée aux contraintes
+            <b class="highlight-network">Transport des données entre les objets et les plateformes IoT</b> · Wi-Fi,
+            Bluetooth, ZigBee, LoRaWAN, Sigfox, NB-IoT, IPv6
           </div>
           <div class="iot-layer-badge badge-network">
             <div class="iot-layer-name-large">Couche Réseau</div>
@@ -2335,8 +2333,8 @@
           <div class="iot-layer-separator">↕</div>
 
           <div class="iot-layer-preview preview-perception">
-            <b class="highlight-network">Capteurs, actionneurs, objets physiques</b> — thermomètres, caméras, RFID, GPS,
-            accéléromètres
+            <b class="highlight-network">Acquisition des données du monde physique</b> · Capteurs, RFID, GPS, caméras,
+            actionneurs...
           </div>
           <div class="iot-layer-badge badge-perception">
             <div class="iot-layer-name-large">Couche Perception</div>
@@ -2372,108 +2370,12 @@
             </div>
           </div>
         </div>
-
-        <div class="iot-arch-wrap">
-          <div class="iot-arch-title tbl-margin">Comparatif rapide des protocoles IoT</div>
-          <table class="iot-comparison-table">
-            <thead>
-              <tr>
-                <th class="th-left">Protocole</th>
-                <th class="th-center">Portée</th>
-                <th class="th-center">Débit max</th>
-                <th class="th-center">Conso.</th>
-                <th class="th-center">Topologie</th>
-                <th class="th-right">Usage typique</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="row-wifi">
-                <td class="td-protocol color-wifi">WiFi 6</td>
-                <td class="td-center">~100 m</td>
-                <td class="td-center td-mono">9,6 Gb/s</td>
-                <td class="td-center">Élevée</td>
-                <td class="td-center">Étoile</td>
-                <td>Maison, bureau, caméras IP</td>
-              </tr>
-              <tr class="row-bt">
-                <td class="td-protocol color-bt">BLE 5.0</td>
-                <td class="td-center">~100 m</td>
-                <td class="td-center td-mono">2 Mb/s</td>
-                <td class="td-center">Très faible</td>
-                <td class="td-center">Étoile/Mesh</td>
-                <td>Wearables, santé, beacons</td>
-              </tr>
-              <tr class="row-zigbee">
-                <td class="td-protocol color-zigbee">ZigBee</td>
-                <td class="td-center">10–100 m</td>
-                <td class="td-center td-mono">250 kb/s</td>
-                <td class="td-center">Très faible</td>
-                <td class="td-center">Mesh</td>
-                <td>Domotique, éclairage smart</td>
-              </tr>
-              <tr class="row-lora">
-                <td class="td-protocol color-lora">LoRaWAN</td>
-                <td class="td-center">2–15 km</td>
-                <td class="td-center td-mono">50 kb/s</td>
-                <td class="td-center">Ultra faible</td>
-                <td class="td-center">Étoile</td>
-                <td>Smart city, agriculture, eau</td>
-              </tr>
-              <tr class="row-nbiot">
-                <td class="td-protocol color-nbiot">NB-IoT</td>
-                <td class="td-center">5–15 km</td>
-                <td class="td-center td-mono">200 kb/s</td>
-                <td class="td-center">Très faible</td>
-                <td class="td-center">Cellulaire</td>
-                <td>Compteurs, alarmes, trackers</td>
-              </tr>
-              <tr class="row-sigfox">
-                <td class="td-protocol color-sigfox">Sigfox</td>
-                <td class="td-center">10–50 km</td>
-                <td class="td-center td-mono">100 b/s</td>
-                <td class="td-center">Ultra faible</td>
-                <td class="td-center">Étoile</td>
-                <td>Logistique, géolocalisation</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="iot-arch-wrap">
-          <div class="iot-arch-title tbl-margin">Domaines d'Application de l'IoT</div>
-          <div class="iot-domains-grid">
-            <div class="iot-domain-box">
-              <div class="iot-domain-title">Smart City</div>Éclairage public intelligent, gestion des déchets, capteurs
-              de stationnement, qualité de l'air, inondations
-            </div>
-            <div class="iot-domain-box">
-              <div class="iot-domain-title">Santé connectée</div>Montres cardiaques, monitoring à distance, piluliers
-              intelligents, implants connectés, télédiagnostic
-            </div>
-            <div class="iot-domain-box">
-              <div class="iot-domain-title">Agriculture</div>Capteurs d'humidité, drones, prévision météo locale,
-              irrigation automatisée, suivi du bétail
-            </div>
-            <div class="iot-domain-box">
-              <div class="iot-domain-title">Industrie 4.0</div>Maintenance prédictive, jumeaux numériques, robots
-              collaboratifs, chaîne logistique, contrôle qualité
-            </div>
-            <div class="iot-domain-box">
-              <div class="iot-domain-title">Maison connectée</div>Thermostats, serrures, caméras, aspirateurs,
-              assistants vocaux, gestion énergétique
-            </div>
-            <div class="iot-domain-box">
-              <div class="iot-domain-title">Mobilité / V2X</div>Voitures connectées, péages automatiques, flottes,
-              signalisation routière, parkings intelligents
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="iot-col">
         <div class="iot-arch-wrap">
           <div class="iot-arch-title tbl-margin">Réseaux IoT — Portée vs Débit</div>
-          <svg viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg" class="iot-chart-svg">
+          <svg viewBox="0 0 260 180.5" xmlns="http://www.w3.org/2000/svg" class="iot-chart-svg">
             <line x1="45" y1="30" x2="255" y2="30" class="svg-grid-line" />
             <line x1="45" y1="60" x2="255" y2="60" class="svg-grid-line" />
             <line x1="45" y1="90" x2="255" y2="90" class="svg-grid-line" />
@@ -2484,8 +2386,8 @@
             <polygon points="252,157 257,160 252,163" class="svg-arrow" />
             <polygon points="42,14 45,9 48,14" class="svg-arrow" />
 
-            <text x="150" y="175" text-anchor="middle" class="svg-label-title">Portée →</text>
-            <text x="13" y="90" text-anchor="middle" class="svg-label-title svg-rot-90">Débit →</text>
+            <text x="150" y="175" text-anchor="middle" class="svg-label-title">Portée</text>
+            <text x="13" y="90" text-anchor="middle" class="svg-label-title svg-rot-90">Débit</text>
 
             <text x="65" y="169" text-anchor="middle" class="svg-tick-label">1 m</text>
             <text x="95" y="169" text-anchor="middle" class="svg-tick-label">10 m</text>
@@ -2530,12 +2432,119 @@
             <text x="140" y="32" text-anchor="middle" dominant-baseline="middle"
               class="bubble-txt font-wifi">WiFi</text>
           </svg>
-          <div class="iot-chart-caption">Axes logarithmiques · taille des bulles indicative</div>
+          <div class="iot-chart-caption">
+            <b>Analyse du paysage des réseaux IoT : le compromis Débit / Portée</b>
+            Cette représentation graphique illustre parfaitement la spécialisation des protocoles selon la règle du
+            compromis
+            télécom. On observe une diagonale claire : plus une technologie cherche à atteindre une portée importante
+            (comme Sigfox
+            à $50\text{ km}$), plus son débit s'en trouve réduit ($100\text{ b/s}$). À l'inverse, les protocoles à fort
+            débit comme
+            le WiFi 6 se cantonnent à un rayon d'action local. Le bloc central (LTE-M, NB-IoT, LoRa) représente la zone
+            charnière
+            des solutions industrielles et urbaines, offrant le meilleur équilibre entre distance et volume de données.
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="iot-grid">
+    <div class="iot-extra">
+      <div class="iot-arch-wrap">
+        <div class="iot-arch-title tbl-margin">Comparatif rapide des protocoles IoT</div>
+        <table class="iot-comparison-table">
+          <thead>
+            <tr>
+              <th class="th-left">Protocole</th>
+              <th class="th-center">Portée</th>
+              <th class="th-center">Débit max</th>
+              <th class="th-center">Conso.</th>
+              <th class="th-center">Topologie</th>
+              <th class="th-right">Usage typique</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-wifi">
+              <td class="td-protocol color-wifi">WiFi 6</td>
+              <td class="td-center">~100 m</td>
+              <td class="td-center td-mono">9,6 Gb/s</td>
+              <td class="td-center">Élevée</td>
+              <td class="td-center">Étoile</td>
+              <td>Maison, bureau, caméras IP</td>
+            </tr>
+            <tr class="row-bt">
+              <td class="td-protocol color-bt">BLE 5.0</td>
+              <td class="td-center">~100 m</td>
+              <td class="td-center td-mono">2 Mb/s</td>
+              <td class="td-center">Très faible</td>
+              <td class="td-center">Étoile/Mesh</td>
+              <td>Wearables, santé, beacons</td>
+            </tr>
+            <tr class="row-zigbee">
+              <td class="td-protocol color-zigbee">ZigBee</td>
+              <td class="td-center">10–100 m</td>
+              <td class="td-center td-mono">250 kb/s</td>
+              <td class="td-center">Très faible</td>
+              <td class="td-center">Mesh</td>
+              <td>Domotique, éclairage smart</td>
+            </tr>
+            <tr class="row-lora">
+              <td class="td-protocol color-lora">LoRaWAN</td>
+              <td class="td-center">2–15 km</td>
+              <td class="td-center td-mono">50 kb/s</td>
+              <td class="td-center">Ultra faible</td>
+              <td class="td-center">Étoile</td>
+              <td>Smart city, agriculture, eau</td>
+            </tr>
+            <tr class="row-nbiot">
+              <td class="td-protocol color-nbiot">NB-IoT</td>
+              <td class="td-center">5–15 km</td>
+              <td class="td-center td-mono">200 kb/s</td>
+              <td class="td-center">Très faible</td>
+              <td class="td-center">Cellulaire</td>
+              <td>Compteurs, alarmes, trackers</td>
+            </tr>
+            <tr class="row-sigfox">
+              <td class="td-protocol color-sigfox">Sigfox</td>
+              <td class="td-center">10–50 km</td>
+              <td class="td-center td-mono">100 b/s</td>
+              <td class="td-center">Ultra faible</td>
+              <td class="td-center">Étoile</td>
+              <td>Logistique, géolocalisation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="iot-arch-wrap">
+        <div class="iot-arch-title tbl-margin">Domaines d'Application de l'IoT</div>
+        <div class="iot-domains-grid">
+          <div class="iot-domain-box">
+            <div class="iot-domain-title">Smart City</div>Éclairage public intelligent, gestion des déchets,
+            capteurs
+            de stationnement, qualité de l'air, inondations
+          </div>
+          <div class="iot-domain-box">
+            <div class="iot-domain-title">Santé connectée</div>Montres cardiaques, monitoring à distance, piluliers
+            intelligents, implants connectés, télédiagnostic
+          </div>
+          <div class="iot-domain-box">
+            <div class="iot-domain-title">Agriculture</div>Capteurs d'humidité, drones, prévision météo locale,
+            irrigation automatisée, suivi du bétail
+          </div>
+          <div class="iot-domain-box">
+            <div class="iot-domain-title">Industrie 4.0</div>Maintenance prédictive, jumeaux numériques, robots
+            collaboratifs, chaîne logistique, contrôle qualité
+          </div>
+          <div class="iot-domain-box">
+            <div class="iot-domain-title">Maison connectée</div>Thermostats, serrures, caméras, aspirateurs,
+            assistants vocaux, gestion énergétique
+          </div>
+          <div class="iot-domain-box">
+            <div class="iot-domain-title">Mobilité / V2X</div>Voitures connectées, péages automatiques, flottes,
+            signalisation routière, parkings intelligents
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

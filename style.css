@@ -483,7 +483,7 @@ section.era-sec {
 /* ══ ERA I LAYOUT ══ */
 .era1-body {
     display: grid;
-    grid-template-columns: 100mm 1fr;
+    grid-template-columns: 140mm 1fr;
     gap: 6mm;
     align-items: start
 }
@@ -1571,7 +1571,7 @@ section.era-sec {
 
 .iot-arch-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 16pt;
+    font-size: 20pt;
     font-weight: 800;
     color: var(--era4);
     margin-bottom: 3mm
@@ -1621,7 +1621,7 @@ section.era-sec {
 /* Mises en page globales */
 .iot-main-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 350mm;
     gap: 5mm;
     margin-bottom: 4mm;
     align-items: stretch;
@@ -1631,6 +1631,11 @@ section.era-sec {
     display: flex;
     flex-direction: column;
     gap: 5mm;
+}
+
+.iot-col-1 {
+    /* display: grid; */
+    /* grid-template-columns: repeat(2, 1fr); */
 }
 
 /* Modificateurs généraux & textuels */
@@ -1643,11 +1648,11 @@ section.era-sec {
 }
 
 .highlight-processing {
-    color: #2a8a50;
+    color: #1a6b3a;
 }
 
 .highlight-network {
-    color: #3aaa68;
+    color: #1a6b3a;
 }
 
 .highlight-era4 {
@@ -1660,7 +1665,7 @@ section.era-sec {
     border-radius: 2mm;
     padding: 2mm 2.5mm;
     margin-bottom: 1.5mm;
-    font-size: 9.5pt;
+    font-size: 16pt;
     color: var(--ink2);
     line-height: 1.4;
 }
@@ -1698,27 +1703,27 @@ section.era-sec {
 }
 
 .badge-processing {
-    background: #2a8a50;
+    background: #1a6b3a;
 }
 
 .badge-network {
-    background: #3aaa68;
+    background: #1a6b3a;
 }
 
 .badge-perception {
-    background: #50c880;
+    background: #1a6b3a;
 }
 
 .iot-layer-name-large {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12pt;
-    font-weight: 800;
+    font-size: 16pt;
+    font-weight: 700;
     color: #fff;
 }
 
 .iot-layer-mono {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5pt;
+    font-size: 16pt;
     color: rgba(255, 255, 255, .6);
 }
 
@@ -1729,14 +1734,14 @@ section.era-sec {
 .iot-layer-separator {
     text-align: center;
     color: var(--era4);
-    font-size: 10pt;
+    font-size: 16pt;
     line-height: 1;
     margin: .8mm 0;
 }
 
 /* Section chiffres & enjeux */
 .iot-stats-body {
-    font-size: 10pt;
+    font-size: 16pt;
     color: var(--ink2);
     line-height: 1.6;
 }
@@ -1751,7 +1756,7 @@ section.era-sec {
     padding: 2mm 3mm;
     border-radius: 0 2mm 2mm 0;
     margin-bottom: 3mm;
-    font-size: 10pt;
+    font-size: 16pt;
 }
 
 .iot-stats-body .iot-callout:last-of-type {
@@ -1765,7 +1770,7 @@ section.era-sec {
 
 .iot-def-mono {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9.5pt;
+    font-size: 16pt;
     color: var(--ink3);
 }
 
@@ -1773,7 +1778,7 @@ section.era-sec {
 .iot-comparison-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 10pt;
+    font-size: 16pt;
 }
 
 .iot-comparison-table thead tr {
@@ -1800,11 +1805,11 @@ section.era-sec {
 }
 
 .iot-comparison-table tbody tr {
-    padding: 1.5mm 2.5mm;
+    padding: 2.5mm;
 }
 
 .iot-comparison-table tbody td {
-    padding: 1.5mm 2.5mm;
+    padding: 2.5mm;
 }
 
 .iot-comparison-table .row-wifi {
@@ -1872,7 +1877,7 @@ section.era-sec {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2mm;
-    font-size: 10pt;
+    font-size: 16pt;
     color: var(--ink2);
 }
 
@@ -1889,7 +1894,7 @@ section.era-sec {
 }
 
 /* Dataviz / SVG Chart */
-.iot-chart-svg {
+.svg {
     width: 100%;
 }
 
@@ -2013,13 +2018,25 @@ section.era-sec {
 }
 
 .iot-chart-caption {
-    font-size: 8.5pt;
+    font-size: 16pt;
     color: var(--ink3);
-    font-style: italic;
-    text-align: center;
+    /* font-style: italic; */
+    /* text-align: center; */
     margin-top: 1mm;
+    line-height: 1.5;
 }
 
+.iot-chart-caption b {
+    color: #1a6b3a;
+    display: block;
+    margin-bottom: 2mm;
+}
+
+.iot-extra {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm;
+}
 
 
 /* ══ SUB-GEN LABEL ══ */
