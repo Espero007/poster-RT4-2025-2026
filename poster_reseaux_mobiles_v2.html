@@ -524,16 +524,20 @@
         </div>
         <div class="gen-arch">
           <div class="ga-title">Architecture Complète GSM & Liaisons Inter-Entités</div>
-          <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <svg viewBox="0 0 210 140" xmlns="http://www.w3.org/2000/svg" style="width:100%">
             <defs>
               <marker id="ag2" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto">
+                <marker id="ag2-start" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="4.5"
+                  orient="auto">
+                  <path d="M 10 0 L 0 5 L 10 10 z" fill="#888" />
+                </marker>
                 <polygon points="0 0,5 2,0 4" fill="#555" />
               </marker>
             </defs>
 
-            <g transform="translate(0,0)">
+            <g transform="translate(0,10)">
               <!-- MS -->
-              <g transform="translate(0,0)">
+              <g transform="translate(0,-5)">
                 <rect x="1" y="6" width="24" height="14" rx="2" fill="#1452a0" opacity=".9" />
                 <text x="13" y="16" text-anchor="middle" font-family="monospace" font-size="5" font-weight="bold"
                   fill="white">MS</text>
@@ -541,7 +545,8 @@
 
               <!-- Um : MS -> BTS -->
               <g transform="translate(0,0)">
-                <line x1="13" y1="20" x2="13" y2="29" stroke="#888" stroke-width="1.2" marker-end="url(#ag2)" />
+                <line x1="13" y1="17" x2="13" y2="29" stroke="#888" stroke-width="1.2" marker-end="url(#ag2)"
+                  marker-start="url(#ag2-start)" />
                 <text x="20" y="26" text-anchor="middle" font-family="monospace" font-size="5" fill="#1452a0"
                   font-weight="bold">Um</text>
               </g>
@@ -604,7 +609,7 @@
               <!-- EIR -->
               <g transform="translate(-36,0)">
                 <rect x="116" y="53" width="24" height="14" rx="2" fill="#204c8c" />
-                <text x="125" y="60.5" text-anchor="middle" font-family="monospace" font-size="5"
+                <text x="127" y="62.5" text-anchor="middle" font-family="monospace" font-size="5"
                   fill="white">EIR</text>
               </g>
 
@@ -644,7 +649,7 @@
             </g>
 
             <!-- MS - BTS - BSC - MSC... -->
-            <g transform="translate(0,6)">
+            <g transform="translate(0,20)">
               <text x="2" y="72" font-family="monospace" font-size="5.5" fill="#555">MS = Mobile Station</text>
               <text x="2" y="82" font-family="monospace" font-size="5.5" fill="#555">BTS = Base
                 Transceiver Station</text>
@@ -753,7 +758,7 @@
 
             <line x1="125" y1="43" x2="125" y2="53" stroke="#555" stroke-width="0.8" />
             <rect x="116" y="53" width="18" height="11" rx="1" fill="#175869" />
-            <text x="125" y="60.5" text-anchor="middle" font-family="monospace" font-size="4" fill="white">EIR</text>
+            <text x="127" y="62" text-anchor="middle" font-family="monospace" font-size="4" fill="white">EIR</text>
 
             <line x1="135" y1="31" x2="145" y2="12" stroke="#555" stroke-width="0.8" />
             <rect x="145" y="6" width="18" height="11" rx="1" fill="#0d4352" />
