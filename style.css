@@ -642,8 +642,8 @@ section.era-sec {
 /* ══ ERA III — GENERATIONS GRID (wider to fit more) ══ */
 .gen-grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 2.5mm
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5mm
 }
 
 .gen {
@@ -706,25 +706,30 @@ section.era-sec {
 
 .gen-std {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
+    font-size: 16pt;
     opacity: .85;
-    margin-top: 1mm;
+    margin-top: 3mm;
     font-weight: 600
 }
 
 .gen-yrs {
-    font-size: 8pt;
+    font-size: 16pt;
     opacity: .65;
-    margin-top: .5mm
+    margin-top: 2mm
 }
 
 .gen-terminal {
-    padding: 3mm 2.5mm 2mm;
+    padding: 5mm;
     background: #f7f7fa;
     border-bottom: 1px solid var(--rule);
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    height: 40mm;
+}
+
+.gen-terminal .terminal {
+    height: 100%;
 }
 
 .gen-arch {
@@ -764,7 +769,7 @@ section.era-sec {
 
 
 .ga-title {
-    font-size: 8pt;
+    font-size: 13pt;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--ink3);
@@ -773,7 +778,7 @@ section.era-sec {
 }
 
 .gen-specs {
-    padding: 2.5mm;
+    padding: 6mm;
     flex: 1
 }
 
@@ -781,8 +786,9 @@ section.era-sec {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .8mm 0;
-    border-bottom: 1px solid #f0eff4
+    padding: 2mm 0;
+    border-bottom: 1px solid #f0eff4;
+    font-size: 16pt;
 }
 
 .sp-row:last-of-type {
@@ -790,7 +796,7 @@ section.era-sec {
 }
 
 .sp-k {
-    font-size: 9.5pt;
+    /* font-size: 9.5pt; */
     letter-spacing: .8px;
     text-transform: uppercase;
     color: var(--ink3);
@@ -799,7 +805,7 @@ section.era-sec {
 
 .sp-v {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5pt;
+    /* font-size: 10.5pt; */
     font-weight: 700
 }
 
@@ -846,20 +852,20 @@ section.era-sec {
 }
 
 .gf {
-    font-size: 10.5pt;
+    font-size: 16pt;
     color: var(--ink2);
-    padding: 0.6mm 0 0.6mm 3mm;
+    padding: 2mm 0;
     position: relative;
     line-height: 1.4
 }
 
-.gf::before {
+/* .gf::before {
     content: '▸';
     position: absolute;
     left: 0;
     font-size: 5.5pt;
     color: var(--ink3)
-}
+} */
 
 /* ══ WIMAX SECTION ══ */
 .wimax-band {
@@ -2045,9 +2051,9 @@ section.era-sec {
 /* ══ SUB-GEN LABEL ══ */
 .sub-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8pt;
+    font-size: 16pt;
     color: rgba(255, 255, 255, .55);
-    margin-top: 1mm;
+    margin-top: 3mm;
     background: rgba(255, 255, 255, .1);
     border-radius: 1mm;
     padding: .5mm 2mm;
