@@ -2592,10 +2592,10 @@
                   (LOCAL)</b>
                 <div
                   style="margin-top: 3px; line-height: 1.35; background: rgba(0, 119, 204, 0.03); padding: 4px; border: 1px solid rgba(0,119,204,0.15); border-radius: 4px; height: 70px ; font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
-                  div(E) = ρ / ε₀<br>
-                  div(B) = 0<br>
-                  rot(E) = -∂B / ∂t<br>
-                  rot(B) = μ₀J + μ₀ε₀(∂E / ∂t)
+                  div(E) = ρ / ε₀ (Loi de Gauss : Champ E généré par charges ρ)<br>
+                  div(B) = 0 (Loi de Gauss magnétique : Absence de champs magnétique)<br>
+                  rot(E) = -∂B / ∂t (Loi de Faraday : Induction Electromagnétique)<br>
+                  rot(B) = μ₀J + μ₀ε₀(∂E / ∂t) (Loi d'Ampère-Maxwell)
                 </div>
               </div>
             </td>
@@ -2609,9 +2609,9 @@
                   TÉLÉGRAPHISTES (TEM)</b>
                 <div
                   style="margin-top: 3px; line-height: 1.35; background: rgba(200, 48, 0, 0.03); padding: 4px; border: 1px solid rgba(200,48,0,0.15); border-radius: 4px; height: 70px;  font-weight: bold; width: 100%;display: flex; flex-direction: column; justify-content: center;">
-                  ∂V/∂x = -R·I - L·(∂I/∂t)<br>
-                  ∂I/∂x = -G·V - C·(∂V/∂t)<br>
-                  <span style="font-size: 8pt;">γ = √[(R + jωL)(G + jωC)]</span>
+                  ∂V/∂x = -R·I - L·(∂I/∂t) (CHute de tension en ligne)<br>
+                  ∂I/∂x = -G·V - C·(∂V/∂t) (Perte de courant en ligne)<br>
+                  <span style="font-size: 8pt;">γ = √[(R + jωL)(G + jωC)] (Constante bidirectionnelle )</span>
                 </div>
               </div>
             </td>
@@ -2623,9 +2623,10 @@
                   ATTÉNUATION</b>
                 <div
                   style="margin-top: 3px; line-height: 1.35; background: rgba(160, 16, 96, 0.03); padding: 4px; border: 1px solid rgba(160,16,96,0.15); border-radius: 4px; height: 70px;  font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
-                  Equation de diffusion du champ : <b>ΔE = μ·σ·(∂E / ∂t)</b><br>
-                  <b style="font-size: 8.5pt;">Effet de peau :</b>
-                  <b>δ = 1 / √(π·f·μ·σ)</b>
+                  Equation de diffusion du champ : ΔE = μ·σ·(∂E / ∂t) (Equation de diffusion d'onde Electromagnétique en milieu condicteur ohmique)<br>
+                  <b style="font-size: 8.5pt;">Effet de peau :
+                  δ = 1 / √(π·f·μ·σ) (Épaisseur d'effet de peau, atténuation de l'onde à 1/e) 
+                </b>
                 </div>
               </div>
             </td>
@@ -2637,9 +2638,9 @@
                   ANALYSE &amp; JACOBIEN</b>
                 <div
                   style="margin-top: 3px; line-height: 1.35; background: rgba(0, 0, 0, 0.02); padding: 4px; border: 1px solid rgba(0,0,0,0.12); border-radius: 4px; height: 70px; font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
-                  <b>Opérateurs : Gradient (∇f), Divergence (∇·A), Rotationnel (∇×A), Laplacien (Δf = ∇²f)</b><br>
-                  <b style=" font-weight: bold; font-size: 8pt;">Jacobien Sphérique (Antenne) :</b>
-                  <b>J(r,θ,φ) = r²·sin(θ)</b>
+                  <b>Opérateurs d'espace spatiaux: Gradient (∇f), Divergence (∇·A), Rotationnel (∇×A), Laplacien (Δf = ∇²f)</b><br>
+                  <b style=" font-weight: bold; font-size: 8pt;">Jacobien Sphérique (Antenne) :
+                  J(r,θ,φ) = r²·sin(θ) (Facteur d'échelle différenciel dV indispensable pour calculer la puissance de diagramme du rayonnement d'une antenne).</b>
                 </div>
               </div>
             </td>
@@ -2649,8 +2650,8 @@
 
         <div
           style="margin-top: 6px; padding-top: 4px; border-top: 1px dashed var(--rule); font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--era4);">
-          <b>LOIS DE CANAL :</b> Formule de Friis : Pr = Pt·Gt·Gr·(λ / (4π·d))² &nbsp;|&nbsp; Capacité de
-          Shannon-Hartley : <b>C = B · log₂(1 + S/N)</b>
+          <b>LOIS DE CANAL :</b> Formule de Friis : Pr = Pt·Gt·Gr·(λ / (4π·d))² (Puissance reçue Pr selon gain d'antenne émettrice Gt, répectrice Gr, distance d et longueur d'onde λ)&nbsp;|&nbsp; Capacité de
+          Shannon-Hartley : <b>C = B · log₂(1 + S/N) (Débit binaire max C théorique admissible en fonction de la bande passante B et du rapport signa.bruit S/N)</b>
         </div>
       </div>
     </div>
