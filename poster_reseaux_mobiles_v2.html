@@ -712,13 +712,14 @@
         </div>
         <div class="gen-arch">
           <div class="ga-title">Architecture GPRS : Séparation des Flux Circuit (Voix) et Paquet (Données)</div>
-          <svg viewBox="0 0 190 122" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <svg viewBox="0 0 190 135" xmlns="http://www.w3.org/2000/svg" style="width:100%">
             <defs>
               <marker id="ag25" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto">
                 <polygon points="0 0,5 2,0 4" fill="#555" />
               </marker>
             </defs>
 
+            <!-- MS -->
             <g transform="translate(0,0)">
               <rect x="1" y="6" width="24" height="14" rx="2" fill="#056078" opacity=".9" />
               <text x="13" y="16" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MS</text>
@@ -737,6 +738,7 @@
               <text x="13" y="45" text-anchor="middle" font-family="monospace" font-size="5" fill="white">BTS</text>
             </g>
 
+            <!-- BTS -> BSC/PCU -->
             <line x1="25" y1="43" x2="37" y2="43" stroke="#888" stroke-width="1" marker-end="url(#ag25)" />
 
             <!-- BSC + PCU -->
@@ -837,8 +839,6 @@
               </g>
             </g>
 
-
-
             <!-- SGSN - GGSN - RE -->
             <g transform="translate(0,-25)">
               <!-- SGSN -->
@@ -868,13 +868,8 @@
 
             </g>
 
-
-
-
-
-
             <!-- Définition des sigles -->
-            <g transform="translate(0,0)">
+            <g transform="translate(0,10)">
 
               <text x="2" y="70" font-family="monospace" font-size="5" fill="#555">SGSN = Serving GPRS Support
                 Node</text>
