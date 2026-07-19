@@ -746,7 +746,8 @@
               <rect x="75" y="34" width="24" height="28" rx="2" fill="#044a5c" opacity="0.9" />
               <text x="87" y="41" text-anchor="middle" font-family="monospace" font-size="5" fill="white">BSC</text>
               <rect x="77" y="45" width="20" height="14" rx="2" fill="#1a4a5c" />
-              <text x="87" y="53" text-anchor="middle" font-family="monospace" font-size="5" fill="#60d0b8">PCU</text>
+              <text x="87" y="53" text-anchor="middle" font-family="monospace" font-size="5" fill="#60d0b8"
+                font-weight="bold">PCU</text>
             </g>
 
             <!-- Coeur circuit -->
@@ -965,7 +966,8 @@
               <rect x="75" y="34" width="24" height="28" rx="2" fill="#1a5030" opacity=".9" />
               <text x="87" y="41" text-anchor="middle" font-family="monospace" font-size="5" fill="white">BSC</text>
               <rect x="77" y="45" width="20" height="14" rx="2" fill="#2a6e45" />
-              <text x="87" y="53" text-anchor="middle" font-family="monospace" font-size="5" fill="#60d880">PCU</text>
+              <text x="87" y="53" text-anchor="middle" font-family="monospace" font-size="5" fill="#60d880"
+                font-weight="bold">PCU</text>
             </g>
 
             <!-- Coeur circuit -->
@@ -1359,7 +1361,7 @@
             </defs>
 
             <!-- MS -->
-            <g transform="translate(0,0)">
+            <g transform="translate(2,0)">
               <rect x="1" y="6" width="24" height="14" rx="2" fill="#7a1080" opacity=".9" />
               <text x="13" y="16" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MS</text>
             </g>
@@ -1375,9 +1377,9 @@
             <g transform="translate(0,0)">
               <rect x="1" y="28" width="30" height="28" rx="2" fill="#7a1080" opacity=".75" />
               <text x="16" y="35" text-anchor="middle" font-family="monospace" font-size="5" fill="white">NodeB</text>
-              <rect x="3" y="39" width="26" height="14" rx="2" fill="#4d0554" />
-              <text x="16" y="47" text-anchor="middle" font-family="monospace" font-size="5"
-                fill="#d0a0ff">HS-DSCH</text>
+              <rect x="3" y="39" width="26" height="13" rx="2" fill="#4d0554" />
+              <text x="16" y="47" text-anchor="middle" font-family="monospace" font-size="4" fill="#d0a0ff"
+                font-weight="bold">HS-DSCH</text>
             </g>
 
             <!-- NodeB -> RNC -->
@@ -1570,97 +1572,182 @@
         </div>
         <div class="gen-arch">
           <div class="ga-title">Evolved UTRAN : Intégration du MIMO et du Dual-Carrier</div>
-          <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <svg viewBox="0 0 190 115" xmlns="http://www.w3.org/2000/svg" style="width:100%">
             <defs>
-              <marker id="ag375" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto">
+              <marker id="ag25" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto">
                 <polygon points="0 0,5 2,0 4" fill="#555" />
               </marker>
             </defs>
 
-            <rect x="1" y="40" width="24" height="14" rx="2" fill="#a01060" opacity=".9" />
-            <text x="13" y="49.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MS</text>
+            <!-- MS -->
+            <g transform="translate(2,0)">
+              <rect x="1" y="6" width="24" height="14" rx="2" fill="#a01060" opacity=".9" />
+              <text x="13" y="16" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MS</text>
+            </g>
 
-            <line x1="25" y1="47" x2="37" y2="47" stroke="#888" stroke-width="1" marker-end="url(#ag375)" />
-            <text x="31" y="43" text-anchor="middle" font-family="monospace" font-size="4" fill="#a01060"
-              font-weight="bold">Uu</text>
+            <!-- Uu : MS -> NodeB -->
+            <g transform="translate(0,0)">
+              <line x1="13" y1="22" x2="13" y2="28" stroke="#888" stroke-width="1" marker-end="url(#ag2)"
+                marker-start="url(#ag2-start)" />
+              <text x="20" y="27" text-anchor="middle" font-family="monospace" font-size="5" fill="#a01060">Uu</text>
+            </g>
 
-            <g>
-              <rect x="38" y="34" width="26" height="26" rx="2" fill="#a01060" opacity=".8" />
-              <text x="51" y="42" text-anchor="middle" font-family="monospace" font-size="6" fill="white">NodeB</text>
-              <rect x="40" y="47" width="22" height="10" rx="1" fill="#5e0536" />
-              <text x="51" y="54" text-anchor="middle" font-family="monospace" font-size="5" fill="#ff90d0"
+            <!-- NodeB -->
+            <g transform="translate(0,0)">
+              <rect x="1" y="28" width="30" height="28" rx="2" fill="#a01060" opacity=".75" />
+              <text x="16" y="35" text-anchor="middle" font-family="monospace" font-size="5" fill="white">NodeB</text>
+              <rect x="3" y="39" width="26" height="14" rx="2" fill="#5e0536" />
+              <text x="16" y="48" text-anchor="middle" font-family="monospace" font-size="5" fill="#ff90d0"
                 font-weight="bold">MIMO</text>
             </g>
 
-            <line x1="64" y1="47" x2="74" y2="47" stroke="#888" stroke-width="1" marker-end="url(#ag375)" />
-            <text x="69" y="43" text-anchor="middle" font-family="monospace" font-size="3.5" fill="#555">Iub</text>
+            <!-- NodeB -> RNC -->
+            <g transform="translate(0,0)">
+              <line x1="31" y1="43" x2="37" y2="43" stroke="#888" stroke-width="1" marker-end="url(#ag25)" />
+              <text x="35" y="62" text-anchor="middle" font-family="monospace" font-size="5" fill="#a01060">Iub</text>
+            </g>
 
-            <rect x="75" y="34" width="24" height="26" rx="2" fill="#701040" opacity="0.9" />
-            <text x="87" y="48.5" text-anchor="middle" font-family="monospace" font-size="7" font-weight="bold"
-              fill="white">RNC</text>
+            <!-- RNC -->
+            <g transform="translate(-37,-6)">
+              <rect x="75" y="34" width="24" height="28" rx="2" fill="#701040" opacity=".9" />
+              <text x="87" y="49" text-anchor="middle" font-family="monospace" font-size="5" fill="white">RNC</text>
+            </g>
 
-            <line x1="99" y1="39" x2="121" y2="39" stroke="#888" stroke-width="1" marker-end="url(#ag375)" />
-            <text x="105" y="35" text-anchor="middle" font-family="sans-serif" font-size="3.5" fill="#555">Iu-CS</text>
+            <!-- Coeur circuit -->
+            <g transform="translate(0,0)">
+              <rect x="98" y="26" width="58" height="17" rx="2" fill="none" stroke="#500030" stroke-width="1"
+                stroke-dasharray="2,2" />
+              <text x="79" y="29" text-anchor="middle" font-family="monospace" font-size="4" fill="#500030"
+                font-weight="bold">Cœur Circuit</text>
+            </g>
 
-            <line x1="99" y1="52" x2="121" y2="72" stroke="#a01060" stroke-width="1" marker-end="url(#ag375)" />
-            <text x="103" y="63" text-anchor="middle" font-family="sans-serif" font-size="3.5"
-              fill="#a01060">Iu-PS</text>
+            <!-- Coeur paquet -->
+            <g transform="translate(0,0)">
+              <rect x="98" y="45" width="58" height="17" rx="2" fill="none" stroke="#a01060" stroke-width="1"
+                stroke-dasharray="2,2" />
+              <text x="79" y="58" text-anchor="middle" font-family="monospace" font-size="4" fill="#a01060"
+                font-weight="bold">Cœur Paquet</text>
+            </g>
 
-            <rect x="122" y="24" width="50" height="26" rx="2" fill="none" stroke="#500030" stroke-width="1"
-              stroke-dasharray="2,2" />
-            <text x="147" y="22" text-anchor="middle" font-family="monospace" font-size="4" fill="#500030"
-              font-weight="bold">Cœur Circuit</text>
+            <!-- lu-CS : RNC -> MSC -->
+            <g transform="translate(0,0)">
+              <line x1="62" y1="34" x2="99" y2="34" stroke="#888" stroke-width="1" marker-end="url(#ag25)" />
+              <text x="76" y="40" text-anchor="middle" font-family="monospace" font-size="5" fill="#555">lu-CS</text>
+            </g>
 
-            <rect x="125" y="29" width="20" height="14" rx="1" fill="#500030" opacity=".9" />
-            <text x="135" y="38" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MSC</text>
+            <!-- lu-PS : RNC -> SGSN -->
+            <g transform="translate(0,0)">
+              <line x1="62" y1="53" x2="99" y2="53" stroke="#a01060" stroke-width="1" marker-end="url(#ag25)" />
+              <text x="76" y="51" text-anchor="middle" font-family="monospace" font-size="5" fill="#a01060">lu-PS</text>
+            </g>
 
-            <line x1="145" y1="36" x2="153" y2="36" stroke="#888" stroke-width="1" />
+            <!-- EIR - VLR - HLR - AuC -->
+            <g transform="translate(0,0)">
+              <!-- EIR -->
+              <g transform="translate(0,0)">
+                <rect x="71" y="6" width="24" height="14" rx="2" fill="#7a1c4f" />
+                <text x="83" y="15" text-anchor="middle" font-family="monospace" font-size="5" fill="white">EIR</text>
+              </g>
 
-            <rect x="154" y="29" width="16" height="14" rx="1" fill="#2d001b" />
-            <text x="162" y="38" text-anchor="middle" font-family="monospace" font-size="4" fill="white">GMSC</text>
+              <!-- VLR -->
+              <g transform="translate(0,0)">
+                <rect x="100" y="6" width="24" height="14" rx="2" fill="#7a1c4f" />
+                <text x="112" y="15" text-anchor="middle" font-family="monospace" font-size="5" fill="white">VLR</text>
+              </g>
 
-            <line x1="135" y1="29" x2="135" y2="17" stroke="#555" stroke-width="1" />
-            <rect x="126" y="6" width="18" height="11" rx="1" fill="#7a1c4f" />
-            <text x="135" y="13.5" text-anchor="middle" font-family="monospace" font-size="4" fill="white">VLR</text>
+              <!-- HLR -->
+              <g transform="translate(0,0)">
+                <rect x="130" y="6" width="24" height="14" rx="2" fill="#4a0d2f" />
+                <text x="142" y="15" text-anchor="middle" font-family="monospace" font-size="5" fill="white">HLR</text>
+              </g>
 
-            <line x1="135" y1="43" x2="135" y2="53" stroke="#555" stroke-width="1" />
-            <rect x="126" y="53" width="18" height="11" rx="1" fill="#7a1c4f" />
-            <text x="135" y="60.5" text-anchor="middle" font-family="monospace" font-size="4" fill="white">EIR</text>
+              <!-- HLR -> AuC -->
+              <line x1="154" y1="13" x2="160" y2="13" stroke="#555" stroke-width="1" />
 
-            <line x1="145" y1="31" x2="155" y2="12" stroke="#555" stroke-width="1" />
-            <rect x="155" y="6" width="18" height="11" rx="1" fill="#4a0d2f" />
-            <text x="164" y="13.5" text-anchor="middle" font-family="monospace" font-size="4" fill="white">HLR</text>
+              <!-- AuC -->
+              <g transform="translate(0,0)">
+                <rect x="160" y="6" width="24" height="14" rx="2" fill="#911d5e" />
+                <text x="172" y="15" text-anchor="middle" font-family="monospace" font-size="5" fill="white">AuC</text>
+              </g>
+            </g>
 
-            <line x1="173" y1="11.5" x2="183" y2="11.5" stroke="#555" stroke-width="1" />
-            <rect x="183" y="6" width="18" height="11" rx="1" fill="#911d5e" />
-            <text x="192" y="13.5" text-anchor="middle" font-family="monospace" font-size="4" fill="white">AuC</text>
+            <!-- MSC -> VLR -->
+            <line x1="112" y1="27.5" x2="112" y2="19.9" stroke="#555" stroke-width="1" />
 
-            <rect x="122" y="67" width="50" height="22" rx="2" fill="none" stroke="#a01060" stroke-width="1"
-              stroke-dasharray="2,2" />
-            <text x="147" y="96" text-anchor="middle" font-family="monospace" font-size="4" fill="#a01060"
-              font-weight="bold">Cœur Paquet</text>
+            <!-- MSC -> HLR -->
+            <polyline points="112,27.5 112,23.5 142,23.5 142,19.9" fill="none" stroke="#555" stroke-width="1" />
 
-            <rect x="125" y="71" width="20" height="14" rx="1" fill="#a01060" opacity=".9" />
-            <text x="135" y="80" text-anchor="middle" font-family="monospace" font-size="5" fill="white">SGSN</text>
+            <!-- MSC -> EIR -->
+            <polyline points="112,27.5 112,23.5 83,23.5 83,19.9" fill="none" stroke="#555" stroke-width="1" />
 
-            <line x1="145" y1="78" x2="153" y2="78" stroke="#a01060" stroke-width="1" />
+            <!-- MSC - GMSC - RTC -->
+            <g transform="translate(0,-8.5)">
+              <!-- MSC -->
+              <g transform="translate(0,0)">
+                <rect x="100" y="36" width="24" height="14" rx="2" fill="#500030" opacity=".9" />
+                <text x="112" y="45" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MSC</text>
+              </g>
 
-            <rect x="154" y="71" width="16" height="14" rx="1" fill="#5e0536" opacity=".9" />
-            <text x="162" y="80" text-anchor="middle" font-family="monospace" font-size="4" fill="white">GGSN</text>
+              <!-- MSC -> GMSC -->
+              <line x1="124" y1="43" x2="130" y2="43" stroke="#888" stroke-width="1" />
 
-            <line x1="170" y1="36" x2="182" y2="36" stroke="#888" stroke-width="1" marker-end="url(#ag375)" />
-            <rect x="183" y="29" width="26" height="14" rx="2" fill="#333" />
-            <text x="196" y="38" text-anchor="middle" font-family="monospace" font-size=" fill=" white">RTC</text>
+              <!-- GMSC -->
+              <g transform="translate(0,0)">
+                <rect x="130" y="36" width="24" height="14" rx="2" fill="#2d001b" />
+                <text x="142" y="45" text-anchor="middle" font-family="monospace" font-size="5" fill="white">GMSC</text>
+              </g>
 
-            <line x1="170" y1="78" x2="182" y2="78" stroke="#a01060" stroke-width="1" marker-end="url(#ag375)" />
-            <rect x="183" y="71" width="26" height="14" rx="2" fill="#111" />
-            <text x="196" y="79.5" text-anchor="middle" font-family="monospace" font-size="5" fill="#ff80e0"
-              font-weight="bold">Internet</text>
+              <!-- GMSC -> RTC -->
+              <line x1="154" y1="43" x2="160" y2="43" stroke="#888" stroke-width="1" marker-end="url(#ag25)" />
 
-            <text x="2" y="102" font-family="monospace" font-size="5" fill="#555">
-              Amélioration HSPA+ : Agrégation de porteuses (Dual-Carrier)
-              <tspan x="2" dy="10">et traitement d'antennes avancées MIMO au NodeB</tspan>
-            </text>
+              <!-- RTC -->
+              <g transform="translate(0,0)">
+                <rect x="160" y="36" width="24" height="14" rx="2" fill="#333" />
+                <text x="172" y="45" text-anchor="middle" font-family="monospace" font-size="5" fill="white">RTC</text>
+              </g>
+            </g>
+
+            <!-- SGSN - GGSN - Net -->
+            <g transform="translate(0,-25)">
+              <!-- SGSN -->
+              <g transform="translate(0,0)">
+                <rect x="100" y="71" width="24" height="14" rx="2" fill="#a01060" opacity=".9" />
+                <text x="112" y="80" text-anchor="middle" font-family="monospace" font-size="5" fill="white">SGSN</text>
+              </g>
+
+              <!-- SGSN -> GGSN -->
+              <line x1="124" y1="78" x2="130" y2="78" stroke="#a01060" stroke-width="1" />
+
+              <!-- GGSN -->
+              <g transform="translate(0,0)">
+                <rect x="130" y="71" width="24" height="14" rx="2" fill="#5e0536" opacity=".9" />
+                <text x="142" y="80" text-anchor="middle" font-family="monospace" font-size="5" fill="white">GGSN</text>
+              </g>
+
+              <!-- GGSN -> Net -->
+              <line x1="154" y1="78" x2="160" y2="78" stroke="#a01060" stroke-width="1" marker-end="url(#ag25)" />
+
+              <!-- Net -->
+              <g transform="translate(0,0)">
+                <rect x="160" y="71" width="24" height="14" rx="2" fill="#111" />
+                <text x="172" y="79.5" text-anchor="middle" font-family="monospace" font-size="5" fill="#ff90d0"
+                  font-weight="bold">NET</text>
+              </g>
+            </g>
+
+            <!-- Définition des sigles -->
+            <g transform="translate(0,10)">
+              <text x="2" y="70" font-family="monospace" font-size="5" fill="#555">Amélioration HSPA+ : Agrégation de
+                porteuses (Dual-</text>
+              <text x="2" y="80" font-family="monospace" font-size="5" fill="#555">Carrier) et traitement d'antennes
+                avancées MIMO au</text>
+              <text x="2" y="90" font-family="monospace" font-size="5" fill="#555">NodeB</text>
+              <!-- <text x="2" y="80" font-family="monospace" font-size="5" fill="#555">rapide (HARQ) au sein du NodeB</text> -->
+              <!-- <text x="2" y="90" font-family="monospace" font-size="5" fill="#a01060">■ Voix: RNC ➔ MSC ➔ GMSC ➔ -->
+              <!-- RTC</text> -->
+              <!-- <text x="2" y="100" font-family="monospace" font-size="5" fill="#a01060">■ Données: RNC ➔ SGSN ➔ GGSN ➔
+                Internet</text> -->
+            </g>
           </svg>
         </div>
         <div class="gen-specs">
