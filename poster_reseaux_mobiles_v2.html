@@ -916,12 +916,12 @@
             <!-- Définition des sigles -->
             <g transform="translate(0,10)">
 
-              <text x="2" y="70" font-family="monospace" font-size="5" fill="#555">SGSN = Serving GPRS Support
+              <text x="2" y="70" font-family="monospace" font-size="5" fill="#555">SGSN : Serving GPRS Support
                 Node</text>
-              <text x="2" y="80" font-family="monospace" font-size="5" fill="#555">GGSN = Gateway GPRS Support
+              <text x="2" y="80" font-family="monospace" font-size="5" fill="#555">GGSN : Gateway GPRS Support
                 Node</text>
-              <text x="2" y="90" font-family="monospace" font-size="5" fill="#555">PCU = Packet Control Unit</text>
-              <text x="2" y="100" font-family="monospace" font-size="5" fill="#555">NET = Internet</text>
+              <text x="2" y="90" font-family="monospace" font-size="5" fill="#555">PCU : Packet Control Unit</text>
+              <text x="2" y="100" font-family="monospace" font-size="5" fill="#555">NET : Internet</text>
               <text x="2" y="110" font-family="monospace" font-size="5" fill="#056078">■ Voix: BSC ➔ MSC ➔ GMSC ➔
                 RTC</text>
               <text x="2" y="120" font-family="monospace" font-size="5" fill="#056078">■ Données: PCU ➔ SGSN ➔ GGSN ➔
@@ -990,21 +990,21 @@
             </g>
 
             <!-- 8PSK : MS -> BTS -->
-            <g transform="translate(0,0)">
+            <g transform="translate(4,0)">
               <line x1="13" y1="22" x2="13" y2="35" stroke="#888" stroke-width="1" marker-end="url(#ag2)"
                 marker-start="url(#ag2-start)" />
               <text x="22" y="29" text-anchor="middle" font-family="monospace" font-size="5" fill="#236a40">8PSK</text>
             </g>
 
             <!-- BTS -->
-            <g transform="translate(0,0)">
+            <g transform="translate(4,0)">
               <rect x="1" y="36" width="24" height="20" rx="2" fill="#236a40" opacity=".75" />
               <text x="13" y="45" text-anchor="middle" font-family="monospace" font-size="5" fill="white">BTS+</text>
               <text x="13" y="52" text-anchor="middle" font-family="monospace" font-size="5" fill="white">EDGE</text>
             </g>
 
             <!-- BTS -> BSC/PCU -->
-            <line x1="25" y1="43" x2="37" y2="43" stroke="#888" stroke-width="1" marker-end="url(#ag25)" />
+            <line x1="29" y1="43" x2="37" y2="43" stroke="#888" stroke-width="1" marker-end="url(#ag25)" />
 
             <!-- BSC + PCU -->
             <g transform="translate(-37,-6)">
@@ -1188,13 +1188,13 @@
               </marker>
             </defs>
 
-            <!-- MS -->
+            <!-- UE -->
             <g transform="translate(0,0)">
               <rect x="1" y="6" width="24" height="14" rx="2" fill="#5e1f96" opacity=".9" />
-              <text x="13" y="16" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MS</text>
+              <text x="13" y="16" text-anchor="middle" font-family="monospace" font-size="5" fill="white">UE</text>
             </g>
 
-            <!-- Uu : MS -> NodeB -->
+            <!-- Uu : UE -> NodeB -->
             <g transform="translate(0,0)">
               <line x1="13" y1="22" x2="13" y2="35" stroke="#888" stroke-width="1" marker-end="url(#ag2)"
                 marker-start="url(#ag2-start)" />
@@ -1343,6 +1343,7 @@
 
             <!-- Définition des sigles -->
             <g transform="translate(0,10)">
+              <text x="2" y="60" font-family="monospace" font-size="5" fill="#555">UE : User Equipement</text>
               <text x="2" y="70" font-family="monospace" font-size="5" fill="#555">RNC = Radio Network Controller</text>
               <text x="2" y="80" font-family="monospace" font-size="5" fill="#5e1f96">■ Voix: RNC ➔ MSC ➔ GMSC ➔
                 RTC</text>
@@ -1352,7 +1353,7 @@
           </svg>
         </div>
         <div class="gen-specs">
-          <div class="sp-row"><span class="sp-k">Débit</span><span class="sp-v">384 kb/s</span></div>
+          <div class="sp-row"><span class="sp-k">Débit</span><span class="sp-v">2 Mb/s</span></div>
           <div class="sp-row"><span class="sp-k">Accès</span><span class="sp-v">W-CDMA</span></div>
           <div class="sp-row"><span class="sp-k">Latence</span><span class="sp-v">~100–200 ms</span></div>
           <div class="gen-feats">
