@@ -111,7 +111,7 @@ header::after {
 .hdr-inner {
     position: relative;
     display: grid;
-    grid-template-rows: max-content max-content max-content max-content;
+    grid-template-rows: repeat(4, max-content);
     gap: 10mm;
     align-items: start
 }
@@ -140,13 +140,14 @@ header::after {
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
-.hdr-inner .row-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20mm;
+.hdr-inner .row-1-2 {
+    display: flex;
+    gap: 10mm;
+    justify-content: center;
+    align-items: center;
 }
 
 .hdr-inner .row-3 {
@@ -198,19 +199,8 @@ header::after {
 }
 
 .row-2 .poster-title {
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    text-align: center;
 }
-
-/* .hdr-promo-image { */
-/* width: 1000px; */
-/* height: 200px; */
-/* background-color: #000; */
-/* background-image: url("photo-ensemble.jpg"); */
-/* overflow: hidden; */
-/* } */
 
 .hdr-promo-image img {
     height: 346px;
