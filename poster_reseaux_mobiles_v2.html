@@ -1996,68 +1996,118 @@
         </div>
         <div class="gen-arch">
           <div class="ga-title">Architecture E-UTRAN : Agrégation de composantes de porteuses (CA)</div>
-          <svg viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <svg viewBox="0 0 210 140" xmlns="http://www.w3.org/2000/svg" style="width:100%">
             <defs>
               <marker id="ag4p" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto">
                 <polygon points="0 0,5 2,0 4" fill="#555" />
               </marker>
             </defs>
 
-            <rect x="1" y="40" width="24" height="14" rx="2" fill="#c83000" opacity=".9" />
-            <text x="13" y="49.5" text-anchor="middle" font-family="monospace" font-size="5" fill="white">MS</text>
+            <!-- UE -->
+            <g transform="translate(0,0)">
+              <rect x="1" y="40" width="26" height="14" rx="2" fill="#c83000" opacity=".9" />
+              <text x="14" y="49.5" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">UE</text>
+            </g>
 
-            <line x1="25" y1="44" x2="37" y2="34" stroke="#c83000" stroke-width="1" marker-end="url(#ag4p)" />
-            <line x1="25" y1="50" x2="37" y2="60" stroke="#a02000" stroke-width="1" marker-end="url(#ag4p)" />
-            <text x="31" y="49" text-anchor="middle" font-family="monospace" font-size="3.5" fill="#c83000"
-              font-weight="bold">LTE-Uu</text>
+            <!-- LTE-Uu : MS -> eNB PCell et MS -> eNB SCell -->
+            <g transform="translate(0,0)">
+              <line x1="27" y1="44" x2="39" y2="34" stroke="#c83000" stroke-width="1" marker-end="url(#ag4p)" />
+              <line x1="27" y1="50" x2="39" y2="60" stroke="#a02000" stroke-width="1" marker-end="url(#ag4p)" />
+              <text x="33" y="79" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#c83000"
+                font-weight="bold">LTE-Uu</text>
+            </g>
 
-            <rect x="38" y="24" width="26" height="15" rx="2" fill="#c83000" opacity=".85" />
-            <text x="51" y="31" text-anchor="middle" font-family="monospace" font-size="4" fill="white">eNB</text>
-            <text x="51" y="36" text-anchor="middle" font-family="monospace" font-size="3.5" fill="#ff9050">PCell</text>
+            <!-- eNB PCell -->
+            <g transform="translate(0,0)">
+              <rect x="40" y="27" width="26" height="18" rx="2" fill="#c83000" opacity=".85" />
+              <text x="53" y="35" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">eNB</text>
+              <text x="53" y="41" text-anchor="middle" font-family="monospace" font-size="5.5"
+                fill="#ff9050">PCell</text>
+            </g>
 
-            <rect x="38" y="55" width="26" height="15" rx="2" fill="#a02000" opacity=".75" />
-            <text x="51" y="62" text-anchor="middle" font-family="monospace" font-size="4" fill="white">eNB</text>
-            <text x="51" y="67" text-anchor="middle" font-family="monospace" font-size="3.5" fill="#ff9050">SCell</text>
+            <!-- eNB SCell -->
+            <g transform="translate(0,0)">
+              <rect x="40" y="55" width="26" height="18" rx="2" fill="#a02000" opacity=".75" />
+              <text x="53" y="63" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">eNB</text>
+              <text x="53" y="69" text-anchor="middle" font-family="monospace" font-size="5.5"
+                fill="#ff9050">SCell</text>
+            </g>
 
-            <line x1="64" y1="31" x2="74" y2="31" stroke="#888" stroke-width="1" marker-end="url(#ag4p)" />
-            <line x1="64" y1="62" x2="74" y2="62" stroke="#888" stroke-width="1" marker-end="url(#ag4p)" />
-            <text x="69" y="47" text-anchor="middle" font-family="monospace" font-size="3.5" fill="#555">S1</text>
+            <!-- S1 : eNB PCell -> MME, eNB PCell -> S-GW et eNB SCell -> S-GW -->
+            <g transform="translate(0,0)">
+              <line x1="66" y1="34" x2="78" y2="34" stroke="#888" stroke-width="1" marker-end="url(#ag4p)" />
+              <line x1="66" y1="40" x2="78" y2="54" stroke="#888" stroke-width="1" marker-end="url(#ag4p)" />
+              <line x1="66" y1="62" x2="78" y2="62" stroke="#888" stroke-width="1" marker-end="url(#ag4p)" />
+              <text x="72" y="30" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#555">S1</text>
+            </g>
 
-            <rect x="75" y="24" width="24" height="16" rx="2" fill="#803a00" opacity="0.9" />
-            <text x="87" y="34" text-anchor="middle" font-family="monospace" font-size="5" font-weight="bold"
-              fill="white">MME</text>
+            <!-- MME -->
+            <g transform="translate(0,0)">
+              <rect x="79" y="27" width="26" height="14" rx="2" fill="#803a00" opacity=".9" />
+              <text x="92" y="37" text-anchor="middle" font-family="monospace" font-size="5.5" font-weight="bold"
+                fill="white">MME</text>
+            </g>
 
-            <rect x="75" y="54" width="24" height="16" rx="2" fill="#c83000" opacity="0.9" />
-            <text x="87" y="64" text-anchor="middle" font-family="monospace" font-size="5" font-weight="bold"
-              fill="white">S-GW</text>
+            <!-- S-GW -->
+            <g transform="translate(0,0)">
+              <rect x="79" y="55" width="26" height="14" rx="2" fill="#c83000" opacity=".9" />
+              <text x="92" y="65" text-anchor="middle" font-family="monospace" font-size="5.5" font-weight="bold"
+                fill="white">S-GW</text>
+            </g>
 
-            <line x1="99" y1="32" x2="111" y2="32" stroke="#888" stroke-width="1" marker-end="url(#ag4p)" />
-            <line x1="99" y1="62" x2="111" y2="62" stroke="#c83000" stroke-width="1" marker-end="url(#ag4p)" />
+            <!-- S11 : MME -> HSS et S5 : S-GW -> P-GW -->
+            <g transform="translate(0,0)">
+              <line x1="105" y1="34" x2="119" y2="34" stroke="#888" stroke-width="1" />
+              <line x1="105" y1="62" x2="117" y2="62" stroke="#c83000" stroke-width="1" marker-end="url(#ag4p)" />
+            </g>
 
-            <rect x="112" y="24" width="26" height="16" rx="2" fill="#602a00" opacity=".9" />
-            <text x="125" y="34" text-anchor="middle" font-family="monospace" font-size="5" fill="white">HSS</text>
+            <!-- HSS -->
+            <g transform="translate(0,0)">
+              <rect x="118" y="27" width="26" height="14" rx="2" fill="#602a00" opacity=".9" />
+              <text x="131" y="37" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">HSS</text>
+            </g>
 
-            <rect x="112" y="54" width="26" height="16" rx="2" fill="#903a00" opacity=".9" />
-            <text x="125" y="64" text-anchor="middle" font-family="monospace" font-size="5" fill="white">P-GW</text>
+            <!-- P-GW -->
+            <g transform="translate(0,0)">
+              <rect x="118" y="55" width="26" height="14" rx="2" fill="#903a00" opacity=".9" />
+              <text x="131" y="65" text-anchor="middle" font-family="monospace" font-size="5.5" fill="white">P-GW</text>
+            </g>
 
-            <line x1="138" y1="62" x2="153" y2="62" stroke="#c83000" stroke-width="1" marker-end="url(#ag4p)" />
-            <text x="145" y="58" text-anchor="middle" font-family="sans-serif" font-size="3.5" fill="#c83000">Sgi</text>
+            <!-- SGi : P-GW -> Réseaux Externes -->
+            <g transform="translate(0,0)">
+              <line x1="144" y1="62" x2="154" y2="62" stroke="#c83000" stroke-width="1" marker-end="url(#ag4p)" />
+              <text x="149" y="58" text-anchor="middle" font-family="sans-serif" font-size="5.5"
+                fill="#c83000">Sgi</text>
+            </g>
 
-            <rect x="154" y="44" width="54" height="32" rx="2" fill="none" stroke="#111" stroke-width="1"
-              stroke-dasharray="2,2" />
-            <text x="181" y="41" text-anchor="middle" font-family="monospace" font-size="4" fill="#111"
-              font-weight="bold">Réseaux Externes</text>
+            <!-- Réseaux Externes -->
+            <g transform="translate(0,0)">
+              <rect x="155" y="44" width="52" height="32" rx="2" fill="none" stroke="#111" stroke-width="1"
+                stroke-dasharray="2,2" />
+              <text x="181" y="35" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#111"
+                font-weight="bold">Réseaux</text>
+              <text x="181" y="41" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#111"
+                font-weight="bold">Externes</text>
+              <rect x="158" y="49" width="46" height="22" rx="2" fill="#111" />
+              <text x="181" y="62" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#ff8040"
+                font-weight="bold">Internet IP</text>
+            </g>
 
-            <rect x="158" y="49" width="46" height="22" rx="1" fill="#111" />
-            <text x="181" y="62" text-anchor="middle" font-family="monospace" font-size="5" fill="#ff8040"
-              font-weight="bold">Internet IP</text>
+            <!-- Définition des sigles -->
+            <g transform="translate(0,0)">
+              <text x="2" y="96" font-family="monospace" font-size="5" fill="#555">Amélioration LTE-A : Agrégation
+                simultanée de</text>
+              <text x="2" y="106" font-family="monospace" font-size="5" fill="#555">
+                plusieurs bandes de fréquences (PCell + SCell) pour</text>
+              <text x="2" y="116" font-family="monospace" font-size="5" fill="#555">maximiser le
+                débit utilisateur</text>
+              <text x="2" y="126" font-family="monospace" font-size="5" fill="#c83000">■ Signalisation : MME ➔
+                HSS</text>
+              <text x="2" y="136" font-family="monospace" font-size="5" fill="#c83000">■
+                Trafic
+                Data : S-GW ➔ P-GW</text>
+            </g>
 
-            <text x="2" y="96" font-family="monospace" font-size="5" fill="#555">
-              Amélioration LTE-A : Agrégation simultanée de plusieurs bandes de
-              <tspan x="2" dy="6">fréquences (PCell + SCell) pour maximiser le débit utilisateur</tspan>
-            </text>
-            <text x="2" y="111" font-family="monospace" font-size="4" fill="#c83000">■ Signalisation (Plan de Contrôle)
-              : MME ➔ HSS | ■ Trafic Data (Plan Usager) : S-GW ➔ P-GW</text>
           </svg>
         </div>
         <div class="gen-specs">
