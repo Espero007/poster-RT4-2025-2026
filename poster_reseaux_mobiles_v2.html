@@ -2574,87 +2574,152 @@
       <span class="sec-title">Formules fondamentales des mathématiques et physiques appliquées en radio
         télécommunication </span>
     </div>
-    <div style="display: block; width: 100%; clear: both; margin-top: 15px;">
-      <div class="iot-arch-wrap" style="width: 100%; padding: 6px 12px; border-color: var(--era4);">
-        <div class="iot-arch-title"
-          style="margin-bottom: 5px; font-size: 13pt; text-transform: uppercase; letter-spacing: 0.5px;">
-          Équations Fondamentales des Télécommunications &amp; Analyse Vectorielle
-        </div>
+   <!-- BLOC PÉDAGOGIQUE AVEC NOTATION VECTORIELLE STRICTE (FLÈCHES & OPERATEURS) -->
+  <div style="display: block; width: 100%; clear: both; margin-top: 15px;">
+    <style>
+      .vec { display: inline-block; position: relative; padding-top: 0.2em; }
+      .vec::after { content: "→"; position: absolute; top: -0.45em; left: 50%; transform: translateX(-50%) scaleX(1.5); font-size: 0.75em; font-weight: bold;line-height: 1.5}
+      .math-frac { inline-size: max-content; display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.9em; padding: 0 4px; }
+      .math-num { border-bottom: 1.5px solid currentColor; padding-bottom: 1px; display: block; }
+      .math-den { padding-top: 1px; display: block; }
+      .math-eq { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 4px 0; }
+    </style>
 
-        <table
-          style="width: 100%; table-layout: fixed; border-collapse: collapse; font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--ink);">
-          <tr>
-
-            <td style="width: 25%; vertical-align: top; padding-right: 12px;">
-              <div
-                style="border-left: 3px solid var(--wifi); padding-left: 6px; display: inline-block; width: 100%; height: 90px; vertical-align: top;">
-                <b style="color: var(--wifi); font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">I. MAXWELL
-                  (LOCAL)</b>
-                <div
-                  style="margin-top: 3px; line-height: 1.35; background: rgba(0, 119, 204, 0.03); padding: 4px; border: 1px solid rgba(0,119,204,0.15); border-radius: 4px; height: 70px ; font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
-                  div(E) = ρ / ε₀ (Loi de Gauss : Champ E généré par charges ρ)<br>
-                  div(B) = 0 (Loi de Gauss magnétique : Absence de champs magnétique)<br>
-                  rot(E) = -∂B / ∂t (Loi de Faraday : Induction Electromagnétique)<br>
-                  rot(B) = μ₀J + μ₀ε₀(∂E / ∂t) (Loi d'Ampère-Maxwell)
-                </div>
-              </div>
-            </td>
-
-            <td style="width: 27%; vertical-align: top; padding-right: 12px;">
-              <div
-                style="border-left: 3px solid var(--g4p); padding-left: 6px; display: inline-block; width: 100%; height: 90px; vertical-align: top;">
-                <b style="color: var(--wifi); font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">I. MAXWELL
-                  (LOCAL)</b>
-                <b style="color: var(--g4p); font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">II.
-                  TÉLÉGRAPHISTES (TEM)</b>
-                <div
-                  style="margin-top: 3px; line-height: 1.35; background: rgba(200, 48, 0, 0.03); padding: 4px; border: 1px solid rgba(200,48,0,0.15); border-radius: 4px; height: 70px;  font-weight: bold; width: 100%;display: flex; flex-direction: column; justify-content: center;">
-                  ∂V/∂x = -R·I - L·(∂I/∂t) (CHute de tension en ligne)<br>
-                  ∂I/∂x = -G·V - C·(∂V/∂t) (Perte de courant en ligne)<br>
-                  <span style="font-size: 8pt;">γ = √[(R + jωL)(G + jωC)] (Constante bidirectionnelle )</span>
-                </div>
-              </div>
-            </td>
-
-            <td style="width: 23%; vertical-align: top; padding-right: 12px;">
-              <div
-                style="border-left: 3px solid var(--g375); padding-left: 6px; display: inline-block; width: 100%; height: 90px; vertical-align: top;">
-                <b style="font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">III. PROPAGATION &amp;
-                  ATTÉNUATION</b>
-                <div
-                  style="margin-top: 3px; line-height: 1.35; background: rgba(160, 16, 96, 0.03); padding: 4px; border: 1px solid rgba(160,16,96,0.15); border-radius: 4px; height: 70px;  font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
-                  Equation de diffusion du champ : ΔE = μ·σ·(∂E / ∂t) (Equation de diffusion d'onde Electromagnétique en milieu condicteur ohmique)<br>
-                  <b style="font-size: 8.5pt;">Effet de peau :
-                  δ = 1 / √(π·f·μ·σ) (Épaisseur d'effet de peau, atténuation de l'onde à 1/e) 
-                </b>
-                </div>
-              </div>
-            </td>
-
-            <td style="width: 25%; vertical-align: top;">
-              <div
-                style="border-left: 3px solid var(--ink2); padding-left: 6px; display: inline-block; width: 100%; height: 90px; vertical-align: top;">
-                <b style="color: var(--ink2); font-size: 9.5pt; font-family: 'Barlow Condensed', sans-serif;">IV.
-                  ANALYSE &amp; JACOBIEN</b>
-                <div
-                  style="margin-top: 3px; line-height: 1.35; background: rgba(0, 0, 0, 0.02); padding: 4px; border: 1px solid rgba(0,0,0,0.12); border-radius: 4px; height: 70px; font-weight: bold; width: 100%; display: flex; flex-direction: column; justify-content: center;">
-                  <b>Opérateurs d'espace spatiaux: Gradient (∇f), Divergence (∇·A), Rotationnel (∇×A), Laplacien (Δf = ∇²f)</b><br>
-                  <b style=" font-weight: bold; font-size: 8pt;">Jacobien Sphérique (Antenne) :
-                  J(r,θ,φ) = r²·sin(θ) (Facteur d'échelle différenciel dV indispensable pour calculer la puissance de diagramme du rayonnement d'une antenne).</b>
-                </div>
-              </div>
-            </td>
-
-          </tr>
-        </table>
-
-        <div
-          style="margin-top: 6px; padding-top: 4px; border-top: 1px dashed var(--rule); font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--era4);">
-          <b>LOIS DE CANAL :</b> Formule de Friis : Pr = Pt·Gt·Gr·(λ / (4π·d))² (Puissance reçue Pr selon gain d'antenne émettrice Gt, répectrice Gr, distance d et longueur d'onde λ)&nbsp;|&nbsp; Capacité de
-          Shannon-Hartley : <b>C = B · log₂(1 + S/N) (Débit binaire max C théorique admissible en fonction de la bande passante B et du rapport signa.bruit S/N)</b>
-        </div>
+    <div class="iot-arch-wrap" style="width: 100%; padding: 12px 16px; border-color: var(--era4);">
+      <div class="iot-arch-title tbl-margin" >
+        Équations Fondamentales des Télécommunications : Explications &amp; Cas d'Usage
       </div>
+      
+      <table style="width: 100%; border-collapse: separate; border-spacing: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--ink);">
+        
+        <!-- I. ANALYSE VECTORIELLE -->
+        <tr>
+          <td style="width: 100%;">
+            <div style="border-left: 4px solid var(--ink2); padding-left: 10px; background: rgba(0, 0, 0, 0.02); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(0,0,0,0.12); border-left-width: 0;">
+              <b style="color: var(--ink2); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">I. OPÉRATEURS VECTORIELS SPATIAUX &amp; JACOBIEN SPHÉRIQUE</b>
+              <div style="margin-top: 4px; line-height: 1.6; text-align: justify;  font-size: 16pt; font-family: 'Barlow', sans-serif;">
+                <b>• </b><span class="vec">grad</span>(f) = <span class="vec">∇</span>f (Gradient) : C'est la flèche de la plus forte pente. Si f représente la hauteur d'une montagne ou d'une température, le gradient est une flèche qui pointe exactement vers l'endroit où ça monte le plus vite, et sa longueur indique à quel point la pente est raide.L'opérateur ∇ dérive la fonction par rapport à chaque direction spatiale (x,yz) pour obtenir les composantes du vecteur. Elle est utilisée pour déterminer la dierction de la force de gravité ou analyser les transferts thermiques de la zone chaude vers la zone froide.,  <br> <br> <b>• </b><b>div</b> <span class="vec"> A </span> = <span class="vec">∇</span> · <span class="vec">A</span> (Divergence) : C'est le bilan de création ou disparition en un point (source ou puit). Prenons un robinet ouvert sous l'eau (la divergence est positive, du fluide sort) ou un drain qui aspire l'eau (la divergence est négative). Si la divergence est nulle, rien ne se crée, tout ce qui entre sort. Elle est utilisée pour prouver l'absence de charges magnétiques isolées ou calculer la densité de charge électrique. <br><br> <b>• </b><span class="vec"> rot </span>  <span class="vec"> A </span> = <span class="vec">∇</span> &and; <span class="vec">A</span> (Rotationnel) : C'est la mesure du tourbillon. Une petite hélice miniature placée dans un fluide tournant grâce au fluide qui tourne aussi, traduit l'existence du rotationnel. Dans le cas contraire, le ratationnel, le rotationnel est nul. L'axe de l'hélice donne la direction du vecteur rotationnel. Elle est utilisée pour calculer le champ magnétique créé par un courant qui circule et analyser la vortexité des vents dans un météo ou les tourbillons dans les guides d'ondes RF<br><br> <b>• </b> Δf = <span class="vec">∇</span>²f (Laplacien) : C'est le niveau de courbure de la tension. Il compare la valeur d'une grandeur en un point par rapport à la moyenne de ce qui l'entoure. Elle est utilisée da,s les équations des ondes électrmagnétiques (propagaton de la lumière/radio), équation de la chaleur ou potentiel électrostatique (Equation de poisson) <br><br> <b>• </b> J(r,θ,φ) = r²·sin(θ).  (Jacabien) : C'est le facteur d'échelle géométrique. <br><br> <b>Dans ces formaules, A représente un vecteur et f un sclaire</b></div> 
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- II. MAXWELL -->
+        <tr>
+          <td style="width: 100%;">
+            <div style="border-left: 4px solid var(--wifi); padding-left: 10px; background: rgba(0, 119, 204, 0.03); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(0,119,204,0.15); border-left-width: 0;">
+              <b style="color: var(--wifi); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">II. ÉQUATIONS DE MAXWELL (RÉGIME ÉLECTROMAGNETIQUE LOCAL)</b>
+              <div style="margin-top: 4px; line-height: 1.6; text-align: justify;">
+                <div class="display: block" style= "font-family: 'Barlow', sans-serif; font-size: 16pt;">
+                <!-- 1. MAXWELL-GAUSS -->
+                <b>• </b><b>div</b> <span class="vec">E</span> = <span class="math-frac"><span class="math-num">ρ</span><span class="math-den">ε₀</span></span> <b>(Maxwell-Gauss) :</b> 
+                Relie le champ électrique aux charges électriques qui le créent. Une charge positive agit comme une "source" de champ électrique qui "rayonne" vers l'extérieur (divergence positive).<br>
+                <b>Cas d'usage :</b> Calcul du champ électrique dans les condensateurs HF, modélisation de la zone de déplétion dans les diodes/transistors RF et blindage électromagnétique (CEM).<br><br>
+
+                <!-- 2. MAXWELL-THOMSON -->
+                <b>• </b><b>div</b> <span class="vec">B</span> = 0 <b>(Maxwell-Thomson) :</b> 
+                Indique que le flux magnétique est toujours conservé : il n'existe pas de charges magnétiques isolées (pas de monopôle). Les lignes de champ magnétique tournent en boucle fermée sur elles-mêmes.<br>
+                <b>Cas d'usage :</b> Guidage du flux dans les transformateurs RF, étude du confinement des lignes de champ dans les câbles coaxiaux et antennes inductives (NFC/RFID).<br><br>
+
+                <!-- 3. MAXWELL-FARADAY -->
+                <b>• </b><span class="vec"><b>rot</b></span> <span class="vec">E</span> = -<span class="math-frac"><span class="math-num">∂<span class="vec">B</span></span><span class="math-den">∂t</span></span> <b>(Maxwell-Faraday) :</b> 
+                Explique l'induction électromagnétique : un champ magnétique variable dans le temps (∂<span class="vec">B</span>/∂t) génère un "tourbillon" de champ électrique (rot <span class="vec">E</span>).<br>
+                <b>Cas d'usage :</b> Principe de fonctionnement des antennes réceptrices (l'onde électromagnétique incidente induit un courant dans l'antenne) et inducteurs haute fréquence.<br><br>
+
+                <!-- 4. MAXWELL-AMPÈRE -->
+                <b>• </b><span class="vec"><b>rot</b></span> <span class="vec">B</span> = μ₀<span class="vec">J</span> + μ₀ε₀<span class="math-frac"><span class="math-num">∂<span class="vec">E</span></span><span class="math-den">∂t</span></span> <b>(Maxwell-Ampère) :</b> 
+                Montre qu'un champ magnétique est créé soit par un courant électrique de conduction (<span class="vec">J</span>), soit par la variation d'un champ électrique dans le temps (∂<span class="vec">E</span>/∂t, courant de déplacement). C'est ce second terme qui rend la propagation dans le vide possible !<br>
+                <b>Cas d'usage :</b> Émission d'ondes par les antennes émettrices, propagation HF dans le vide/l'air et dimensionnement des guides d'ondes micro-ondes.<br><br>
+
+                <div style="font-style: italic; margin-top: 6px;">
+                  <b>Dans ces formules :</b> <span class="vec">E</span> est le champ électrique, <span class="vec">B</span> le champ magnétique, <span class="vec">J</span> la densité de courant, ρ la densité de charge, ε₀ la permittivité du vide et μ₀ la perméabilité du vide.
+                </div>
+               
+            </div>
+          </td>
+        </tr>
+
+        <!-- III. TÉLÉGRAPHISTES -->
+        <tr>
+          <td style="width: 100%;">
+            <div style="border-left: 4px solid var(--g4p); padding-left: 10px; background: rgba(200, 48, 0, 0.03); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(200,48,0,0.15); border-left-width: 0;">
+              <b style="color: var(--g4p); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">III. ÉQUATIONS DES TÉLÉGRAPHISTES (LIGNES DE TRANSMISSION TEM)</b>
+              <div style="margin-top: 4px; line-height: 1.6; text-align: justify;">
+                <div class="display: block" style= "font-family: 'Barlow', sans-serif; font-size: 16pt;">
+                 <!-- 1. CHUTE DE TENSION EN LIGNE -->
+                <b>• </b><span><span class="math-frac"><span class="math-num">∂V</span><span class="math-den">∂x</span></span> = -R·I - L·<span class="math-frac"><span class="math-num">∂I</span><span class="math-den">∂t</span></span></span> <b>(Loi des mailles linéique) :</b> 
+                Montre comment la tension V diminue le long de la ligne (x). Cette perte est causée par la résistance du conducteur (R) et l'effet d'auto-induction (L) face aux variations du courant dans le temps.<br>
+                <b>Cas d'usage :</b> Évaluation de la chute de tension et des pertes par effet Joule dans les longs câbles coaxiaux et paires torsadées Ethernet.<br><br>
+
+                <!-- 2. PERTE DE COURANT EN LIGNE -->
+                <b>• </b><span><span class="math-frac"><span class="math-num">∂I</span><span class="math-den">∂x</span></span> = -G·V - C·<span class="math-frac"><span class="math-num">∂V</span><span class="math-den">∂t</span></span></span> <b>(Loi des nœuds linéique) :</b> 
+                Explique comment le courant I fuit au fur et à mesure de la propagation. Le courant s'échappe à travers l'isolant via la conductance de fuite (G) et alimente la capacité équivalente (C) entre les conducteurs.<br>
+                <b>Cas d'usage :</b> Modélisation des fuites diélectriques et dimensionnement de l'isolation dans les lignes à microruban sur PCB (RF Microstrip).<br><br>
+
+                <!-- 3. CONSTANTE DE PROPAGATION -->
+                <b>• </b><span> γ = α + jβ = √<span style="border-top: 1px solid currentColor; padding-top: 1px;">(R + jωL)(G + jωC)</span></span> <b>(Constante de propagation) :</b> 
+                C'est la carte d'identité de l'onde guidée. La partie réelle α mesure l'affaiblissement (l'onde faiblit) et la partie imaginaire β mesure le déphasage (l'onde avance en ondulant à la pulsation ω).<br>
+                <b>Cas d'usage :</b> Calcul de l'atténuation en dB/m d'un câble, prédiction du déphasage des signaux HF et adaptation d'impédance pour éviter les réflexions.<br><br>
+
+                <div style="font-style: italic; margin-top: 6px;">
+                  <b>Dans ces formules :</b> V est la tension, I le courant, R la résistance linéique (Ω/m), L l'inductance (H/m), G la conductance de fuite (S/m), C la capacité (F/m) et ω la pulsation du signal.
+                </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- IV. DIFFUSION & PEAU -->
+        <tr>
+          <td style="width: 100%;">
+            <div style="border-left: 4px solid var(--g375); padding-left: 10px; background: rgba(160, 16, 96, 0.03); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(160,16,96,0.15); border-left-width: 0;">
+              <b style="color: var(--g375); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">IV. PROPAGATION DANS LES CONDUCTEURS &amp; EFFET DE PEAU</b>
+              <div style="margin-top: 4px; line-height: 1.6; text-align: justify;">
+                <div class="display: block" style= "font-family: 'Barlow', sans-serif; font-size: 16pt;">
+                 <!-- 1. ÉQUATION DE DIFFUSION DU CHAMP -->
+                  <b>• </b><span>Δ<span class="vec">E</span> = μ·σ·<span class="math-frac"><span class="math-num">∂<span class="vec">E</span></span><span class="math-den">∂t</span></span></span> <b>(Équation de diffusion électromagnétique) :</b> 
+                  Décrit la façon dont un champ électrique pénètre et s'atténue à l'intérieur d'un matériau conducteur. Contrairement au vide où l'onde se propage sans fin, dans un métal (σ > 0), l'onde est rapidement absorbée et transformée en chaleur par effet Joule.<br>
+                  <b>Cas d'usage :</b> Calcul de l'atténuation des champs dans les parois métalliques, conception de blindages électromagnétiques (CEM) et analyse de la pénétration du signal dans les milieux dissipatifs.<br><br>
+
+                  <!-- 2. ÉPAISSEUR DE PEAU -->
+                  <b>• </b><span>δ = <span class="math-frac"><span class="math-num">1</span><span class="math-den">√<span style="border-top: 1px solid currentColor;">π·f·μ·σ</span></span></span></span> <b>(Épaisseur ou profondeur de peau) :</b> 
+                  Représente la profondeur à laquelle l'amplitude du champ a diminué de 63% (il ne reste que 1/e ≈ 37%). Plus la fréquence (f) augmente, plus le courant est refoulé vers la surface extrême du conducteur, réduisant la section utile du métal.<br>
+                  <b>Cas d'usage :</b> Dorure ou argenture de surface des pistes PCB RF et des guides d'onde, calcul de l'augmentation de la résistance linéique (R) en haute fréquence et dimensionnement des câbles coaxiaux.<br><br>
+
+                  <div style="font-style: italic; margin-top: 6px;">
+                    <b>Dans ces formules :</b> <span class="vec">E</span> est le champ électrique, μ la perméabilité magnétique du matériau, σ sa conductivité électrique, f la fréquence du signal et δ la profondeur de peau (en mètres).
+                  </div>
+          </td>
+        </tr>
+
+
+        <!-- V. CANAL DE TRANSMISSION -->
+        <tr>
+          <td style="width: 100%;">
+            <div style="border-left: 4px solid var(--era4); padding-left: 10px; background: rgba(0, 0, 0, 0.02); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(0,0,0,0.12); border-left-width: 0;">
+              <b style="color: var(--era4); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">V. BILAN DE LIAISON ET CAPACITÉ DU CANAL</b>
+              <div style="margin-top: 4px; line-height: 1.6; text-align: justify;">
+                <div class="display: block" style= "font-family: 'Barlow', sans-serif; font-size: 16pt;">
+                  <!-- 1. ÉQUATION DE FRIIS -->
+                  <b>• </b><span>P<sub>r</sub> = P<sub>t</sub> · G<sub>t</sub> · G<sub>r</sub> · <span class="math-frac"><span class="math-num">λ²</span><span class="math-den">(4π·d)²</span></span></span> <b>(Formule de transmission de Friis) :</b> 
+                  Calcule la puissance hertzienne reçue par une antenne en espace libre à une distance d. Elle montre que l'atténuation augmente fortement avec le carré de la distance (d²) et le carré de la fréquence (car la longueur d'onde λ = c/f diminue).<br>
+                  <b>Cas d'usage :</b> Dimensionnement du bilan de liaison (Link Budget) en dBm, calcul de la portée utile des réseaux sans fil (Wi-Fi, LoRaWAN, 5G, liaisons satellites) et choix du gain des antennes émettrices (G<sub>t</sub>) et réceptrices (G<sub>r</sub>).<br><br>
+
+                  <!-- 2. SHANNON-HARTLEY -->
+                  <b>• </b><span>C = B · log<sub>2</sub>(1 + <span class="math-frac"><span class="math-num">S</span><span class="math-den">N</span></span>)</span> <b>(Théorème de Shannon-Hartley) :</b> 
+                  Définit la limite physique théorique absolue du débit d'information (C en bit/s) pouvant être transmis sans erreur sur un canal radio. Ce débit dépend directement de la largeur de bande disponible (B) et du rapport signal sur bruit (S/N).<br>
+                  <b>Cas d'usage :</b> Évaluation de la capacité maximale des canaux cellulaires (4G/5G/6G), optimisation de l'efficacité spectrale et dimensionnement des ordres de modulation (QAM) selon la qualité du canal radio.<br><br>
+
+                  <div style="font-style: italic; margin-top: 6px;">
+                    <b>Dans ces formules :</b> P<sub>r</sub> est la puissance reçue, P<sub>t</sub> la puissance émise, G<sub>t</sub> et G<sub>r</sub> les gains des antennes, λ la longueur d'onde, d la distance, C la capacité du canal (bit/s), B la bande passante (Hz) et S/N le rapport signal sur bruit.
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+      </table>
     </div>
+  </div>
   </section>
 
   <!-- ══════════ FOOTER ══════════ -->
