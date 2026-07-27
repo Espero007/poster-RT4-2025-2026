@@ -2198,3 +2198,7 @@ footer {
 .form-item--note {
     font-style: italic;
 }
+
+.form-color {
+ color: var(--era5);   
+}
