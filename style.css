@@ -25,7 +25,7 @@
     --era3-lt: #dfe9f7;
     --era4: #1a6b3a;
     --era4-bg: #edf7f1;
-    --era5: #e07000;
+    --era5: #c200e0;
     --era5-bg: #eef3fb;
     --era5-lt: #dfe9f7;
     --g2: #1452a0;
@@ -2085,3 +2085,45 @@ footer {
     display: inline-block;
     margin-right: 2mm
 }
+
+.vec { display: inline-block; position: relative; padding-top: 0.2em; }
+      .vec::after { content: "→"; position: absolute; top: -0.45em; left: 50%; transform: translateX(-50%) scaleX(1.5); font-size: 0.75em; font-weight: bold;line-height: 1.5}
+      .math-frac { inline-size: max-content; display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.9em; padding: 0 4px; }
+      .math-num { border-bottom: 1.5px solid currentColor; padding-bottom: 1px; display: block; }
+      .math-den { padding-top: 1px; display: block; }
+      .math-eq { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 4px 0; }
+      
+      /* Grille 2 par 2 puis 1 seul */
+      .formula-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        width: 100%;
+      }
+      .col-half {
+        flex: 1 1 calc(50% - 16px);
+        min-width: 300px;
+        box-sizing: border-box;
+      }
+      .col-full {
+        flex: 1 1 100%;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+.form-blck1 {
+    width: 100%; padding: 12px 16px; border-color: var(--era5); box-sizing: border-box;
+}
+
+.form-blck2 {
+border-left: 4px solid var(--era5); padding-left: 10px; background: rgba(0, 119, 204, 0.03); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(0,119,204,0.15); border-left-width: 0;
+}
+
+.form-blck3 {
+    color: var(--era5); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;
+}
+
+.form-blck4{
+    margin-top: 4px; line-height: 1.6; text-align: justify;  font-size: 16pt; font-family: 'Barlow', sans-serif;
+}
+
