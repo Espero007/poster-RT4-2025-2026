@@ -3155,7 +3155,7 @@
 
               <!-- Gradient -->
               <div class="form-blck4 form-item form-item--grad">
-                <b class = "form-color"><span class="vec">grad</span>(f) = <span class="vec">∇</span>f (Gradient)</b> :
+                <b class="form-color"><span class="vec">grad</span>(f) = <span class="vec">∇</span>f (Gradient)</b> :
                 C'est un vecteur qui va dans le sens de la plus forte pente et qui mesure la variation rapide d'une
                 grandeur.
                 Sur une carte d'altitude, par exemple, le gradient en un point pointe exactement dans le sens de la plus
@@ -3168,7 +3168,8 @@
 
               <!-- Divergence -->
               <div class="form-blck4 form-item form-item--div">
-                <b class = "form-color">div <span class="vec">A</span> = <span class="vec">∇</span> · <span class="vec">A</span>
+                <b class="form-color">div <span class="vec">A</span> = <span class="vec">∇</span> · <span
+                    class="vec">A</span>
                   (Divergence)</b> :
                 C'est le bilan de création ou disparition de la matière en un point (source ou puits). Imaginons de
                 l'eau en un point : pour un robinet ouvert, la divergence est positive car de la matière (l'eau) est
@@ -3181,8 +3182,8 @@
 
               <!-- Rotationnel -->
               <div class="form-blck4 form-item form-item--rot">
-                <b class = "form-color"><span class="vec">rot</span> <span class="vec">A</span> = <span class="vec">∇</span> &and; <span
-                    class="vec">A</span> (Rotationnel)</b> :
+                <b class="form-color"><span class="vec">rot</span> <span class="vec">A</span> = <span
+                    class="vec">∇</span> &and; <span class="vec">A</span> (Rotationnel)</b> :
                 C'est la mesure du tourbillon en un point. Imaginons une petite hélice miniature plongée dans un
                 fluide : si le courant la fait tourner sur elle-même, le rotationnel n'est pas nul, et l'axe de
                 rotation de l'hélice donne la direction du vecteur. Si l'hélice ne tourne pas, le rotationnel est
@@ -3192,19 +3193,22 @@
 
               <!-- Laplacien -->
               <div class="form-blck4 form-item form-item--laplacien">
-                <b class = "form-color">Δf = <span class="vec">∇</span>²f (Laplacien)</b> :
-                Le laplacien mesure l'écart entre la valeur d'une grandeur en un point par rapport à la moyenne
-                de ce qui l'entoure. Quand la goutte tombe, l'encre est concentrée au centre par rapport à l'eau
-                autour (fort laplacien). L'encre va naturellement se diffuser vers l'extérieur jusqu'à ce que tout
-                soit homogène (laplacien redevenu nul). Elle est utilisée dans les équations des ondes
+                <b class="form-color">Δf = <span class="vec">∇</span>²f (Laplacien)</b> :
+                Le laplacien mesure l'écart entre la valeur d'une grandeur en un point par et la moyenne
+                de ce qui l'entoure. Quand une goutte d'encre tombe dans de l'eau, l'encre est initialement concentrée
+                au centre par rapport à l'eau
+                autour d'elle (fort laplacien). Ensuite, l'encre va naturellement se diffuser vers l'extérieur jusqu'à
+                ce que tout
+                soit homogène (laplacien redevenu nul). Le laplacien est utilisée dans les équations des ondes
                 électromagnétiques (propagation de la lumière/radio), l'équation de la chaleur ou le potentiel
                 électrostatique (Équation de Poisson).
               </div>
 
               <!-- Jacobien -->
               <div class="form-blck4 form-item form-item--jacobien">
-                <b class = "form-color">J(r, θ, φ) = r²·sin(θ) (Jacobien)</b> :
-                C'est le facteur d'échelle géométrique.
+                <b class="form-color">J(r, θ, φ) = r²·sin(θ) (Jacobien)</b> :
+                C'est le facteur d'échelle géométrique ou encore le "zoom" mathématique nécessaire pour garder la bonne
+                échelle quand on passe d'une grille droite à une grille arrondie.
               </div>
 
               <!-- Note générale -->
@@ -3224,8 +3228,8 @@
 
               <!-- Maxwell-Gauss -->
               <div class="form-blck4 form-item form-item--maxwell-gauss">
-                <b class = "form-color">div <span class="vec">E</span> = <span class="math-frac"><span class="math-num">ρ</span><span
-                      class="math-den">ε₀</span></span> (Maxwell-Gauss) :</b>
+                <b class="form-color">div <span class="vec">E</span> = <span class="math-frac"><span
+                      class="math-num">ρ</span><span class="math-den">ε₀</span></span> (Maxwell-Gauss) :</b>
                 Relie le champ électrique aux charges électriques qui le créent. Une charge positive agit comme une
                 "source" de champ électrique qui "rayonne" vers l'extérieur (divergence positive).<br>
                 <b>Cas d'usage :</b> Calcul du champ électrique dans les condensateurs HF, modélisation de la zone de
@@ -3234,7 +3238,7 @@
 
               <!-- Maxwell-Thomson -->
               <div class="form-blck4 form-item form-item--maxwell-thomson">
-                <b class = "form-color">div <span class="vec">B</span> = 0 (Maxwell-Thomson) :</b>
+                <b class="form-color">div <span class="vec">B</span> = 0 (Maxwell-Thomson) :</b>
                 Indique que le flux magnétique est toujours conservé : il n'existe pas de charges magnétiques isolées
                 (pas de monopôle). Les lignes de champ magnétique tournent en boucle fermée sur elles-mêmes.<br>
                 <b>Cas d'usage :</b> Guidage du flux dans les transformateurs RF, étude du confinement des lignes de
@@ -3243,8 +3247,9 @@
 
               <!-- Maxwell-Faraday -->
               <div class="form-blck4 form-item form-item--maxwell-faraday">
-                <b class = "form-color"><span class="vec">rot</span> <span class="vec">E</span> = -<span class="math-frac"><span
-                      class="math-num">∂<span class="vec">B</span></span><span class="math-den">∂t</span></span>
+                <b class="form-color"><span class="vec">rot</span> <span class="vec">E</span> = -<span
+                    class="math-frac"><span class="math-num">∂<span class="vec">B</span></span><span
+                      class="math-den">∂t</span></span>
                   (Maxwell-Faraday) :</b>
                 Explique l'induction électromagnétique : un champ magnétique variable dans le temps (∂<span
                   class="vec">B</span>/∂t)
@@ -3255,9 +3260,9 @@
 
               <!-- Maxwell-Ampère -->
               <div class="form-blck4 form-item form-item--maxwell-ampere">
-                <b class = "form-color"><span class="vec">rot</span> <span class="vec">B</span> = μ₀<span class="vec">J</span> + μ₀ε₀<span
-                    class="math-frac"><span class="math-num">∂<span class="vec">E</span></span><span
-                      class="math-den">∂t</span></span> (Maxwell-Ampère) :</b>
+                <b class="form-color"><span class="vec">rot</span> <span class="vec">B</span> = μ₀<span
+                    class="vec">J</span> + μ₀ε₀<span class="math-frac"><span class="math-num">∂<span
+                        class="vec">E</span></span><span class="math-den">∂t</span></span> (Maxwell-Ampère) :</b>
                 Montre qu'un champ magnétique est créé soit par un courant électrique de conduction (<span
                   class="vec">J</span>),
                 soit par la variation d'un champ électrique dans le temps (∂<span class="vec">E</span>/∂t, courant de
@@ -3269,7 +3274,7 @@
 
               <!-- Note générale -->
               <div class="form-blck4">
-                <b class = "form-color">Dans ces formules :</b> <span class="vec">E</span> est le champ électrique, <span
+                <b class="form-color">Dans ces formules :</b> <span class="vec">E</span> est le champ électrique, <span
                   class="vec">B</span>
                 le champ magnétique, <span class="vec">J</span> la densité de courant, ρ la densité de charge,
                 ε₀ la permittivité du vide et μ₀ la perméabilité du vide.
@@ -3287,7 +3292,8 @@
 
               <!-- Loi des mailles linéique -->
               <div class="form-blck4 form-item form-item--telegraphistes-mailles">
-                <b class = "form-color"><span class="math-frac"><span class="math-num">∂V</span><span class="math-den">∂x</span></span> =
+                <b class="form-color"><span class="math-frac"><span class="math-num">∂V</span><span
+                      class="math-den">∂x</span></span> =
                   -R·I -
                   L·<span class="math-frac"><span class="math-num">∂I</span><span class="math-den">∂t</span></span> (Loi
                   des
@@ -3300,21 +3306,23 @@
 
               <!-- Loi des nœuds linéique -->
               <div class="form-blck4 form-item form-item--telegraphistes-noeuds">
-                <bclass = "form-color"><span class="math-frac"><span class="math-num">∂I</span><span class="math-den">∂x</span></span> =
+                <bclass="form-color"><span class="math-frac"><span class="math-num">∂I</span><span
+                      class="math-den">∂x</span></span> =
                   -G·V -
                   C·<span class="math-frac"><span class="math-num">∂V</span><span class="math-den">∂t</span></span> (Loi
                   des
                   nœuds linéique) :</b>
-                Explique comment le courant I fuit au fur et à mesure de la propagation dans la ligne de transmission
-                (câble coaxial, piste PCB). Le courant s'échappe à travers l'isolant via la conductance de fuite (G)
-                et alimente la capacité équivalente (C) entre les conducteurs.<br>
-                <b>Cas d'usage :</b> Modélisation des fuites diélectriques et dimensionnement de l'isolation dans les
-                lignes à microruban sur PCB (RF Microstrip).
+                  Explique comment le courant I fuit au fur et à mesure de la propagation dans la ligne de transmission
+                  (câble coaxial, piste PCB). Le courant s'échappe à travers l'isolant via la conductance de fuite (G)
+                  et alimente la capacité équivalente (C) entre les conducteurs.<br>
+                  <b>Cas d'usage :</b> Modélisation des fuites diélectriques et dimensionnement de l'isolation dans les
+                  lignes à microruban sur PCB (RF Microstrip).
               </div>
 
               <!-- Constante de propagation -->
               <div class="form-blck4 form-item form-item--telegraphistes-propagation">
-                <b class = "form-color">γ = α + jβ = √<span style="border-top: 1px solid currentColor; padding-top: 1px;">(R + jωL)(G +
+                <b class="form-color">γ = α + jβ = √<span
+                    style="border-top: 1px solid currentColor; padding-top: 1px;">(R + jωL)(G +
                     jωC)</span>
                   (Constante de propagation) :</b>
                 C'est la carte d'identité de l'onde guidée. La partie réelle α mesure l'affaiblissement (l'onde faiblit)
@@ -3341,8 +3349,9 @@
 
               <!-- Équation de diffusion -->
               <div class="form-blck4 form-item form-item--diffusion">
-                <b class = "form-color">Δ<span class="vec">E</span> = μ·σ·<span class="math-frac"><span class="math-num">∂<span
-                        class="vec">E</span></span><span class="math-den">∂t</span></span> (Équation de diffusion
+                <b class="form-color">Δ<span class="vec">E</span> = μ·σ·<span class="math-frac"><span
+                      class="math-num">∂<span class="vec">E</span></span><span class="math-den">∂t</span></span>
+                  (Équation de diffusion
                   électromagnétique) :</b>
                 Décrit la façon dont un champ électrique pénètre et s'atténue à l'intérieur d'un matériau conducteur.
                 Contrairement au vide où l'onde se propage sans fin, dans un métal (σ > 0), l'onde est rapidement
@@ -3356,8 +3365,9 @@
 
               <!-- Épaisseur de peau -->
               <div class="form-blck4 form-item form-item--epaisseur-peau">
-                <b class = "form-color">δ = <span class="math-frac"><span class="math-num">1</span><span class="math-den">√<span
-                        style="border-top: 1px solid currentColor;">π·f·μ·σ</span></span></span> (Épaisseur ou
+                <b class="form-color">δ = <span class="math-frac"><span class="math-num">1</span><span
+                      class="math-den">√<span style="border-top: 1px solid currentColor;">π·f·μ·σ</span></span></span>
+                  (Épaisseur ou
                   profondeur de
                   peau) :</b>
                 Représente la profondeur à laquelle l'amplitude du champ a diminué de 63% (il ne reste que 1/e ≈ 37%).
@@ -3387,8 +3397,9 @@
 
               <!-- Friis -->
               <div class="form-blck4 form-item form-item--friis">
-                <b class = "form-color">P<sub>r</sub> = P<sub>t</sub> · G<sub>t</sub> · G<sub>r</sub> · <span class="math-frac"><span
-                      class="math-num">λ²</span><span class="math-den">(4π·d)²</span></span> (Formule de transmission de
+                <b class="form-color">P<sub>r</sub> = P<sub>t</sub> · G<sub>t</sub> · G<sub>r</sub> · <span
+                    class="math-frac"><span class="math-num">λ²</span><span class="math-den">(4π·d)²</span></span>
+                  (Formule de transmission de
                   Friis)
                   :</b>
                 Calcule la puissance hertzienne reçue par une antenne en espace libre à une distance d. Elle montre
@@ -3401,8 +3412,9 @@
 
               <!-- Shannon-Hartley -->
               <div class="form-blck4 form-item form-item--shannon">
-                <b class = "form-color">C = B · log<sub>2</sub>(1 + <span class="math-frac"><span class="math-num">S</span><span
-                      class="math-den">N</span></span>) (Théorème de Shannon-Hartley) :</b>
+                <b class="form-color">C = B · log<sub>2</sub>(1 + <span class="math-frac"><span
+                      class="math-num">S</span><span class="math-den">N</span></span>) (Théorème de Shannon-Hartley)
+                  :</b>
                 Définit la limite physique théorique absolue du débit d'information (C en bit/s) pouvant être transmis
                 sans erreur sur un canal radio. Ce débit dépend directement de la largeur de bande disponible (B) et
                 du rapport signal sur bruit (S/N).<br>
@@ -3413,7 +3425,8 @@
 
               <!-- Note générale -->
               <div class="form-blck4 form-item--note">
-                <b class = "form-color">Dans ces formules :</b> P<sub>r</sub> est la puissance reçue, P<sub>t</sub> la puissance émise,
+                <b class="form-color">Dans ces formules :</b> P<sub>r</sub> est la puissance reçue, P<sub>t</sub> la
+                puissance émise,
                 G<sub>t</sub> et G<sub>r</sub> les gains des antennes, λ la longueur d'onde, d la distance,
                 C la capacité du canal (bit/s), B la bande passante (Hz) et S/N le rapport signal sur bruit.
               </div>
