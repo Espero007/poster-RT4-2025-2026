@@ -2585,17 +2585,10 @@
       .math-eq { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 4px 0; }
     </style>
 
+
+    <!-- I. ANALYSE VECTORIELLE -->
     <div class="iot-arch-wrap" style="width: 100%; padding: 12px 16px; border-color: var(--era4);">
-      <div class="iot-arch-title tbl-margin" >
-        Équations Fondamentales des Télécommunications : Explications &amp; Cas d'Usage
-      </div>
-      
-      <table style="width: 100%; border-collapse: separate; border-spacing: 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--ink);">
-        
-        <!-- I. ANALYSE VECTORIELLE -->
-        <tr>
-          <td style="width: 100%;">
-            <div style="border-left: 4px solid var(--ink2); padding-left: 10px; background: rgba(0, 0, 0, 0.02); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(0,0,0,0.12); border-left-width: 0;">
+      <div style="border-left: 4px solid var(--ink2); padding-left: 10px; background: rgba(0, 0, 0, 0.02); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(0,0,0,0.12); border-left-width: 0;">
               <b style="color: var(--ink2); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">I. OPÉRATEURS VECTORIELS SPATIAUX &amp; JACOBIEN SPHÉRIQUE</b>
               <div style="margin-top: 4px; line-height: 1.6; text-align: justify;  font-size: 16pt; font-family: 'Barlow', sans-serif;">
                 <b>• </b><b><span class="vec">grad</span>(f) = <span class="vec">∇</span>f (Gradient) </b>: C'est la flèche de la plus forte pente, Elle mesure la variation rapide d'une grandeur. Sur une carte d'altitude, le gradient en un point pointe exactement dans le sens de la plus grande pente vers le sommet. En météo, le gradient de température ou de pression montre comment la température ou la pression change sur une distance donnée. L'opérateur ∇ dérive la fonction par rapport à chaque direction spatiale (x,yz) pour obtenir les composantes du vecteur. Elle est utilisée pour déterminer la dierction de la force de gravité ou analyser les transferts thermiques de la zone chaude vers la zone froide.<br> 
@@ -2606,12 +2599,10 @@
                 <b>Dans ces formaules, A représente un vecteur et f un sclaire</b></div> 
               </div>
             </div>
-          </td>
-        </tr>
+        </div>
 
         <!-- II. MAXWELL -->
-        <tr>
-          <td style="width: 100%;">
+        <div class="iot-arch-wrap" style="width: 100%; padding: 12px 16px; border-color: var(--era4);">
             <div style="border-left: 4px solid var(--wifi); padding-left: 10px; background: rgba(0, 119, 204, 0.03); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(0,119,204,0.15); border-left-width: 0;">
               <b style="color: var(--wifi); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">II. ÉQUATIONS DE MAXWELL (RÉGIME ÉLECTROMAGNETIQUE LOCAL)</b>
               <div style="margin-top: 4px; line-height: 1.6; text-align: justify;">
@@ -2639,14 +2630,15 @@
                 <div style="font-style: italic; margin-top: 6px;">
                   <b>Dans ces formules :</b> <span class="vec">E</span> est le champ électrique, <span class="vec">B</span> le champ magnétique, <span class="vec">J</span> la densité de courant, ρ la densité de charge, ε₀ la permittivité du vide et μ₀ la perméabilité du vide.
                 </div>
-               
             </div>
-          </td>
-        </tr>
+          </div>
+          </div>
+          </div>
+      
 
         <!-- III. TÉLÉGRAPHISTES -->
-        <tr>
-          <td style="width: 100%;">
+        <div class="iot-arch-wrap" style="width: 100%; padding: 12px 16px; border-color: var(--era4);">
+        
             <div style="border-left: 4px solid var(--g4p); padding-left: 10px; background: rgba(200, 48, 0, 0.03); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(200,48,0,0.15); border-left-width: 0;">
               <b style="color: var(--g4p); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">III. ÉQUATIONS DES TÉLÉGRAPHISTES (LIGNES DE TRANSMISSION TEM)</b>
               <div style="margin-top: 4px; line-height: 1.6; text-align: justify;">
@@ -2670,12 +2662,12 @@
                   <b>Dans ces formules :</b> V est la tension, I le courant, R la résistance linéique (Ω/m), L l'inductance (H/m), G la conductance de fuite (S/m), C la capacité (F/m) et ω la pulsation du signal.
                 </div>
             </div>
-          </td>
-        </tr>
+            </div>
+            </div> </div>
+
 
         <!-- IV. DIFFUSION & PEAU -->
-        <tr>
-          <td style="width: 100%;">
+        <div class="iot-arch-wrap" style="width: 100%; padding: 12px 16px; border-color: var(--era4);">
             <div style="border-left: 4px solid var(--g375); padding-left: 10px; background: rgba(160, 16, 96, 0.03); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(160,16,96,0.15); border-left-width: 0;">
               <b style="color: var(--g375); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">IV. PROPAGATION DANS LES CONDUCTEURS &amp; EFFET DE PEAU</b>
               <div style="margin-top: 4px; line-height: 1.6; text-align: justify;">
@@ -2693,13 +2685,13 @@
                   <div style="font-style: italic; margin-top: 6px;">
                     <b>Dans ces formules :</b> <span class="vec">E</span> est le champ électrique, μ la perméabilité magnétique du matériau, σ sa conductivité électrique, f la fréquence du signal et δ la profondeur de peau (en mètres).
                   </div>
-          </td>
-        </tr>
+          </div>
+            </div>
+            </div> </div>
 
 
         <!-- V. CANAL DE TRANSMISSION -->
-        <tr>
-          <td style="width: 100%;">
+          <div class="iot-arch-wrap" style="width: 100%; padding: 12px 16px; border-color: var(--era4);">        <tr>
             <div style="border-left: 4px solid var(--era4); padding-left: 10px; background: rgba(0, 0, 0, 0.02); padding: 8px 10px; border-radius: 0 4px 4px 0; border: 1px solid rgba(0,0,0,0.12); border-left-width: 0;">
               <b style="color: var(--era4); font-size: 16pt; font-family: 'Barlow Condensed', sans-serif;">V. BILAN DE LIAISON ET CAPACITÉ DU CANAL</b>
               <div style="margin-top: 4px; line-height: 1.6; text-align: justify;">
@@ -2719,12 +2711,9 @@
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
+         </div>
 
-      </table>
-    </div>
-  </div>
+   
   </section>
 
   <!-- ══════════ FOOTER ══════════ -->
