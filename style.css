@@ -7,7 +7,7 @@
 }
 
 @page {
-    size: A1 landscape;
+    size: A0 landscape;
     margin: 0
 }
 
@@ -17,17 +17,22 @@
     --era1: #a82020;
     --era1-bg: #fdf1f0;
     --era1-lt: #fce8e7;
-    --era2: #b85800;
-    --era2-bg: #fdf4ec;
-    --era2-lt: #fce9d8;
+    --era2: #a82020;
+    --era2-bg: #fdf1f0;
+    --era2-lt: #fce8e7;
+    /* --era2: #b85800; */
+    /* --era2-bg: #fdf4ec; */
+    /* --era2-lt: #fce9d8; */
     --era3: #0f3d6e;
     --era3-bg: #eef3fb;
     --era3-lt: #dfe9f7;
     --era4: #1a6b3a;
     --era4-bg: #edf7f1;
-    --era5: #840797;
+    --era5: #1a6b3a;
+    --era5-bg: #edf7f1;
+    /* --era5: #840797;
     --era5-bg: #eef3fb;
-    --era5-lt: #dfe9f7;
+    --era5-lt: #dfe9f7; */
     --g2: #1452a0;
     --g25: #05607a;
     --g275: #236a40;
@@ -49,15 +54,14 @@
     --ink3: #8888a8;
     --rule: #dedbd0;
     --card-bg: #ffffff;
-    --text-size: 10pt;
+    --preview-processing-bg: #2a8a5012;
+    --preview-processing-border: #2a8a5040;
+    --highlight-network: #1a6b3a;
+    --text-size: 16pt;
 }
 
 body {
-    /* Zoom uniforme de 1.3 pour agrandir tout le poster proportionnellement.
-       La largeur est réduite à 841mm / 1.3 ≈ 647mm pour que
-       zoom × largeur = 841mm (format A1 landscape préservé à l'impression). */
-    width: 647mm;
-    zoom: 1.3;
+    width: 1189mm;
     background: var(--bg);
     font-family: 'Barlow', sans-serif;
     color: var(--ink);
@@ -72,21 +76,22 @@ body {
     }
 
     body {
-        width: 647mm;
-        zoom: 1.3
+        width: 1189mm;
     }
 }
 
 .body-text {
-    font-size: 10pt !important;
+    font-size: 16pt !important;
 }
 
 /* ══ HEADER ══ */
 header {
     background: var(--dark);
-    padding: 10mm 15mm 8mm;
+    padding: 10mm 15mm 5mm;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    grid-column-start: 1;
+    grid-column-end: -1
 }
 
 header::before {
@@ -203,17 +208,17 @@ header::after {
 }
 
 .hdr-promo-image img {
-    height: 346px;
+    height: 120mm;
     border-radius: 10px;
 }
 
 h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 42pt;
-    font-weight: 900;
+    font-size: 45pt;
+    font-weight: 800;
     line-height: .9;
     color: #fff;
-    letter-spacing: -1.5px
+    /* letter-spacing: -1.5px */
 }
 
 h1 em {
@@ -358,7 +363,7 @@ h1 em {
 
 /* ══ SECTION BASE ══ */
 section.era-sec {
-    padding: 6mm 11mm 7mm
+    padding: 6mm 10mm
 }
 
 .era-sec.e1 {
@@ -369,12 +374,31 @@ section.era-sec {
     background: var(--era2-bg)
 }
 
-.era-sec.e3 {
+.era-sec.e2 .tc {
+    grid-template: max-content 1fr / 1fr;
+}
+
+.era-sec.e2 .tc-img {
+    justify-content: center;
+}
+
+.era-sec.e3,
+.era-sec.e-wimax {
     background: var(--era3-bg)
 }
 
+.e-wimax {
+    padding-top: 0 !important;
+}
+
 .era-sec.e4 {
-    background: var(--era4-bg)
+    background: var(--era4-bg);
+    padding-right: 5mm;
+}
+
+.era-sec.e5 {
+    background: var(--era5-bg);
+    padding-left: 0mm;
 }
 
 .sec-hdr {
@@ -394,7 +418,8 @@ section.era-sec {
     border-color: var(--era2)
 }
 
-.e3 .sec-hdr {
+.e3 .sec-hdr,
+.e-wimax .sec-hdr {
     border-color: var(--era3)
 }
 
@@ -425,7 +450,8 @@ section.era-sec {
     background: var(--era2)
 }
 
-.e3 .sec-tag {
+.e3 .sec-tag,
+.e-wimax .sec-tag {
     background: var(--era3)
 }
 
@@ -452,7 +478,8 @@ section.era-sec {
     color: var(--era2)
 }
 
-.e3 .sec-title {
+.e3 .sec-title,
+.e-wimax .sec-title {
     color: var(--era3)
 }
 
@@ -527,7 +554,7 @@ section.era-sec {
     gap: 5mm;
     background: var(--card-bg);
     border-radius: 2.5mm;
-    padding: 3mm 3.5mm 2.5mm;
+    padding: 4mm;
     border: 1px solid var(--rule);
     position: relative;
     overflow: hidden;
@@ -563,7 +590,7 @@ section.era-sec {
     font-size: 18pt;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 2mm
+    margin-bottom: 4mm
 }
 
 .tc-r {
@@ -594,6 +621,7 @@ section.era-sec {
     display: flex;
     gap: 5mm;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .tc-img img {
@@ -725,7 +753,9 @@ section.era-sec {
 .gen-arch {
     padding: 2mm 2.5mm 2.5mm;
     background: #fbfbfe;
-    border-bottom: 1px solid var(--rule)
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
 }
 
 /* Scaling SVG text inside architectures to compensate for browser zoom issues on SVGs */
@@ -879,7 +909,7 @@ section.era-sec {
 .wimax-body {
     padding: 4mm 5mm;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 450mm 1fr;
     gap: 5mm;
     align-items: stretch;
 }
@@ -996,6 +1026,21 @@ section.era-sec {
     gap: 5mm
 }
 
+.wimax-body-stack.stack-2 {
+    grid-template: 1fr / 1fr 1fr;
+    color: #fff;
+    line-height: 1.6;
+    font-size: 16pt;
+}
+
+.wimax-body-stack.stack-2 .wimax-row {
+    margin-top: 5mm;
+}
+
+.wimax-body-stack.stack-2 .wimax-lbl {
+    width: 50mm;
+}
+
 .wimax-card {
     background: rgba(255, 255, 255, .08);
     border-radius: 2mm;
@@ -1060,14 +1105,9 @@ section.era-sec {
 /* ══ 5G + SPEED COMPARE WRAPPER ══ */
 .g5-speed-wrap {
     display: grid;
-    grid-template-columns: 1fr 172mm;
-    grid-template-rows: 1fr auto;
+    grid-template-columns: 480mm 1fr;
     gap: 5mm;
-    padding-top: 3mm;
-}
-
-.g5-speed-wrap .g5-band {
-    min-width: 0
+    padding-top: 10mm;
 }
 
 /* ══ 5G BAND ══ */
@@ -1173,6 +1213,8 @@ section.era-sec {
 /* ══ 5G SBA DIAGRAM PANEL ══ */
 .g5-sba {
     padding: 4mm 5mm;
+    display: flex;
+    justify-content: center;
 }
 
 .g5-sba-title {
@@ -1186,7 +1228,7 @@ section.era-sec {
 }
 
 .g5-sba-svg {
-    width: 100%;
+    width: 460mm;
     display: block
 }
 
@@ -1237,9 +1279,8 @@ section.era-sec {
     background: #fff;
     border-radius: 3mm;
     padding: 4mm 5mm;
-    margin-top: 3mm;
     border: 1px solid #dde4f0;
-    grid-column: 1/-1;
+    height: 100%;
 }
 
 .sc-title {
@@ -1621,7 +1662,8 @@ section.era-sec {
 /* Mises en page globales */
 .iot-main-layout {
     display: grid;
-    grid-template-columns: 1fr 350mm;
+    /* grid-template-columns: 1fr 410mm; */
+
     gap: 5mm;
     margin-bottom: 4mm;
     align-items: stretch;
@@ -1676,8 +1718,8 @@ section.era-sec {
 }
 
 .preview-processing {
-    background: rgba(42, 138, 80, .07);
-    border-color: rgba(42, 138, 80, .25);
+    background: var(--preview-processing-bg);
+    border-color: var(--preview-processing-border);
 }
 
 .preview-network {
@@ -1930,6 +1972,12 @@ section.era-sec {
 }
 
 /* Bulles SVG & Couleurs de fond */
+.iot-chart-svg {
+    width: 320mm;
+    flex-shrink: 0;
+}
+
+
 .iot-chart-svg circle {
     stroke-width: 1.5;
 }
@@ -2020,8 +2068,7 @@ section.era-sec {
 .iot-chart-caption {
     font-size: 16pt;
     color: var(--ink3);
-    /* font-style: italic; */
-    /* text-align: center; */
+    text-align: justify;
     margin-top: 1mm;
     line-height: 1.5;
 }
@@ -2030,6 +2077,7 @@ section.era-sec {
     color: #1a6b3a;
     display: block;
     margin-bottom: 2mm;
+    text-align: left;
 }
 
 .iot-extra {
@@ -2125,34 +2173,13 @@ footer {
 /* Grille 2 par 2 puis 1 seul */
 .formula-grid {
     display: grid;
-    /* flex-wrap: wrap; */
     gap: 5mm;
-    /* width: 100%; */
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, auto);
-}
-
-/* .col-half { */
-/* flex: 1 1 calc(50% - 16px); */
-/* min-width: 300px; */
-/* box-sizing: border-box; */
-/* } */
-
-/* .col-full {
-    flex: 1 1 100%;
-    width: 100%;
-    box-sizing: border-box;
-} */
-
-.bilan-liaison {
-    grid-column-start: 1;
-    grid-column-end: -1;
+    grid-template: repeat(2, max-content) / repeat(3, 1fr);
 }
 
 .form-blck1 {
     height: 100%;
     padding: 12px 16px;
-    border-color: var(--era5);
 }
 
 .form-blck2 {
@@ -2169,13 +2196,14 @@ footer {
     margin: 5mm 0;
     line-height: 1.6;
     text-align: justify;
-    font-size: 16pt;
+    font-size: var(--text-size);
     font-family: 'Barlow', sans-serif;
 }
 
 .form-item {
     margin-bottom: 8px;
-    background: #eef;
+    background: var(--preview-processing-bg);
+    color: var(--ink2);
     padding: 5mm;
     padding-left: 7mm;
     border-radius: 3mm;
@@ -2200,5 +2228,20 @@ footer {
 }
 
 .form-color {
-    color: #840797;
+    color: var(--highlight-network);
+}
+
+.page {
+    height: 84.1cm;
+    width: 118.9cm;
+    position: absolute;
+    border: 2mm dotted #000;
+    z-index: 10;
+    transform: translateY(calc(1 * 84.1cm));
+    /* display: none; */
+}
+
+.e4-e5-container {
+    display: grid;
+    grid-template: 1fr / 460mm 1fr;
 }
