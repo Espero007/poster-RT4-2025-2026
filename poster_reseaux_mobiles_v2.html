@@ -3,17 +3,60 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Poster A1 — Évolution des Réseaux Radio Mobiles</title>
+  <title>Poster A0 — Évolution des Réseaux Radio Mobiles</title>
+
+  <!--
+    ============================================================
+    POSTER — Évolution des Réseaux Radio Mobiles
+    poster_reseaux_mobiles_v2.html — Version nettoyée et commentée
+
+    Auteurs  : GIT 4e Année, Promotion 2025-2026, EPAC / UAC
+    Format   : A0 Paysage (1189mm x 841mm)
+    CSS      : style.css (meme dossier)
+    Polices  : Barlow Condensed (titres), Barlow (corps),
+               JetBrains Mono (specs, code) via Google Fonts
+
+    STRUCTURE GENERALE DU DOCUMENT :
+      header               : Logos, Titre, Timeline chronologique
+      section.e1           : Ère I   — Radio Pionnière (1888-1978)
+      section.e2           : Ère II  — Mobile Analogique (1979-1990)
+      section.e3           : Ère III — Numérique GSM (1991-Aujourd'hui)
+                             Grille : 2G / 2.5G / 2.75G / 3G / 3.5G / 3.75G / 4G / 4G+
+                             Bandeau 5G + Graphe comparatif des débits
+      section.e-wimax      : Technologies concurrentes IEEE (WiMAX 802.16)
+      div.e4-e5-container  :
+        section.e4         : Ère IV — IoT & Réseaux Spécialisés
+        section.e5         : Ère V  — Formules Mathématiques RF
+      footer               : Identité académique
+    ============================================================
+  -->
+
+  <!-- Polices Google Fonts :
+       Barlow Condensed = titres de sections et badges
+       Barlow           = texte courant
+       JetBrains Mono   = spécifications techniques, code, sigles -->
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
     rel="stylesheet">
+
+  <!-- Feuille de styles principale (règles de mise en page, couleurs, composants) -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- Repere visuel A0 paysage (desactiver pour impression) -->
   <div class="page"></div>
   <!-- ══════════ HEADER ══════════ -->
+  
+
+  <!-- ============================================================
+       ERE I - Radio Pionniere (1888-1978)
+       Illustration TSF | Cartes : TSF, Militaire, Police, Talkie
+       ============================================================
+  <!-- ============================================================
+       HEADER : Logos institutionnels | Titre | Timeline
+       ============================================================ -->
   <header>
     <div class="hdr-inner">
       <div class="row-1">
@@ -94,7 +137,9 @@
           <div class="lg-item"><span class="lg-bar" style="background:var(--nbiot)"></span>NB-IoT / LTE-MTC</div>
         </div>
         <!-- ══════════ TIMELINE ══════════ -->
-        <div class="timeline-wrap">
+      
+  <!-- Timeline chronologique : de 1888 a aujourd'hui -->
+  <div class="timeline-wrap">
           <div class="timeline-track">
             <div class="tl-line"></div>
             <div class="tl-evts">
@@ -189,7 +234,7 @@
     </div>
   </header>
 
-  <div style="display : grid; grid-template : 1fr / 1fr 1fr">
+  <div style="display:grid; grid-template:1fr / 1fr 1fr">
     <!-- ══════════ ÈRE I ══════════ -->
     <section class="era-sec e1">
       <div class="sec-hdr">
@@ -374,6 +419,11 @@
     </section>
 
     <!-- ══════════ ÈRE II ══════════ -->
+
+    <!-- ============================================================
+         ERE II - Mobile Analogique (1979-1990)
+         Vehicule + Architecture 0G/1G | Cartes : 0G, PMR, IMTS, 1G
+         ============================================================ -->
     <section class="era-sec e2">
       <div class="sec-hdr">
         <span class="sec-tag">Ère II</span>
@@ -495,6 +545,12 @@
 
 
   <!-- ══════════ ÈRE III ══════════ -->
+
+  <!-- ============================================================
+       ERE III - Numerique / Famille GSM (1991-Aujourd'hui)
+       Grille des generations : 2G > 2.5G > 2.75G > 3G > 3.5G > 3.75G > 4G > 4G+
+       Puis : Bandeau 5G NR + Graphe comparatif des debits
+       ============================================================ -->
   <section class="era-sec e3">
     <div class="sec-hdr">
       <span class="sec-tag">Ère III</span>
@@ -502,6 +558,13 @@
       <span class="sec-period">1991 – Aujourd'hui</span>
     </div>
 
+
+    <!-- Grille des 8 generations GSM.
+         Chaque .gen contient :
+           .gen-hdr      : badge couleur, norme, annees
+           .gen-terminal : illustration SVG du terminal
+           .gen-arch     : diagramme SVG de l'architecture reseau
+           .gen-specs    : tableau debit/latence/acces + features -->
     <div class="gen-grid">
       <!-- 2G GSM -->
       <div class="gen g2" style="width : 400mm;">
@@ -2209,6 +2272,8 @@
 
     </div><!-- /gen-grid 8 cols -->
 
+
+    <!-- Bandeau 5G NR + Graphe de comparaison des debits (2G -> 5G) -->
     <div class="g5-speed-wrap">
       <!-- 5G full-width band -->
       <div class="g5-band">
@@ -2680,6 +2745,12 @@
   </section>
 
   <!-- Technologies Concurrentes IEEE & Haut Débit Radio (WiMAX / 802.16) -->
+
+  <!-- ============================================================
+       TECHNOLOGIES CONCURRENTES IEEE - WiMAX / 802.16
+       Standard concurrent du 3G/4G, periode 2004-2015
+       Architecture ASN/CSN, OFDMA, QoS native
+       ============================================================ -->
   <section class="era-sec e-wimax">
     <div class="sec-hdr">
       <span class="sec-tag">IEEE</span>
@@ -2906,9 +2977,19 @@
     </div>
   </section>
 
+
+  <!-- ============================================================
+       CONTENEUR ERES IV & V - 2 colonnes
+       Colonne gauche  : ERE IV - IoT & Reseaux Specialises
+       Colonne droite  : ERE V  - Formules Mathematiques RF
+       ============================================================ -->
   <div class="e4-e5-container">
     <!-- ══════════ ÈRE IV — IoT & RÉSEAUX SPÉCIALISÉS ══════════ -->
-    <section class="era-sec e4" style="flex : 1">
+
+    <!-- ERE IV - IoT & Reseaux Specialises (1991-Aujourd'hui)
+         Architecture 4 couches | Comparatif protocoles | Graphe portee/debit
+         Protocoles : WiFi, Bluetooth, ZigBee, LoRaWAN, NB-IoT, Sigfox -->
+    <section class="era-sec e4" style="flex:1">
       <div class="sec-hdr">
         <span class="sec-tag">Extra</span>
         <span class="sec-title">Internet des Objets (IoT) &amp; Réseaux Radio Spécialisés — WiFi, Bluetooth, LoRa,
@@ -3148,7 +3229,7 @@
       </div>
     </section>
 
-    <section class="era-sec e5" style="flex : 2">
+    <section class="era-sec e5" style="flex:2">
       <div class="sec-hdr">
         <span class="sec-tag">EXTRA</span>
         <span class="sec-title">Quelques formules fondamentales des mathématiques et physiques appliquées en radio
@@ -3367,7 +3448,7 @@
           </div>
         </div>
 
-        <div style="display : grid; grid-template : 1fr / 1fr 1fr; grid-column : 1/-1; gap: 5mm">
+        <div style="display:grid; grid-template:1fr / 1fr 1fr; grid-column : 1/-1; gap: 5mm">
           <!-- IV. DIFFUSION & PEAU -->
           <div class="col-half">
             <div class="iot-arch-wrap form-blck1">
@@ -3466,6 +3547,10 @@
   </div>
 
   <!-- ══════════ FOOTER ══════════ -->
+
+  <!-- ============================================================
+       FOOTER - Identification academique
+       ============================================================ -->
   <footer>
     <span>Génie Informatique et Télécommunications (GIT) 4ème Année · Option Réseaux & Télécommunications (RT) ·
       Promotion 2025–2026 · Poster Pédagogique</span>
