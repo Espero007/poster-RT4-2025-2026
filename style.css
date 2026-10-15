@@ -316,7 +316,7 @@ h1 em {
 /* Compteurs statistiques (4 Ères, 9 Générations, etc.) */
 .hdr-stats {
     display: flex;
-    gap: 3.5mm;
+    gap: 20mm;
     margin-top: 10mm;
     flex-wrap: wrap;
 }
@@ -325,7 +325,7 @@ h1 em {
     text-align: center;
     border: 1px solid rgba(255,255,255,.1);
     border-radius: 2mm;
-    padding: 2mm 4mm;
+    padding: 4mm 6mm;
 }
 
 .hdr-stat-n {
